@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Интерактивные учебные конспекты по биохимии, гистологии и физиологии.">
   <title>Библиотека конспектов</title>
+  <script src="theme.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
@@ -12,7 +13,7 @@
   <header class="masthead">
     <div class="shell masthead-inner">
       <a class="wordmark" href="./">Конспекты</a>
-      <span class="masthead-caption">Учебная библиотека</span>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Тёмная тема" aria-pressed="false">Тема</button>
     </div>
   </header>
 
@@ -41,6 +42,7 @@
     <div class="reader-toolbar">
       <a class="back" id="back-link" href="./">← <span>К каталогу</span></a>
       <h1 id="reader-title"></h1>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Тёмная тема" aria-pressed="false">Тема</button>
       <nav class="pager" aria-label="Переключение конспектов">
         <a id="previous" aria-label="Предыдущий конспект" hidden>←</a>
         <a id="next" aria-label="Следующий конспект" hidden>→</a>
