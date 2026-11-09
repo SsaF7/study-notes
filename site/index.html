@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивные учебные конспекты по биохимии, гистологии и физиологии.">
+  <title>Библиотека конспектов</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <a class="wordmark" href="./">Конспекты</a>
+      <span class="masthead-caption">Учебная библиотека</span>
+    </div>
+  </header>
+
+  <main class="shell library" id="library">
+    <h1>Библиотека конспектов</h1>
+    <p class="intro">Открой конспект или найди нужный термин во всей библиотеке.</p>
+    <form id="filters" role="search">
+      <div class="field">
+        <label for="query">Поиск по конспектам</label>
+        <input type="search" id="query" name="q" placeholder="Например, цикл Кребса" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="subject">Предмет</label>
+        <select id="subject" name="subject"><option value="">Все предметы</option></select>
+      </div>
+    </form>
+    <div class="results-header">
+      <h2>Каталог</h2>
+      <p id="status" role="status">Загружаем каталог…</p>
+    </div>
+    <ul id="results" class="results"></ul>
+    <noscript>Для поиска и чтения конспектов включи JavaScript.</noscript>
+  </main>
+
+  <main class="reader" id="reader" hidden>
+    <div class="reader-toolbar">
+      <a class="back" id="back-link" href="./">← <span>К каталогу</span></a>
+      <h1 id="reader-title"></h1>
+      <nav class="pager" aria-label="Переключение конспектов">
+        <a id="previous" aria-label="Предыдущий конспект" hidden>←</a>
+        <a id="next" aria-label="Следующий конспект" hidden>→</a>
+      </nav>
+    </div>
+    <iframe id="note-frame" title="Интерактивный конспект"></iframe>
+  </main>
+</body>
+</html>

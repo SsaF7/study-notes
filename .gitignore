@@ -1,0 +1,8 @@
+/*.html
+/*.zip
+*.pdf
+/outputs/
+/dist/
+/.build-*/
+/notes/.import-*/
+__pycache__/

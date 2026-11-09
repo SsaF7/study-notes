@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Конспект: физиология ЦНС, движений и вегетатики (Алипов, гл. 4–6)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f3ec; --paper:#fffdf8; --ink:#1d1b18; --muted:#6b655b; --line:#e3ddd0;
+  --accent:#c2410c; --accent2:#0f766e;
+  --c4:#2563eb; --c5:#c2410c; --c6:#0f766e;
+  --simple-bg:#e8f0fe; --simple-bd:#3b6fd8;
+  --assoc-bg:#f3e8ff; --assoc-bd:#8b5cf6;
+  --life-bg:#e7f6ec; --life-bd:#1f9d55;
+  --trap-bg:#fdecea; --trap-bd:#d93025;
+  --book-bg:#fff6dc; --book-bd:#d4a017;
+  --lab-bg:#fbfaf6; --lab-bd:#1d1b18;
+  --ok:#15803d; --bad:#b91c1c;
+  --exc:#ef7d32; --inh:#2f4f8f; --hi:#facc15;
+  --radius:14px;
+  --ff:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --fh:"Unbounded","Golos Text",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --bg:#15140f; --paper:#1e1c17; --ink:#ece7dc; --muted:#a59d8f; --line:#35322a;
+  --accent:#fb923c; --accent2:#2dd4bf; --c4:#7aa7ff; --c5:#fb923c; --c6:#2dd4bf;
+  --simple-bg:#17243d; --simple-bd:#6f9bff; --assoc-bg:#271b3d; --assoc-bd:#b18cff;
+  --life-bg:#14301f; --life-bd:#4ade80; --trap-bg:#3a1916; --trap-bd:#ff7a6b;
+  --book-bg:#352a0c; --book-bd:#e8b93a; --lab-bg:#1a1915; --lab-bd:#ece7dc;
+  --ok:#4ade80; --bad:#f87171; --exc:#fb923c; --inh:#8fb0ff;
+}}
+:root[data-theme=dark]{
+  --bg:#15140f; --paper:#1e1c17; --ink:#ece7dc; --muted:#a59d8f; --line:#35322a;
+  --accent:#fb923c; --accent2:#2dd4bf; --c4:#7aa7ff; --c5:#fb923c; --c6:#2dd4bf;
+  --simple-bg:#17243d; --simple-bd:#6f9bff; --assoc-bg:#271b3d; --assoc-bd:#b18cff;
+  --life-bg:#14301f; --life-bd:#4ade80; --trap-bg:#3a1916; --trap-bd:#ff7a6b;
+  --book-bg:#352a0c; --book-bd:#e8b93a; --lab-bg:#1a1915; --lab-bd:#ece7dc;
+  --ok:#4ade80; --bad:#f87171; --exc:#fb923c; --inh:#8fb0ff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--ff);-webkit-text-size-adjust:100%;overflow-x:hidden}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--fh);line-height:1.2;letter-spacing:-.01em}
+h1{font-size:clamp(26px,6vw,42px);margin:.2em 0 .3em}
+h2{font-size:clamp(20px,4.6vw,28px);margin:1.6em 0 .5em}
+h3{font-size:clamp(16px,3.8vw,19px);margin:1.4em 0 .4em}
+h3 .num{color:var(--muted);font-weight:500;margin-right:.35em}
+p{margin:.55em 0}
+a{color:var(--accent)}
+b,strong{font-weight:650}
+.muted{color:var(--muted)}
+small{font-size:.86em}
+
+/* header */
+.hero{padding:28px 0 12px}
+.kicker{font:600 12px/1 var(--ff);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero p{color:var(--muted);max-width:60ch}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{font:600 14px/1 var(--ff);border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 14px;cursor:pointer;touch-action:manipulation}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.on{background:var(--ink);color:var(--paper)}
+.btn.sm{padding:7px 11px;font-size:13px}
+.btn:disabled{opacity:.4;cursor:default}
+
+/* sticky nav */
+nav.pills{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.pills .row{display:flex;gap:6px;overflow-x:auto;padding:8px 16px;max-width:880px;margin:0 auto;scrollbar-width:none}
+nav.pills .row::-webkit-scrollbar{display:none}
+nav.pills .row.sub{padding-top:0}
+nav.pills a{flex:0 0 auto;text-decoration:none;color:var(--ink);font:600 13px/1 var(--ff);padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);white-space:nowrap}
+nav.pills .row.sub a{font-weight:500;font-size:12px;padding:6px 10px}
+nav.pills a.act{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+nav.pills a[data-ch="4"].act{background:var(--c4);border-color:var(--c4);color:#fff}
+nav.pills a[data-ch="5"].act{background:var(--c5);border-color:var(--c5);color:#fff}
+nav.pills a[data-ch="6"].act{background:var(--c6);border-color:var(--c6);color:#fff}
+
+/* chapter head */
+.chap{margin-top:34px;padding:22px 20px;border-radius:var(--radius);color:#fff;position:relative;overflow:hidden}
+.chap.c4{background:linear-gradient(135deg,#1e40af,#3b82f6)}
+.chap.c5{background:linear-gradient(135deg,#9a3412,#ea580c)}
+.chap.c6{background:linear-gradient(135deg,#115e59,#14b8a6)}
+.chap .n{font:700 64px/1 var(--fh);opacity:.25;position:absolute;right:14px;top:8px}
+.chap h2{margin:.1em 0 .25em;color:#fff}
+.chap p{margin:0;opacity:.95;max-width:56ch}
+.chap .pages{font-size:13px;opacity:.85;margin-top:6px}
+
+/* blocks */
+.blk{border-left:4px solid;border-radius:10px;padding:10px 14px 10px 14px;margin:12px 0;position:relative}
+.blk::before{display:block;font:700 11px/1 var(--ff);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.blk.simple{background:var(--simple-bg);border-color:var(--simple-bd)}
+.blk.simple::before{content:"Просто";color:var(--simple-bd)}
+.blk.assoc{background:var(--assoc-bg);border-color:var(--assoc-bd)}
+.blk.assoc::before{content:"Ассоциация";color:var(--assoc-bd)}
+.blk.life{background:var(--life-bg);border-color:var(--life-bd)}
+.blk.life::before{content:"Из жизни *";color:var(--life-bd)}
+.blk.trap{background:var(--trap-bg);border-color:var(--trap-bd)}
+.blk.trap::before{content:"Не путай";color:var(--trap-bd)}
+.blk.book{background:var(--book-bg);border-color:var(--book-bd)}
+.blk.book::before{content:"На опросе — по книге";color:var(--book-bd)}
+.blk p:first-of-type{margin-top:0}.blk p:last-child{margin-bottom:0}
+.blk ul{margin:.3em 0;padding-left:1.2em}
+
+ul,ol{padding-left:1.3em;margin:.5em 0}
+li{margin:.2em 0}
+
+/* chains */
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0}
+.chain span{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:14px;font-weight:500}
+.chain i{font-style:normal;color:var(--muted);font-weight:700}
+.chain span.ex{border-color:var(--exc)}.chain span.in{border-color:var(--inh)}
+
+/* tables */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:520px}
+.tw.narrow table{min-width:0}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-weight:650;background:color-mix(in srgb,var(--line) 45%,var(--paper));position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+tr.hl td{background:color-mix(in srgb,var(--hi) 35%,var(--paper));transition:background .3s}
+td.sym{color:var(--c5);font-weight:600}td.par{color:var(--c6);font-weight:600}
+
+/* figures */
+figure.fig{margin:16px 0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+figure.fig img{display:block;width:100%;height:auto;cursor:zoom-in;background:#fff}
+figure.fig figcaption{background:var(--paper);padding:10px 14px;font-size:14px;border-top:1px solid var(--line)}
+figure.fig figcaption b{color:var(--accent)}
+figure.fig.half{max-width:460px}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:12px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:100%;max-height:92vh;background:#fff;border-radius:6px}
+.lb .x{position:absolute;top:10px;right:14px;color:#fff;font:700 28px/1 var(--ff)}
+
+/* lab */
+.lab{border:2px dashed var(--lab-bd);border-radius:var(--radius);padding:16px 14px 14px;margin:22px 0;background:var(--lab-bg);position:relative}
+.lab>.tag{position:absolute;top:-12px;left:14px;background:var(--ink);color:var(--paper);font:700 11px/1 var(--ff);letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.lab h4{font:700 16px/1.3 var(--fh);margin:6px 0 4px}
+.lab .how{font-size:14px;color:var(--muted);margin:0 0 10px}
+.lab .how::before{content:"Что делать: ";font-weight:700;color:var(--ink)}
+.lab .ctl{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.lab .out{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px;min-height:3em}
+.lab svg{display:block;width:100%;height:auto;max-width:100%}
+.svgw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#l3svg,#l4svg,#l6svg,#l8svg,#l9svg,#l10svg{min-width:580px}
+@media (max-width:620px){.svgw.sc::before{content:"← схему можно листать вбок →";display:block;font-size:12px;color:var(--muted);text-align:center;margin:2px 0 4px;position:sticky;left:0}}
+.score{font-weight:700}
+.lab input[type=range]{width:100%}
+
+/* quiz */
+.q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0}
+.q .qt{font-weight:600;margin-bottom:8px}
+.q .qt small{display:inline-block;font-weight:600;color:#fff;border-radius:6px;padding:1px 6px;margin-right:6px}
+.q .opts{display:grid;gap:6px}
+.q button.o{text-align:left;font:15px/1.4 var(--ff);padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.q button.o:hover:not(:disabled){border-color:var(--ink)}
+.q button.o.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,var(--paper))}
+.q button.o.wrong{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--paper))}
+.q .ex{display:none;margin-top:8px;font-size:14px;color:var(--muted)}
+.q.done .ex{display:block}
+.prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:8px 0}
+.prog i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.card{height:150px;cursor:pointer;position:relative}
+.card .in{position:relative;width:100%;height:100%}
+.card .fa,.card .ba{position:absolute;inset:0;border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid var(--line);transition:opacity .25s}
+.card .fa{background:var(--paper);font:600 15px/1.3 var(--fh)}
+.card .ba{background:var(--ink);color:var(--paper);font-size:13.5px;line-height:1.35;opacity:0;pointer-events:none}
+.card.f .ba{opacity:1}.card.f .fa{opacity:0}
+.card .fa small{position:absolute;top:8px;left:10px;font:600 11px var(--ff);color:var(--muted)}
+
+footer{margin:40px 0 60px;color:var(--muted);font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:620px){.two{grid-template-columns:1fr}}
+.tagc{display:inline-block;font:600 12px/1 var(--ff);padding:4px 8px;border-radius:6px;color:#fff}
+.t4{background:var(--c4)}.t5{background:var(--c5)}.t6{background:var(--c6)}
+kbd{font:600 13px var(--ff);background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+</style>
+</head>
+<body>
+<header class="wrap hero">
+  <div class="kicker">Н. Н. Алипов · «Основы медицинской физиологии» · 2-е изд., 2013</div>
+  <h1>Главы 4–6: ЦНС, движения, вегетатика</h1>
+  <p>Конспект для опроса: суть простыми словами, рисунки из учебника, 10 лабораторий, тест, карточки и шпаргалки. Номера страниц — по учебнику.</p>
+  <div class="toolbar">
+    <button class="btn sm" id="themeBtn">◐ Тема</button>
+    <a class="btn sm" href="#test" style="text-decoration:none">Сразу к тесту →</a>
+  </div>
+</header>
+<nav class="pills" id="nav">
+  <div class="row" id="navMain">
+    <a href="#ch4" data-ch="4">4 · ЦНС</a>
+    <a href="#ch5" data-ch="5">5 · Движения</a>
+    <a href="#ch6" data-ch="6">6 · Вегетатика</a>
+    <a href="#test">Тест</a>
+    <a href="#cards">Карточки</a>
+    <a href="#traps">Не путать</a>
+    <a href="#nums">Цифры</a>
+  </div>
+  <div class="row sub" id="navSub"></div>
+</nav>
+<main class="wrap">
+<section id="ch4" data-ch="4">
+<div class="chap c4"><span class="n">4</span>
+  <div class="kicker" style="color:#fff;opacity:.8">Глава 4</div>
+  <h2>Общая физиология ЦНС</h2>
+  <p>Как нейрон «решает», что такое рефлекс и как миллиарды нейронов работают согласованно: контуры, центры, иерархия, доминанта, функциональная система.</p>
+  <div class="pages">Учебник, с. 62–77</div>
+</div>
+
+<h3 id="s4-0" data-short="Задачи ЦНС"><span class="num">4.0</span>Зачем нужна ЦНС</h3>
+<p>Назначение ЦНС — <b>управлять сложным организмом в сложной среде</b>. Отсюда две задачи:</p>
+<div class="tw narrow"><table>
+<tr><th>Задача</th><th>Что это</th><th>Чем обеспечивается</th></tr>
+<tr><td><b>Адаптация</b></td><td>целесообразно реагировать на внешнюю среду</td><td><b>рефлекторный принцип</b>: почти вся деятельность ЦНС — рефлекторные акты</td></tr>
+<tr><td><b>Интеграция</b></td><td>управлять организмом как единым целым</td><td><b>координация</b> рефлексов, программ, центров</td></tr>
+</table></div>
+<p>Структурно-функциональная единица ЦНС — <b>нейрон</b>.</p>
+<div class="blk assoc"><p>Адаптация — это «отвечать на сообщения извне», интеграция — «чтобы все отделы компании работали как одна команда, а не каждый сам по себе».</p></div>
+
+<h3 id="s4-1" data-short="Нейрон"><span class="num">4.1</span>Нейрон: строение</h3>
+<div class="two">
+<div>
+<ul>
+<li><b>Дендриты</b> — <i>афферентные</i> (приносящие) отростки: обычно много, короткие, ветвистые.</li>
+<li><b>Тело (сома)</b> — <i>трофический центр</i>: ядро и органеллы для синтеза белков и обмена.</li>
+<li><b>Аксон</b> — <i>эфферентный</i> (выносящий) отросток: <b>всегда один</b>, обычно длинный, ветвится в основном на конце → пресинаптические окончания.</li>
+</ul>
+<p>С точки зрения передачи информации:</p>
+<ul>
+<li><b>входной отдел</b> — дендриты + тело (на них до десятков, а иногда сотен тысяч синапсов!);</li>
+<li><b>выходной отдел</b> — аксон.</li>
+</ul>
+</div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1017" height="765" src="img/fig4-1.jpg" alt="Рисунок 4.1"><figcaption><b>Рис. 4.1</b> (с. 63). Отделы нейрона: тело, ядро, дендриты, аксон.</figcaption></figure>
+</div>
+<div class="blk trap"><p>Нейроны бывают разные (чувствительные с одним длинным дендритом, вставочные с коротким аксоном и т. д.), но правило одно: <b>дендриты — чувствительные отростки, аксон — двигательный, и аксон всегда один</b>.</p></div>
+<div class="blk assoc"><p>Нейрон = функция в коде: много аргументов на входе (дендриты), одно возвращаемое значение (аксон). Тело — «сервер», где идёт синтез.</p></div>
+
+<h3 id="s4-2" data-short="Синапс"><span class="num">4.2</span>Синаптическая передача (кратко, подробно — гл. 2)</h3>
+<div class="chain"><span>ПД приходит в пресинаптическое окончание</span><i>→</i><span>медиатор из пузырьков в щель</span><i>→</i><span>диффузия к постсинаптической мембране</span><i>→</i><span>связь с рецепторами</span></div>
+<p>Синапс = <b>пресинаптическое окончание + синаптическая щель + постсинаптическая мембрана</b>.</p>
+<div class="tw narrow"><table>
+<tr><th>Рецептор</th><th>Что происходит</th></tr>
+<tr><td><b>Метаботропный</b></td><td>включаются внутриклеточные биохимические системы → меняются обмен и функция клетки</td></tr>
+<tr><td><b>Ионотропный</b></td><td>открываются (реже закрываются) ионные каналы → постсинаптический потенциал</td></tr>
+</table></div>
+<div class="two">
+<div class="blk simple"><p><b>ВПСП</b> — деполяризация. Один ВПСП почти всегда <b>подпороговый</b>; только сумма ВПСП доводит мембрану до E<sub>кр</sub> → ПД.</p></div>
+<div class="blk simple"><p><b>ТПСП</b> — гиперполяризация, отдаляет потенциал от E<sub>кр</sub> → <b>торможение</b> (процесс, препятствующий развитию возбуждения).</p></div>
+</div>
+<div class="blk trap"><p>ПД возникает <b>не в области синапса</b> (там нет быстрых натриевых каналов), а там, где эти каналы впервые появляются, — в <b>начальном сегменте аксона, аксонном холмике</b>.</p></div>
+<p><b>Инактивация медиатора — 3 способа:</b> вымывание из щели · обратный захват · ферментативное расщепление.</p>
+
+<h3 id="s4-3" data-short="Медиаторы"><span class="num">4.3</span>Медиаторы нервной системы (табл. 4.1)</h3>
+<div class="tw"><table>
+<tr><th>Медиатор</th><th>Рецепторы (тип)</th><th>Где</th><th>Роль</th></tr>
+<tr><td rowspan="2"><b>Ацетилхолин</b></td><td>N (ИТ)</td><td>нервно-мышечный синапс; вегетативные ганглии; нейроны ЦНС</td><td>нервно-мышечная передача; передача в ганглиях; быстрая точная передача в ЦНС</td></tr>
+<tr><td>M (МТ)</td><td>окончания парасимпатических нервов на органах; ЦНС</td><td>конечный медиатор <b>парасимпатики</b></td></tr>
+<tr><td><b>Норадреналин</b></td><td>α, β (МТ)</td><td>окончания симпатических нервов; <b>голубоватое место</b></td><td>конечный медиатор <b>симпатики</b>; активация обширных зон ЦНС при стрессе</td></tr>
+<tr><td><b>Дофамин</b></td><td>D<sub>1</sub>–D<sub>5</sub> (МТ)</td><td><b>черная субстанция</b>; лимбическая система</td><td>регуляция движений; эмоции</td></tr>
+<tr><td><b>Серотонин</b> (5-НТ)</td><td>5-HT<sub>3</sub> (ИТ), остальные (МТ)</td><td><b>ядра шва</b>; энтеральная НС</td><td>поведение и сон; ЖКТ</td></tr>
+<tr><td><b>ГАМК</b></td><td>ГАМК<sub>А</sub> (ИТ), ГАМК<sub>Б</sub> (МТ)</td><td>повсеместно в ЦНС</td><td><b>главный тормозный</b> медиатор ЦНС</td></tr>
+<tr><td><b>Глицин</b></td><td>(ИТ)</td><td>спинной мозг, ствол</td><td>тормозный медиатор</td></tr>
+<tr><td><b>Глутамат</b></td><td>AMPA, NMDA, каинатные (ИТ); mGlu (МТ)</td><td>повсеместно в ЦНС</td><td><b>универсальный возбуждающий</b> медиатор</td></tr>
+</table></div>
+<p class="muted"><small>ИТ — ионотропные, МТ — метаботропные. Кроме этих есть много других, в том числе большая группа нейропептидов.</small></p>
+<div class="blk assoc"><p>«<b>Глу</b>тамат — <b>газ</b>, ГАМК — <b>тормоз</b>». Глицин — тормоз «пониже», в спинном мозге и стволе. Дофамин — «<b>черный</b> дофамин» (черная субстанция) для движений, серотонин — «<b>шов</b>».</p></div>
+<div class="blk life"><p>Многие лекарства — это игры с медиаторами: антидепрессанты блокируют обратный захват серотонина, бензодиазепины (успокоительные) усиливают действие ГАМК, при паркинсонизме дают предшественник дофамина (леводопу).</p></div>
+
+<h3 id="s4-4" data-short="Интеграция"><span class="num">4.4</span>Интегративная деятельность нейрона</h3>
+<p>Входов — десятки тысяч, выход — один. В каждый момент нейрон принимает <b>одно решение</b>: будет ли ПД на выходе, сколько и с какой частотой. Это и есть <b>интегративная деятельность</b>.</p>
+<div class="tw narrow"><table>
+<tr><th>Суммация</th><th>Что складывается</th></tr>
+<tr><td><b>Пространственная</b></td><td>ПСП из <b>разных синапсов</b> (разные точки пространства) одновременно</td></tr>
+<tr><td><b>Временнáя</b></td><td>ПСП из <b>одного синапса</b>, пришедшие с коротким промежутком</td></tr>
+</table></div>
+<div class="blk simple"><p>Суммация — это <b>алгебраическое сложение</b>: ВПСП и ТПСП «гасят» друг друга. ПД генерируются всё время, пока потенциал аксонного холмика выше E<sub>кр</sub>: чем дольше превышение, тем больше ПД.</p></div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1014" height="1076" src="img/fig4-2.jpg" alt="Рисунок 4.2"><figcaption><b>Рис. 4.2</b> (с. 66). Нейрон с входами 1 и 2 (возбуждающие) и 3 (тормозный); электрод в аксонном холмике. <b>А, Б</b> — одиночные ВПСП; <b>В</b> — ТПСП; <b>Г</b> — пространственная суммация (1+2) → ПД; <b>Д</b> — временная (1,1) → ПД; <b>Е</b> — три ВПСП → несколько ПД; <b>Ж</b> — 1+3 гасят друг друга. МП — мембранный потенциал.</figcaption></figure>
+
+<div class="lab" id="lab1"><span class="tag">Лаборатория 1</span>
+<h4>Нейрон-интегратор</h4>
+<p class="how">нажимай варианты А–Ж (как на рис. 4.2) и смотри, перейдёт ли потенциал за пунктир E<sub>кр</sub>. В режиме «Свой опыт» добавляй сигналы на входы сам.</p>
+<div class="ctl" id="l1pre"></div>
+<div class="ctl"><button class="btn sm" data-in="1">+ вход 1 (возб.)</button><button class="btn sm" data-in="2">+ вход 2 (возб.)</button><button class="btn sm" data-in="3">+ вход 3 (торм.)</button><button class="btn sm" id="l1clr">очистить</button></div>
+<div class="svgw"><svg id="l1svg" viewBox="0 0 640 230" role="img" aria-label="график мембранного потенциала"></svg></div>
+<div class="out" id="l1out"></div>
+</div>
+
+<h3 id="s4-5" data-short="Рефлекс"><span class="num">4.5</span>Рефлекс</h3>
+<p><b>Рефлекс</b> — реакция на раздражитель, опосредованная нервной системой. Основа — <b>рефлекторная дуга</b> из трёх отделов (кроме двухнейронных моносинаптических рефлексов на растяжение):</p>
+<div class="chain"><span>Чувствительный (афферентный): рецепторы + чувствительный нейрон</span><i>→</i><span>Центральный: 1 или много (до сотен) вставочных</span><i>→</i><span>Двигательный (эфферентный): двигательный нейрон</span></div>
+<p>Ответ зависит главным образом от:</p>
+<ul><li><b>раздражителя</b> (горячее → отдёрнуть руку; запах пищи → слюна);</li>
+<li><b>состояния центрального звена</b> (в стрессе или усилием воли можно не бросить горячее; у сытого слюна на запах не выделяется).</li></ul>
+<div class="blk simple"><p>Главное свойство рефлекса — <b>пластичность</b>: старые рефлексы меняются, вырабатываются новые → гибкое приспособление к среде (подробнее гл. 18).</p></div>
+
+<h3 id="s4-6" data-short="Координация"><span class="num">4.6</span>Координация функций ЦНС: классификация</h3>
+<figure class="fig"><img loading="lazy" decoding="async" width="923" height="600" src="img/fig4-3.jpg" alt="Рисунок 4.3"><figcaption><b>Рис. 4.3</b> (с. 67). Виды координации: союзных функций (временная / пространственная → по горизонтали = модульная, по вертикали = иерархическая) и антагонистических функций.</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Вид</th><th>Суть</th><th>Пример из книги</th></tr>
+<tr><td><b>Союзных функций</b></td><td>разные виды деятельности согласованно создают единый акт</td><td>сокращение сгибателя + расслабление разгибателя при отдёргивании; сгибание одной ноги + разгибание другой при ходьбе</td></tr>
+<tr><td>→ временнáя</td><td>рефлексы идут друг за другом в строгой последовательности</td><td>цепные рефлексы</td></tr>
+<tr><td>→ пространственная <b>горизонтальная</b></td><td>взаимодействие на одном уровне ЦНС → <b>модульная</b> организация (нейроны → контуры → центры)</td><td>нейронные контуры</td></tr>
+<tr><td>→ пространственная <b>вертикальная</b></td><td>центры разных уровней в одной системе, нижние подчинены верхним → <b>иерархическая</b> организация</td><td>система управления движениями</td></tr>
+<tr><td><b>Антагонистических функций</b></td><td>одни виды деятельности подавляют другие</td><td>отдёргивание подавляет чесание; оборонительное поведение подавляет пищевое</td></tr>
+</table></div>
+<div class="blk assoc"><p>Горизонталь = «коллеги одного отдела договариваются», вертикаль = «начальник управляет подчинёнными».</p></div>
+
+<h3 id="s4-7" data-short="Контуры"><span class="num">4.7</span>Модульная организация: нейронные контуры</h3>
+<p><b>Нейронный контур</b> — малая группа нейронов, соединённых строго определённым образом; отвечает за стандартную операцию (генерация ритма, превращение редкой импульсации в частую и т. п.).</p>
+<div class="blk assoc"><p>Книга прямо сравнивает: <b>контуры — микросхемы ЦНС</b>. Сложный прибор собран из ограниченного набора микросхем (усилители, генераторы), а нервный центр — из ограниченного набора контуров; из каких контуров состоит центр, такие у него и свойства.</p></div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1014" height="1025" src="img/fig4-4.jpg" alt="Рисунок 4.4"><figcaption><b>Рис. 4.4</b> (с. 69). Светлые кружки — возбуждающие нейроны, тёмные — тормозные; стрелка — момент раздражения, звёздочка — выход. <b>А</b> дивергентный, <b>Б</b> конвергентный, <b>В</b> круговая циркуляция, <b>Г</b> возвратное торможение, <b>Д</b> генератор ритма, <b>Е</b> реципрокное торможение, <b>Ж</b> латеральное торможение, <b>З</b> пресинаптическое торможение.</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Контур</th><th>Вход → выход</th><th>Устройство</th><th>Назначение / пример</th></tr>
+<tr><td colspan="4" class="muted"><b>Распределительные</b> — узлы ветвления и схождения путей, основа организации ЦНС</td></tr>
+<tr><td><b>А. Дивергентный</b></td><td>1 вход → много выходов</td><td>один аксон ветвится на много нейронов (мультипликация)</td><td>распределить возбуждение: тронул горячее → отдёргивание + боль + перераспределение тонуса</td></tr>
+<tr><td><b>Б. Конвергентный</b></td><td>много входов → 1 выход</td><td>много аксонов на один нейрон</td><td>схождение программ: на мотонейрон сгибателя пальца сходятся письмо, фортепиано, чесание</td></tr>
+<tr><td colspan="4" class="muted"><b>Круговые</b></td></tr>
+<tr><td><b>В. Круговая циркуляция</b></td><td>короткий импульс → <b>долгая</b> импульсация</td><td>коллатераль выходного нейрона через <b>возбуждающие</b> нейроны возвращается к нему же</td><td>длительное «эхо»: память, эмоции</td></tr>
+<tr><td><b>Г. Возвратное торможение</b></td><td>длинный разряд → <b>короткий</b></td><td>коллатераль → <b>тормозный</b> нейрон → тот же выходной нейрон</td><td>быстро оборвать импульсацию → точные быстрые движения. В спинном мозге — <b>торможение Реншоу</b>, клетка Реншоу</td></tr>
+<tr><td><b>Д. Генератор ритма</b></td><td>постоянная или никакая → <b>периодические разряды</b></td><td>как Г, но выходной нейрон разряжается постоянно (автоматизм или вход)</td><td>дыхательный ритм, ритмы ЭЭГ</td></tr>
+<tr><td colspan="4" class="muted"><b>Прочие</b></td></tr>
+<tr><td><b>Е. Реципрокное торможение</b></td><td>возбуждает один выход, тормозит другой</td><td>вход прямо на один нейрон и через тормозный вставочный — на другой</td><td>мышцы-антагонисты: сгибатель сокращается — разгибатель расслабляется</td></tr>
+<tr><td><b>Ж. Латеральное торможение</b></td><td>возбуждённый канал тормозит соседей</td><td>коллатерали во все стороны через тормозные вставочные</td><td>выделение <b>контраста</b>, например в сетчатке</td></tr>
+<tr><td><b>З. Пресинаптическое торможение</b></td><td>подавление на самом входе</td><td>тормозное волокно 2 подходит к окончанию волокна 1 → меньше медиатора</td><td>выключить ненужную чувствительность ещё до спинномозговых нейронов</td></tr>
+</table></div>
+<p><b>Как работает генератор ритма:</b></p>
+<div class="chain"><span>(1) выходной нейрон даёт разряд + по коллатерали возбуждает тормозный</span><i>→</i><span>(2) тормозный достигает порога и тормозит выходной → пауза</span><i>→</i><span>(3) на тормозный больше ничего не идёт, он замолкает</span><i>→</i><span>(4) цикл заново</span></div>
+<div class="blk trap"><ul>
+<li><b>В</b> и <b>Г</b> внешне похожи, но функции противоположны: коллатераль идёт через <b>возбуждающий</b> (В, продлевает) или <b>тормозный</b> (Г, обрывает) нейрон.</li>
+<li><b>Г</b> и <b>Д</b> внешне <b>неотличимы</b>. Разница: в генераторе ритма выходной нейрон разряжается постоянно.</li>
+<li><b>Реципрокное</b> — между антагонистами (сгибатель/разгибатель). <b>Латеральное</b> — между соседями (контраст). <b>Пресинаптическое</b> — до синапса, на окончании аксона.</li>
+</ul></div>
+
+<div class="lab" id="lab2"><span class="tag">Лаборатория 2</span>
+<h4>Осциллограф контуров</h4>
+<p class="how">выбери контур и нажми «Подать сигнал»: увидишь, как импульсация на входе превращается в импульсацию на выходе. Потом попробуй «Угадай контур».</p>
+<div class="ctl" id="l2sel"></div>
+<div class="ctl"><button class="btn sm" id="l2go">▶ Подать сигнал</button><button class="btn sm" id="l2quiz">🎯 Угадай контур</button><span class="score" id="l2score" style="align-self:center"></span></div>
+<div class="svgw"><svg id="l2svg" viewBox="0 0 640 210"></svg></div>
+<div class="ctl" id="l2ans"></div>
+<div class="out" id="l2out"></div>
+</div>
+
+<h3 id="s4-8" data-short="Нервные центры"><span class="num">4.8</span>Нервные центры и их свойства</h3>
+<p><b>Нервный центр</b> — локализованное скопление нейронов, управляющее определённой функцией или рефлексом (центр коленного рефлекса, дыхательный центр). Центры состоят из контуров; сам по себе отдельный контур законченную функцию почти никогда не обеспечивает.</p>
+<p><b>Общие свойства</b> вытекают из двух особенностей: в центре идут <b>синаптические переключения</b> и сосредоточены <b>тела нейронов</b>. Значит, свойства центров = свойства синапсов + свойства тел нейронов.</p>
+<div class="tw narrow"><table>
+<tr><th>Свойство</th><th>Причина</th></tr>
+<tr><td>Одностороннее проведение</td><td>одностороннее проведение в химических синапсах</td></tr>
+<tr><td>Замедленное проведение</td><td>синаптическая задержка</td></tr>
+<tr><td>Низкая лабильность</td><td>низкая лабильность химических синапсов (по сравнению с волокнами)</td></tr>
+<tr><td>Высокая утомляемость</td><td>высокая утомляемость синапсов</td></tr>
+<tr><td>Чувствительность к препаратам</td><td>блокаторы рецепторов, ингибиторы синтеза или обратного захвата медиатора</td></tr>
+<tr><td>Чувствительность к гипоксии</td><td>аэробный метаболизм тел нейронов</td></tr>
+</table></div>
+<div class="blk assoc"><p>Первые четыре — «из-за синапса», последние два — «из-за синапса и тела». Мнемоника <b>«ОЗЛУПГ»</b>: <b>О</b>дносторонне, <b>З</b>амедленно, <b>Л</b>абильность низкая, <b>У</b>томляемость, <b>П</b>репараты, <b>Г</b>ипоксия.</p></div>
+<p><b>Специальные свойства</b> зависят от функции и входящих контуров:</p>
+<ul>
+<li>есть круговая циркуляция (эмоциогенные структуры) → <b>длительное последействие</b>;</li>
+<li>есть возвратное торможение (двигательные центры спинного мозга) → <b>короткое последействие</b>;</li>
+<li>есть генератор ритма (дыхательный центр) → <b>ритмичная активность</b>.</li>
+</ul>
+<div class="blk life"><p>Чувствительность к гипоксии на практике: без кровотока мозг теряет сознание за секунды, а необратимые повреждения нейронов начинаются примерно через 4–6 минут. Поэтому при остановке сердца так важно сразу начать реанимацию.</p></div>
+
+<h3 id="s4-9" data-short="Иерархия"><span class="num">4.9</span>Иерархическая организация</h3>
+<p><b>Распределённая система</b> объединяет центры разных уровней для сложной функции. Пример: шагательный рефлекс есть в спинном мозге, но настоящая ходьба требует спинного мозга, ствола, стриопаллидарной системы, мозжечка и коры. Самые сложные распределённые системы — <b>функциональные системы</b> (поведение).</p>
+<figure class="fig"><img loading="lazy" decoding="async" width="1014" height="723" src="img/fig4-5.jpg" alt="Рисунок 4.5"><figcaption><b>Рис. 4.5</b> (с. 74). <b>А</b> — эфферентная иерархия: сложные → простые → элементарные программы (поток вниз, расходится). <b>Б</b> — афферентная: элементарные → простые → сложные образы (поток вверх, сходится).</figcaption></figure>
+<div class="tw narrow"><table>
+<tr><th></th><th>Эфферентные системы</th><th>Афферентные системы</th></tr>
+<tr><td>Поток</td><td>нисходящий</td><td>восходящий</td></tr>
+<tr><td>Низшие центры</td><td>простейшие элементы движений (сгибание одной ноги + разгибание другой, постоянство длины мышцы)</td><td>простейшая обработка (точки света)</td></tr>
+<tr><td>Высшие центры</td><td>включают/выключают готовые программы и собирают из них сложные</td><td>сложная обработка (фигуры → лица)</td></tr>
+<tr><td>Принцип</td><td><b>дивергенция</b></td><td><b>конвергенция</b></td></tr>
+</table></div>
+<div class="blk trap"><p>Эфферентная иерархия = <b>Д</b>ивергенция (один начальник раздаёт команды многим), афферентная = <b>К</b>онвергенция (донесения стекаются к одному). Сравни: «<b>э</b>ф<b>ф</b>ерентный — раз<b>ф</b>ан», «<b>а</b>фферентный — к <b>а</b>дресату».</p></div>
+
+<h3 id="s4-10" data-short="Временная коорд."><span class="num">4.10</span>Временнáя координация</h3>
+<p>Программы должны идти в правильной последовательности. Условия: в ЦНС должна приходить информация о ходе и завершении предыдущей программы, и после её завершения должна запускаться следующая. Два механизма:</p>
+<div class="two">
+<div class="blk simple"><p><b>Обратная связь (обратная афферентация)</b> — информация о ходе выполнения, по ней программа корректируется. Для движений главные — <b>проприоцептивная</b> и <b>вестибулярная</b>.</p></div>
+<div class="blk simple"><p><b>Цепные рефлексы</b> — пусковой фактор следующего рефлекса = правильное окончание предыдущего. Чесательный рефлекс: сначала поднести конечность, и только после контакта — ритмичное чесание. Любое поведение — цепь программ.</p></div>
+</div>
+
+<h3 id="s4-11" data-short="Доминанта"><span class="num">4.11</span>Координация антагонистических функций. Доминанта</h3>
+<div class="chain"><span><b>Общий конечный путь</b>: программ больше, чем исполнителей</span><i>→</i><span><b>Борьба</b> за общий конечный путь</span><i>→</i><span>побеждает более <b>сильный = значимый</b> раздражитель</span><i>→</i><span>победитель = <b>доминанта</b></span></div>
+<ul>
+<li><b>Общий конечный путь</b> — структура, где сходятся разные программы. Классика — <b>мотонейроны спинного мозга</b> (один палец — и письмо, и чесание, и хватание). В широком смысле — любая такая структура.</li>
+<li><b>Фактор силы/значимости</b>: «сильнее» в поведении = <b>значимее</b>, а не громче (вид хищника важнее кормушки; важное сообщение важнее сильного шума).</li>
+<li><b>Доминанта</b> — программа поведения, победившая в борьбе (связана с доминирующей потребностью); стойкий очаг. Особенности:
+ <ul><li><b>тормозит</b> другие программы, захватывая общие конечные пути;</li>
+ <li><b>«притягивает» посторонние раздражители</b>: при переполненном мочевом пузыре сильный посторонний раздражитель может вызвать мочеиспускание; любой посторонний раздражитель усиливает зубную или головную боль.</li></ul></li>
+</ul>
+<div class="blk life"><p>Перед дедлайном (сильная доминанта) не замечаешь голода, а любая мелочь только «подогревает» работу. А у влюблённого всё вокруг напоминает о человеке — это то же «притягивание» посторонних раздражителей. Доминанту описал А. А. Ухтомский.</p></div>
+
+<h3 id="s4-12" data-short="Функц. система"><span class="num">4.12</span>Функциональная система (П. К. Анохин)</h3>
+<p><b>Функциональная система</b> — временное объединение множества нервных структур, направленное на достижение <b>полезного результата</b> (удовлетворение потребности). Любое поведение направлено на потребность (запускается при её появлении, прекращается при удовлетворении или невозможности) и требует участия всего организма.</p>
+<figure class="fig"><img loading="lazy" decoding="async" width="890" height="528" src="img/fig4-6.jpg" alt="Рисунок 4.6"><figcaption><b>Рис. 4.6</b> (с. 76). Афферентный синтез (мотивация, память, обстановочная и пусковая афферентация) → программа действий + акцептор результатов действия → результат → обратная афферентация в акцептор.</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Компонент</th><th>Что это</th><th>Пример (обед)</th></tr>
+<tr><td>Мотивация</td><td>потребность (близко, но не тождественно; гл. 18)</td><td>голод</td></tr>
+<tr><td>Память</td><td>собственный опыт: как удовлетворить</td><td>где столовая, сколько стоит обед</td></tr>
+<tr><td>Обстановочная афферентация</td><td>информация об окружающей обстановке</td><td>где я, сколько у меня денег</td></tr>
+<tr><td>Пусковая афферентация</td><td>стимул, запускающий поведение</td><td>звонок на перемену</td></tr>
+<tr><td><b>Афферентный синтез</b></td><td>сопоставление всего этого → решение</td><td>«иду в буфет»</td></tr>
+<tr><td>Программа действий</td><td>что делать</td><td>встать, дойти, открыть дверь…</td></tr>
+<tr><td>Акцептор результатов действия</td><td>какой результат ожидается</td><td>«дверь откроется», «буду сыт»</td></tr>
+<tr><td>Обратная афферентация</td><td>информация о полученных результатах → сравнение с акцептором</td><td>дверь открылась / нет</td></tr>
+</table></div>
+<p>Совпало → продолжаем. Не совпало → программа корректируется. Достигнут конечный результат или он недостижим (столовая закрыта, времени нет) → функциональная система <b>распадается</b>.</p>
+<div class="blk simple"><p>В функциональной системе работают <b>все</b> принципы главы: рефлекторный (потребность и пусковая афферентация — раздражители), иерархический (поведение запускает программы движений, те — шагательный, хватательный рефлексы), цепные рефлексы (программа = цепь), обратная связь (обратная афферентация) и доминанта (система строится на самой значимой потребности и подавляет остальные).</p></div>
+<div class="blk assoc"><p>Акцептор результатов действия — это <b>assert в тестах</b>: ожидаемое значение заранее записано, обратная афферентация — фактический результат. Упал тест → поправили код (программу) и запустили снова.</p></div>
+
+<div class="lab" id="lab3"><span class="tag">Лаборатория 3</span>
+<h4>Функциональная система по шагам</h4>
+<p class="how">выбери сценарий и жми «Дальше». Подсвечивается блок схемы, который работает на этом шаге.</p>
+<div class="ctl" id="l3sc"><button class="btn sm on" data-sc="0">🍽 Всё получилось</button><button class="btn sm" data-sc="1">🚪 Дверь не открылась</button><button class="btn sm" data-sc="2">🔒 Столовая закрыта</button></div>
+<div class="svgw"><svg id="l3svg" viewBox="0 0 640 300"></svg></div>
+<div class="ctl"><button class="btn sm" id="l3prev">← Назад</button><button class="btn sm" id="l3next">Дальше →</button><span id="l3step" class="muted" style="align-self:center"></span></div>
+<div class="out" id="l3out"></div>
+</div>
+</section>
+<section id="ch5" data-ch="5">
+<div class="chap c5"><span class="n">5</span>
+  <div class="kicker" style="color:#fff;opacity:.8">Глава 5</div>
+  <h2>Физиология двигательных систем</h2>
+  <p>Трёхэтажная система управления движениями: спинной мозг → ствол → кора, плюс два «редактора» — мозжечок и базальные ядра.</p>
+  <div class="pages">Учебник, с. 78–110</div>
+</div>
+
+<h3 id="s5-1" data-short="Принципы"><span class="num">5.1</span>Общие принципы управления движениями</h3>
+<p><b>Классификация движений</b> (условная):</p>
+<div class="tw narrow"><table>
+<tr><th>Пара</th><th>Первые</th><th>Вторые</th></tr>
+<tr><td>Позные / локомоторные</td><td><b>позные</b>: сохранить, сменить, удержать позу (резкое торможение поезда). Идут постоянно, даже во сне</td><td><b>локомоторные</b>: передвижение, движения конечностей. Всегда на фоне позных</td></tr>
+<tr><td>Стереотипные / нестереотипные</td><td><b>стереотипные</b>: врождённые, потом совершенствуются (стояние, ходьба)</td><td><b>нестереотипные</b>: приобретённые, индивидуальные (фортепиано)</td></tr>
+</table></div>
+<p class="muted">Позные движения в основном стереотипны, локомоторные — наоборот.</p>
+
+<p><b>Иерархическая организация — 3 уровня:</b></p>
+<div class="tw narrow"><table>
+<tr><th>Уровень</th><th>Что в нём заложено</th></tr>
+<tr><td><b>Кора головного мозга</b></td><td>программы сложных <b>поведенческих актов</b></td></tr>
+<tr><td><b>Ствол мозга</b></td><td>программы отдельных <b>цельных движений</b></td></tr>
+<tr><td><b>Спинной мозг</b></td><td>программы <b>элементов</b> основных движений</td></tr>
+</table></div>
+<p>Высшие центры <b>включают готовые программы низших</b> и собирают из них более сложные.</p>
+<div class="two">
+<figure class="fig"><img loading="lazy" decoding="async" width="1012" height="595" src="img/fig5-1.jpg" alt="Рисунок 5.1"><figcaption><b>Рис. 5.1</b> (с. 79). Кора → ствол → спинной мозг (жирные линии — прямые влияния). Базальные ганглии и мозжечок — коррекция (пунктир).</figcaption></figure>
+<figure class="fig"><img loading="lazy" decoding="async" width="1012" height="751" src="img/fig5-2.jpg" alt="Рисунок 5.2"><figcaption><b>Рис. 5.2</b> (с. 79). Ходьба: кора включает стволовую программу ходьбы и тормозит бег; ствол собирает ходьбу из шагательного рефлекса и разгибания туловища, тормозя чесательный. (+) активация, (−) торможение.</figcaption></figure>
+</div>
+<div class="blk simple"><p>Спинной мозг управляет <b>мышцами</b>, ствол — <b>контурами спинного мозга</b>, кора — <b>центрами ствола</b>.</p></div>
+<div class="blk assoc"><p>Как в армии: генерал (кора) говорит «наступаем на север», полковник (ствол) — «батальоны, шагом марш», сержант (спинной мозг) командует «левой-правой» конкретным солдатам (мышцам).</p></div>
+
+<p><b>Сегментарный и надсегментарный отделы</b></p>
+<ul>
+<li><b>Сегментарный</b> — непосредственно управляет мышцами (и органами) в пределах сегмента. Спинной мозг — <b>преимущественно</b> сегментарный (но благодаря собственным путям в нём есть и надсегментарные программы, например шагательный рефлекс).</li>
+<li><b>Надсегментарный</b> — управляет программами сегментарных отделов, объединяя их в движение. Кора и другие высшие центры — типичные надсегментарные.</li>
+<li><b>Ствол — смешанный</b>: надсегментарные программы цельных движений + ядра черепных нервов, иннервирующие мышцы по сегментарному принципу.</li>
+</ul>
+
+<p><b>Дополнительное прямое управление.</b> Трёхуровневая магистраль даёт только стереотипные, врождённые, в основном позные движения. Для сложных приобретённых кора управляет спинным мозгом <b>напрямую</b> — по <b>кортикоспинальному (пирамидному) пути</b>. К пирамидному пути относят и <b>кортикобульбарные</b> пути к двигательным ядрам черепных нервов.</p>
+<div class="blk trap"><p>Пирамидный путь отвечает <b>не за все произвольные движения</b>, а только за <b>тонкие приобретённые</b> (в основном руки и речь). Многие произвольные стереотипные движения кора запускает через стволовые ядра. Поэтому старое деление «пирамидная = произвольные, экстрапирамидная = автоматические» устарело; термин «экстрапирамидная система» остался в основном для клинических состояний.</p></div>
+<p><b>Системы коррекции</b> — <b>мозжечок и базальные ядра</b>. Сами движений не вызывают (даже при электрическом раздражении), но уточняют все движения до начала и в ходе выполнения.</p>
+<p><b>Обратная связь</b> для движений: <b>проприоцептивная</b> (мышцы и суставы: положение, направление, сила, скорость) и <b>вестибулярная</b> (положение и движение головы в поле тяжести). Зрение и другие — важная, но <b>дополнительная</b> роль.</p>
+
+<h3 id="s5-2" data-short="Спинной мозг"><span class="num">5.2</span>Спинной мозг: анатомия и нейроны</h3>
+<p><b>Сегмент</b> — участок, дающий начало одной паре спинномозговых нервов и иннервирующий определённый участок тела.</p>
+<div class="tw narrow"><table>
+<tr><th>Отдел</th><th>шейный</th><th>грудной</th><th>поясничный</th><th>крестцовый</th><th>копчиковый</th></tr>
+<tr><td>Сегментов</td><td><b>8</b></td><td><b>12</b></td><td><b>5</b></td><td><b>5</b></td><td><b>1–3</b></td></tr>
+</table></div>
+<div class="two">
+<div>
+<ul>
+<li><b>Серое вещество</b> — тела нейронов: передние рога (двигательные), задние рога (чувствительные), <b>боковые рога — только от C<sub>VIII</sub> до L<sub>III</sub></b>.</li>
+<li>В задние рога входят <b>задние корешки</b> (начинаются от спинномозговых ганглиев), из передних выходят <b>передние корешки</b>.</li>
+<li><b>Белое вещество</b> — проводящие пути: передние, боковые, задние <b>канатики</b>.</li>
+</ul>
+</div>
+<figure class="fig"><img loading="lazy" decoding="async" width="984" height="590" src="img/fig5-3.jpg" alt="Рисунок 5.3"><figcaption><b>Рис. 5.3</b> (с. 81). Поперечный срез: задний/боковой/передний рог и канатики, задний корешок со спинномозговым ганглием, передний корешок, альфа-мотонейрон.</figcaption></figure>
+</div>
+<div class="blk assoc"><p>«<b>Задние — З</b>нают» (чувствительные), «<b>передние — П</b>ашут» (двигательные). Закон Белла — Мажанди.</p></div>
+<div class="tw narrow"><table>
+<tr><th>Нейроны</th><th>Где тело</th><th>Что делают</th></tr>
+<tr><td>Чувствительные</td><td>спинномозговые ганглии</td><td>периферическая ветвь от рецептора, центральная — через задний корешок в задний рог</td></tr>
+<tr><td>Вставочные</td><td>основная масса серого вещества</td><td>особая разновидность — преганглионарные вегетативные (гл. 6)</td></tr>
+<tr><td><b>α-мотонейроны</b></td><td>передние рога</td><td>иннервируют собственно скелетные мышцы. <b>Единственные выходные соматические нейроны</b> спинного мозга → <b>общий конечный путь</b></td></tr>
+<tr><td><b>γ-мотонейроны</b></td><td>передние рога</td><td>иннервируют <b>интрафузальные</b> волокна мышечного веретена</td></tr>
+</table></div>
+<p><b>Функции:</b> <b>рефлекторная</b> (серое вещество; рефлексы соматические — на мышцы, и вегетативные — на органы, сосуды, железы) и <b>проводниковая</b> (белое вещество).</p>
+
+<h3 id="s5-3" data-short="Пути"><span class="num">5.3</span>Проводящие пути спинного мозга</h3>
+<div class="two">
+<div>
+<p><b>Нисходящие</b> (все — от ствола или коры):</p>
+<ul>
+<li><b>руброспинальный</b> — от красного ядра;</li>
+<li><b>вестибулоспинальный</b> — от ядра Дейтерса;</li>
+<li><b>ретикулоспинальные</b> медиальный и латеральный — от ретикулярной формации;</li>
+<li><b>тектоспинальный</b> — от четверохолмия;</li>
+<li><b>кортикоспинальный</b> — от прецентральной извилины.</li>
+</ul>
+</div>
+<div>
+<p><b>Собственные пути</b> связывают сегменты между собой → надсегментарные рефлексы в спинном мозге (шагательный).</p>
+<div class="blk assoc"><p>Название пути = «откуда-куда»: <i>rubro</i> (красный) · <i>vestibulo</i> · <i>reticulo</i> (сеть) · <i>tecto</i> (крыша = четверохолмие) · <i>cortico</i> → <i>spinalis</i>.</p></div>
+</div>
+</div>
+<p><b>Восходящие</b> несут почти всю чувствительность туловища и конечностей (кроме идущей по блуждающим нервам): поверхностную (кожа, слизистые рта и наружных половых органов), проприоцептивную (мышцы, суставы, сухожилия), интероцептивную (органы).</p>
+<div class="tw"><table>
+<tr><th>Пути (табл. 5.1)</th><th>Чувствительность</th><th>Куда</th></tr>
+<tr><td><b>Спиноталамические</b> (передний и латеральный)</td><td>грубая поверхностная; интероцептивная <b>болевая</b></td><td>кора</td></tr>
+<tr><td><b>Голля и Бурдаха</b> (тонкий и клиновидный пучки)</td><td><b>тонкая</b> поверхностная; проприоцептивная</td><td>ствол (ядра Голля и Бурдаха) → таламус → кора</td></tr>
+<tr><td><b>Спиноцеребеллярные</b>: передний (<b>Говерса</b>) и задний (<b>Флексига</b>)</td><td>проприоцептивная</td><td><b>мозжечок</b></td></tr>
+</table></div>
+<div class="blk simple"><p>Логика: <b>поверхностная</b> чувствительность осознаётся → идёт в <b>кору</b>. <b>Проприоцептивная</b> — главная обратная связь → идёт во <b>все</b> двигательные отделы: ствол, кору, мозжечок (кроме базальных ядер). <b>Интероцептивная</b> в основном идёт по блуждающим нервам мимо спинного мозга; исключение — <b>болевая</b>, она идёт по спиноталамическим путям.</p></div>
+
+<h3 id="s5-4" data-short="Рефлексы СМ"><span class="num">5.4</span>Рефлексы спинного мозга</h3>
+<p>В спинном мозге лежат <b>элементы основных движений</b>: удержание позы (прежде всего вертикальной), ходьба, бег, защитные рефлексы (отдёргивание, чесание). С дугами связаны контуры:</p>
+<ul>
+<li><b>реципрокного торможения</b> — возбуждение мотонейрона сгибателя тормозит мотонейрон разгибателя;</li>
+<li><b>возвратного торможения (Реншоу)</b> — быстрое окончание движения → точность; предотвращает длительные разряды и <b>спазмы</b>.</li>
+</ul>
+
+<p><b>Миотатический рефлекс</b> (моносинаптический рефлекс на растяжение, «сухожильный»)</p>
+<div class="chain"><span>мышечное веретено</span><i>→</i><span>чувствительный нейрон (спинномозговой ганглий)</span><i>→</i><span>α-мотонейрон (передний рог)</span><i>→</i><span>та же мышца</span></div>
+<ul>
+<li><b>Растяжение мышцы → её сокращение</b>. Пример — коленный рефлекс (растяжение вызывают ударом по сухожилию → неточное название «сухожильный»).</li>
+<li>2 нейрона, <b>1 синапс</b> → «моносинаптический». С дугой связан контур реципрокного торможения → антагонист расслабляется.</li>
+<li>Смысл: <b>постоянство длины мышцы</b> → элемент удержания позы и делает движения <b>плавнее</b>. Поэтому это <b>самые распространённые</b> рефлексы спинного мозга.</li>
+</ul>
+<figure class="fig"><img loading="lazy" decoding="async" width="1013" height="978" src="img/fig5-4.jpg" alt="Рисунок 5.4"><figcaption><b>Рис. 5.4</b> (с. 85). <b>А</b> — дуга миотатического рефлекса (серым — γ-мотонейрон): мышечное веретено → чувствительный нейрон → альфа-мотонейрон → мышца. <b>Б</b> — мышечное веретено: интрафузальное волокно, окончания чувствительных волокон в центре, окончание γ-мотонейрона на концах, рядом рабочие волокна.</figcaption></figure>
+<p><b>Мышечное веретено</b>: веретенообразный пучок особых <b>интрафузальных</b> волокон (<i>intra</i> — внутри, <i>fusus</i> — веретено) в соединительнотканной сумке, <b>параллельно</b> обычным волокнам. В <b>центре</b> нет актина и миозина — это и есть рецептор растяжения, вокруг него обвиваются чувствительные окончания. К <b>концам</b> (сократительным) подходят γ-мотонейроны.</p>
+<div class="blk simple"><p><b>Зачем γ-мотонейроны.</b> Миотатический рефлекс мешает любому изменению длины, то есть самим движениям. Затормозить его нельзя (дуга из 2 нейронов: без чувствительного не будет проприоцепции, без двигательного — движения). Поэтому его «<b>обманывают</b>»: γ-мотонейрон сокращает концы интрафузального волокна → центр растягивается → веретено шлёт «ложную информацию» об удлинении → α-мотонейрон возбуждается → мышца сокращается. <b>Любое сокращение требует активации и α-, и γ-мотонейронов.</b></p></div>
+<div class="blk assoc"><p>γ-мотонейрон — как поднять планку термостата: в комнате та же температура, но термостат «думает», что холодно, и включает отопление (α-мотонейрон).</p></div>
+
+<div class="lab" id="lab4"><span class="tag">Лаборатория 4</span>
+<h4>Мышечное веретено и γ-петля</h4>
+<p class="how">ударь молоточком, запусти движение через γ-мотонейрон или сильно напряги мышцу. Следи, какие нейроны «стреляют» и что происходит с длиной мышцы.</p>
+<div class="ctl"><button class="btn sm" id="l4hit">🔨 Удар по сухожилию</button><button class="btn sm" id="l4gam">γ-мотонейрон: начать движение</button><button class="btn sm" id="l4gol">🏋 Чрезмерное напряжение (Гольджи)</button><button class="btn sm" id="l4rst">сброс</button></div>
+<div class="svgw"><svg id="l4svg" viewBox="0 0 640 250"></svg></div>
+<div class="out" id="l4out">Выбери действие.</div>
+</div>
+
+<p><b>Рефлекс с сухожильного органа Гольджи</b></p>
+<div class="chain"><span>сухожильный орган Гольджи</span><i>→</i><span>чувствительный нейрон</span><i>→</i><span class="in">вставочный <b>тормозный</b></span><i>→</i><span>α-мотонейрон</span><i>→</i><span>мышца</span></div>
+<ul>
+<li><b>Напряжение мышцы → её расслабление</b> (растянуть сухожилие можно только напряжением мышцы).</li>
+<li>Смысл: <b>постоянство напряжения</b> → элемент удержания позы (вертикальное положение требует напряжения разгибателей) и защита от резкого напряжения → <b>травмы</b>.</li>
+</ul>
+<figure class="fig half"><img loading="lazy" decoding="async" width="879" height="664" src="img/fig5-5.jpg" alt="Рисунок 5.5"><figcaption><b>Рис. 5.5</b> (с. 86). Дуга рефлекса с сухожильного органа Гольджи: чувствительный нейрон → вставочный тормозный нейрон → альфа-мотонейрон.</figcaption></figure>
+<div class="blk trap"><p><b>Веретено</b> — в мышце, параллельно волокнам, следит за <b>длиной</b>, растяжение → <b>сокращение</b>, 2 нейрона.<br><b>Орган Гольджи</b> — в сухожилии, следит за <b>напряжением</b>, напряжение → <b>расслабление</b>, есть <b>тормозный</b> вставочный нейрон.</p></div>
+
+<p><b>Сгибательный и перекрёстный разгибательный рефлексы</b></p>
+<ul>
+<li><b>Сгибательный</b>: болевое раздражение кожи → сгибание (отдёргивание). Дуга: кожный болевой рецептор → чувствительный нейрон → <b>несколько</b> вставочных → α-мотонейрон → мышца; + реципрокное торможение разгибателя. Смысл: защитный.</li>
+<li><b>Перекрёстный разгибательный</b>: то же + <b>разгибание противоположной</b> конечности (на другой стороне — обратный реципрокный контур: разгибатель сокращается, сгибатель расслабляется). Смысл: отдёрнуть + оттолкнуть раздражитель другой конечностью.</li>
+</ul>
+<figure class="fig"><img loading="lazy" decoding="async" width="1014" height="640" src="img/fig5-6.jpg" alt="Рисунок 5.6"><figcaption><b>Рис. 5.6</b> (с. 87). Тёмные кружки — тормозные нейроны, светлые — возбуждающие. <b>Р</b> — мотонейроны разгибателей, <b>С</b> — сгибателей; (+) возбуждение, (−) торможение.</figcaption></figure>
+
+<p><b>Остальные рефлексы спинного мозга</b> — все в одной таблице:</p>
+<div class="tw" id="reflexTable"><table>
+<tr><th>Рефлекс</th><th>Раздражитель → ответ</th><th>Смысл</th></tr>
+<tr data-r="myo"><td><b>Миотатический</b></td><td>растяжение мышцы → её сокращение</td><td>постоянство длины, поза, плавность</td></tr>
+<tr data-r="golgi"><td><b>С органа Гольджи</b></td><td>напряжение мышцы → её расслабление</td><td>постоянство напряжения, защита от травмы</td></tr>
+<tr data-r="flex"><td><b>Сгибательный</b></td><td>боль на коже → сгибание конечности</td><td>защитный</td></tr>
+<tr data-r="cross"><td><b>Перекрёстный разгибательный</b></td><td>боль → сгибание своей + разгибание противоположной</td><td>защитный (отдёрнуть + оттолкнуть)</td></tr>
+<tr data-r="step"><td><b>Шагательный</b></td><td>раздражение подошвы (или без видимых раздражителей) → попеременные шаги. Дуга изучена мало: реципрокные контуры + генераторы ритма</td><td>элемент <b>ходьбы</b></td></tr>
+<tr data-r="push"><td><b>Разгибательный толчок</b></td><td><b>удар</b> по подошве → резкое разгибание</td><td>элемент <b>бега</b> (приземлился → оттолкнулся)</td></tr>
+<tr data-r="stand"><td><b>Стоятельный</b></td><td><b>надавливание</b> на подошву → длительное разгибание</td><td>элемент <b>вертикальной позы</b></td></tr>
+<tr data-r="scratch"><td><b>Чесательный</b></td><td>слабое раздражение кожи → 1) поднести конечность, 2) ритмично чесать</td><td>защитный (сбросить паразита)</td></tr>
+</table></div>
+
+<div class="lab" id="lab5"><span class="tag">Лаборатория 5</span>
+<h4>Какой это рефлекс?</h4>
+<p class="how">нажми на ситуацию — в таблице выше и в окне ниже подсветится нужный рефлекс спинного мозга.</p>
+<div class="ctl" id="l5btns"></div>
+<div class="out" id="l5out">Выбери ситуацию.</div>
+</div>
+<div class="blk life"><p>Невролог проверяет коленный, ахиллов и другие сухожильные рефлексы: по их силе и симметрии видно, где поражение. Если нисходящий контроль выключен (инсульт, травма спинного мозга), рефлексы становятся слишком сильными. Если прервана сама дуга (повреждение нерва, корешка), рефлекс исчезает.</p></div>
+
+<h3 id="s5-5" data-short="Ствол"><span class="num">5.5</span>Ствол мозга: общие принципы</h3>
+<p>Ствол = <b>продолговатый мозг + мост + средний мозг</b>. Промежуточный мозг иногда тоже относят, но в физиологии и неврологии это не принято.</p>
+<p>У низших животных ствол был высшим отделом ЦНС (вместе с мозжечком). У нас он остался отделом <b>примитивных стереотипных форм поведения и жизненно важных функций</b>. Особенности:</p>
+<ul>
+<li>получает <b>всю чувствительность, кроме обонятельной</b> (с обонянием связано формирование конечного мозга);</li>
+<li>через черепные нервы или спинной мозг управляет <b>всеми</b> мышцами и органами;</li>
+<li>центры <b>стереотипных врождённых движений</b> (поворот головы и глаз к резкому звуку);</li>
+<li>центры <b>жизненно важных функций</b>: дыхательный, сердечно-сосудистый, глотательный и др.;</li>
+<li>структуры <b>генерализованной активации</b> (сон — бодрствование);</li>
+<li>двусторонние связи со спинным мозгом, мозжечком, конечным мозгом (корой); через ствол идут пути спинного мозга к мозжечку и конечному мозгу.</li>
+</ul>
+<div class="blk life"><p>Книга приводит пример: <b>хроническое вегетативное состояние</b> при обширном поражении конечного мозга и сохранном стволе. Человек месяцами и годами сам дышит, у него стабильное кровообращение, чередуются «бодрствование» и сон, есть примитивные реакции, но нет сознания.</p></div>
+<div class="tw"><table>
+<tr><th>Центры ствола (табл. 5.2)</th><th>Функции</th></tr>
+<tr><td>Ядра черепных нервов III, IV, VI</td><td>вспомогательный аппарат глаза</td></tr>
+<tr><td>V</td><td>поверхностная чувствительность головы и шеи</td></tr>
+<tr><td>VII, XI, XII</td><td>мышцы головы и шеи</td></tr>
+<tr><td>VIII</td><td>слух и вестибулярная чувствительность</td></tr>
+<tr><td>IX, X</td><td>внутренние органы</td></tr>
+<tr><td>Ядра Голля и Бурдаха</td><td>тонкая поверхностная и проприоцептивная чувствительность от туловища и конечностей</td></tr>
+<tr><td>Надсегментарные двигательные: ядро Дейтерса, красное ядро, черная субстанция</td><td>стереотипные врождённые движения</td></tr>
+<tr><td>Активирующие: ретикулярная формация, голубоватое место, ядра шва</td><td>генерализованная активация мозга (бодрствование; гл. 18)</td></tr>
+<tr><td>Жизненно важные: дыхательный, сердечно-сосудистый, глотательный, рвотный, кашлевой</td><td>очевидны из названия</td></tr>
+<tr><td>Претектальные ядра, четверохолмие</td><td>реагирование на раздражители, вспомогательный аппарат глаза</td></tr>
+</table></div>
+<details><summary><b>Связи ствола (табл. 5.3) — развернуть</b></summary>
+<div class="tw"><table>
+<tr><th>Связь</th><th>Пути и ядра</th></tr>
+<tr><td colspan="2"><b>Входы сенсорные</b></td></tr>
+<tr><td>Проприоцептивная и поверхностная от туловища и конечностей</td><td>пучки Голля и Бурдаха → ядра Голля и Бурдаха</td></tr>
+<tr><td>То же от головы и шеи</td><td>черепные нервы</td></tr>
+<tr><td>Интероцептивная</td><td>блуждающий и другие черепные нервы</td></tr>
+<tr><td>Зрительная</td><td>зрительный нерв → претектальные ядра, верхние холмики четверохолмия</td></tr>
+<tr><td>Слуховая</td><td>улитковая часть VIII → улитковые ядра</td></tr>
+<tr><td>Вестибулярная</td><td>преддверная часть VIII → вестибулярные ядра</td></tr>
+<tr><td>Вкусовая</td><td>VII, IX, X → ядро одиночного пути</td></tr>
+<tr><td colspan="2"><b>Входы центральные</b></td></tr>
+<tr><td>От мозжечка</td><td>к ядру Дейтерса и красному ядру</td></tr>
+<tr><td>От коры</td><td>кортиконуклеарные (к ядрам черепных нервов), кортикорубральный, кортиковестибулярный, кортикоретикулярный</td></tr>
+<tr><td colspan="2"><b>Выходы</b></td></tr>
+<tr><td>К спинному мозгу</td><td>руброспинальный, вестибулоспинальный, ретикулоспинальные, тектоспинальный</td></tr>
+<tr><td>К мозжечку</td><td>оливоцеребеллярный (от нижних олив), понтоцеребеллярный (от ядер моста)</td></tr>
+<tr><td>К коре</td><td>восходящие пути ретикулярной формации; пути чувствительности</td></tr>
+<tr><td>К органам</td><td>блуждающий и другие черепные нервы (парасимпатика)</td></tr>
+</table></div></details>
+
+<h3 id="s5-6" data-short="Центры ствола"><span class="num">5.6</span>Двигательные центры ствола</h3>
+<p>Ствол хранит программы основных стереотипных, во многом позных движений. Только на их фоне возможна тонкая активность: чтобы пианист сыграл пассаж, ему сначала надо <b>сидеть</b>. Три группы движений:</p>
+<figure class="fig"><img loading="lazy" decoding="async" width="1014" height="927" src="img/fig5-7.jpg" alt="Рисунок 5.7"><figcaption><b>Рис. 5.7</b> (с. 93). Вест — вестибулярная, Пропр — проприоцептивная чувствительность; Ч — четверохолмие, КЯ — красное ядро, РФ(м) — мостовой и РФ(б) — бульбарный отделы ретикулярной формации, ЯД — ядро Дейтерса. Пути: ТС — тектоспинальный, РС — руброспинальный, ВС — вестибулоспинальный, РетС(м)/(л) — медиальный/латеральный ретикулоспинальный.</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Система</th><th>Центр → путь</th><th>Что делает</th><th>Входы</th></tr>
+<tr><td><b>Антигравитационная</b></td><td>ретикулярная формация: <b>мостовой</b> отдел → медиальный ретикулоспинальный (<b>возбуждает</b>); <b>бульбарный</b> → латеральный (<b>тормозит</b>)</td><td>тонус разгибателей спины, шеи, ног = вертикальное положение, «базовый» тонус. Бодрствование — преобладает возбуждающий, сон — тормозный</td><td>—</td></tr>
+<tr><td><b>Равновесие</b></td><td><b>ядро Дейтерса</b> → вестибулоспинальный</td><td>положение головы в поле тяжести + шеи относительно головы → положение туловища → быстрая коррекция. В основном <b>разгибатели</b></td><td>вестибулярный, проприоцептивный от мышц шеи, мозжечок, кора</td></tr>
+<tr><td><b>Стереотипные движения</b></td><td><b>красное ядро</b> → руброспинальный</td><td>врождённые, в основном позные (смена, восстановление позы); преимущественно <b>сгибатели</b></td><td>проприоцептивный (ядра Голля и Бурдаха), мозжечок, кора (кортикорубральный)</td></tr>
+<tr><td><b>Настораживание</b></td><td><b>четверохолмие</b> → тектоспинальный</td><td>поворот глаз, головы и туловища к внезапному зрительному (верхние холмики) или слуховому (нижние) раздражителю</td><td>зрение, слух</td></tr>
+</table></div>
+<div class="blk assoc"><p>Книга: «<b>ретикулоспинальные пути позволяют нам встать, а вестибулоспинальный — не упасть</b>». Оба повышают тонус разгибателей, но ретикулоспинальные влияния постоянны (зависят только от сна и бодрствования), а вестибулоспинальные всё время меняются с положением тела.</p></div>
+<div class="blk trap"><p><b>Мост</b>овой отдел РФ → <b>м</b>едиальный путь → <b>возбуждает</b>. <b>Бульбарный</b> (продолговатый) → латеральный → <b>тормозит</b>. Красное ядро — <b>сгибатели</b>, Дейтерс и ретикулярная формация — <b>разгибатели</b>.</p></div>
+<p>Основные входы для движений: <b>проприоцептивный</b> (главная обратная связь) и <b>вестибулярный</b>. Без них движения практически невозможны. Остальная чувствительность (зрение) помогает, но ходить можно и с закрытыми глазами. Центральные входы: <b>кора</b> (запускает) и <b>мозжечок</b> (корректирует).</p>
+
+<div class="lab" id="lab6"><span class="tag">Лаборатория 6</span>
+<h4>Пульт ствола мозга</h4>
+<p class="how">переключи «сон / бодрствование» и нажимай ситуации: загорятся центр ствола и его нисходящий путь.</p>
+<div class="ctl"><button class="btn sm on" id="l6wake">☀ Бодрствование</button><button class="btn sm" id="l6sleep">🌙 Сон</button></div>
+<div class="ctl" id="l6sit"></div>
+<div class="svgw"><svg id="l6svg" viewBox="0 0 640 260"></svg></div>
+<div class="out" id="l6out"></div>
+</div>
+
+<h3 id="s5-7" data-short="Рефлексы ствола"><span class="num">5.7</span>Рефлексы ствола мозга</h3>
+<p>Это <b>цельные</b> движения (не элементы, как в спинном мозге): стереотипные, врождённые, во многом позные.</p>
+<div class="tw"><table>
+<tr><th>Позные рефлексы (табл. 5.4)</th><th>Назначение</th><th>Пример</th></tr>
+<tr><td><b>Статические: позно-тонические</b></td><td>смена и сохранение позы</td><td>наклон головы вправо → тонус разгибателей правых конечностей ↑</td></tr>
+<tr><td><b>Статические: выпрямительные</b></td><td>восстановление позы</td><td>переворот на конечности из положения на спине</td></tr>
+<tr><td><b>Статокинетические</b></td><td>удержание позы и равновесия при внезапных воздействиях</td><td>кошка в падении переворачивается на лапы; перераспределение тонуса при резком ускорении (вагон метро)</td></tr>
+</table></div>
+<p>Главные рефлексогенные зоны — <b>вестибулярный аппарат</b> и <b>проприорецепторы шеи</b> → <b>лабиринтные</b> и <b>шейные</b> рефлексы (но можно и с туловища, конечностей, кожи).</p>
+<ul>
+<li><b>Глазодвигательные</b>: смена и фиксация взора, слежение (гл. 17).</li>
+<li><b>Четверохолмный (настораживания, старт-рефлекс)</b>: поворот головы, туловища, глаз к внезапному звуку или вспышке. Это <b>первичное</b> реагирование; осознание и распознавание — в коре.</li>
+<li><b>Прочие</b>: ходьба, бег; у детей — сосание (в том числе пальцев), выплёвывание неприятной пищи.</li>
+</ul>
+<div class="blk trap"><p><b>Статические</b> — поза при <b>неподвижном</b> положении (сменить, сохранить, восстановить). <b>Статокинетические</b> — поза при <b>движении с ускорением</b> (падение, разгон).</p></div>
+
+<h3 id="s5-8" data-short="Кора"><span class="num">5.8</span>Кора головного мозга</h3>
+<figure class="fig"><img loading="lazy" decoding="async" width="1013" height="584" src="img/fig5-8.jpg" alt="Рисунок 5.8"><figcaption><b>Рис. 5.8</b> (с. 96). Первичная моторная зона (прецентральная извилина), премоторная и дополнительная моторная зоны, префронтальная кора; центры: моторный центр праксиса, письменной речи, произвольных движений глаз, моторный центр устной речи.</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Зона</th><th>Где</th><th>Тип коры</th><th>Функция</th></tr>
+<tr><td><b>Моторная</b></td><td>прецентральная извилина, перед центральной бороздой</td><td>первичная двигательная</td><td>управляет <b>отдельными группами мышц</b> (прямо или через стволовые ядра, особенно красное). <b>Соматотопична</b></td></tr>
+<tr><td><b>Премоторная</b> и <b>дополнительная моторная</b></td><td>перед моторной; дополнительная — выше, переходит на медиальную поверхность</td><td>вторичная двигательная</td><td>хранят программы <b>автоматизированных приобретённых</b> движений. <b>Не</b> соматотопичны, состоят из центров навыков</td></tr>
+<tr><td><b>Префронтальная</b></td><td>впереди премоторной и дополнительной</td><td>ассоциативная</td><td><b>замысел и планирование</b> поведенческих актов</td></tr>
+</table></div>
+<p><b>Центры навыков</b> в премоторной и дополнительной зонах:</p>
+<ul>
+<li><b>моторный центр праксиса</b> — основные бытовые навыки (нож и вилка);</li>
+<li><b>моторный центр письменной речи</b> — движения руки при письме;</li>
+<li><b>центр произвольных движений глаз</b> — перевод и фиксация взора на интересном предмете;</li>
+<li><b>моторный центр устной речи (Брока)</b> — «фабрика слов».</li>
+</ul>
+<p><b>Соматотопия</b> моторной зоны:</p>
+<div class="two">
+<ul>
+<li>тело представлено <b>перевёрнутым</b>: ноги сверху, голова снизу;</li>
+<li><b>перекрёстно</b>: правое полушарие — левая половина тела;</li>
+<li>больше всего места у мелких мышц для тонких движений: <b>кисть, речевой аппарат, мимика</b>.</li>
+</ul>
+<figure class="fig"><img loading="lazy" decoding="async" width="1012" height="659" src="img/fig5-10.jpg" alt="Рисунок 5.10"><figcaption><b>Рис. 5.10</b> (с. 97). «Гомункулус»: представительство групп мышц в прецентральной извилине.</figcaption></figure>
+</div>
+<p><b>Функции коры в движениях</b>: замысел и планирование поведения и двигательных актов; запуск и управление стереотипными (стволовыми) движениями; обучение и прямое управление нестереотипными приобретёнными движениями. Только кора может замышлять поведенческие акты и учиться нестереотипным движениям.</p>
+<figure class="fig half"><img loading="lazy" decoding="async" width="1010" height="685" src="img/fig5-9.jpg" alt="Рисунок 5.9"><figcaption><b>Рис. 5.9</b> (с. 96). Префронтальная (поведенческие акты) → премоторная и дополнительная (приобретённые навыки) → моторная (группы мышц) → к спинному мозгу (кортикоспинальный путь) и к ядрам ствола.</figcaption></figure>
+<p>Выход корковой системы — <b>моторная зона</b>. Её пути: к <b>надсегментарным</b> ядрам ствола (кортикорубральный, кортикоретикулярный, кортиковестибулярный) для стереотипных движений и к <b>сегментарным</b> ядрам ствола и спинному мозгу (кортикоспинальный) для тонких движений пальцев и речи.</p>
+<div class="blk simple"><p>Пример «<b>встать и сказать речь</b>»: префронтальная кора строит программу → «встать и удержать равновесие» стереотипно → моторная зона → стволовые ядра (красное ядро); «произнести слова» — навык → центр Брока → участки моторной зоны речевых мышц.</p></div>
+<div class="blk life"><p>Инсульт в левой прецентральной извилине — слабость <b>правой</b> руки и лица; повреждение центра Брока — человек понимает речь, но говорит с трудом, «по слову» (моторная афазия).</p></div>
+
+<h3 id="s5-9" data-short="Мозжечок"><span class="num">5.9</span>Мозжечок</h3>
+<div class="two">
+<div>
+<p>Вырост ствола: <b>червь</b> (по середине) и <b>полушария</b> (по бокам). Оба покрыты корой, внутри — парные ядра:</p>
+<ul>
+<li><b>ядро шатра</b>;</li>
+<li><b>пробковидное</b>;</li>
+<li><b>шаровидное</b>;</li>
+<li><b>зубчатое</b>.</li>
+</ul>
+<p><b>Три пары ножек</b>: нижние — к продолговатому мозгу, средние — к мосту, верхние — к среднему мозгу.</p>
+</div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1008" height="598" src="img/fig5-11.jpg" alt="Рисунок 5.11"><figcaption><b>Рис. 5.11</b> (с. 98). Тёмно-серым — медиальная зона (червь), светло-серым — промежуточная, светлым — латеральная (полушарие). Ядра: шатра, пробковидное, шаровидное, зубчатое.</figcaption></figure>
+</div>
+<div class="blk assoc"><p>Ядра от середины к краю: «<b>Ш</b>атёр <b>П</b>робкой <b>Ш</b>аром <b>З</b>акрыли» — шатра, пробковидное, шаровидное, зубчатое.</p></div>
+<p><b>Мозжечок — корректирующая система:</b> сам движений не вызывает; при поражении человек может замыслить и выполнить любое движение (магистраль цела), но движение будет <b>неточным</b> (пьяная походка).</p>
+<p>Входы: сенсорные — <b>проприоцептивный</b> (спиноцеребеллярные пути) и <b>вестибулярный</b>; центральные — от <b>ствола</b> и от <b>коры</b>. Выходы: к <b>ядрам ствола</b> и к <b>коре через таламус</b>.</p>
+
+<p><b>Нейронный контур мозжечка</b></p>
+<figure class="fig half"><img loading="lazy" decoding="async" width="1012" height="922" src="img/fig5-12.jpg" alt="Рисунок 5.12"><figcaption><b>Рис. 5.12</b> (с. 100). ЛВ — лазящее волокно (прямо на НП), МВ — мшистое волокно (через ВН — вставочные нейроны), НП — нейрон Пуркинье, ЯМ — ядро мозжечка, ЯС — ядро ствола, Тал — таламус.</figcaption></figure>
+<div class="chain"><span>нейрон Пуркинье</span><i>→</i><span>ядро мозжечка</span><i>→</i><span>ядро ствола <i>или</i> таламус → кора</span></div>
+<ul>
+<li><b>Нейроны Пуркинье — единственные выходные нейроны коры мозжечка</b>; все сигналы идут через ядра мозжечка (исключение: ядро Дейтерса получает входы и прямо от коры мозжечка).</li>
+</ul>
+<div class="tw narrow"><table>
+<tr><th></th><th>Лазящие (лиановидные)</th><th>Мшистые (моховидные)</th></tr>
+<tr><td>Откуда</td><td><b>только от нижних олив</b> (оливоцеребеллярный путь)</td><td>от всех остальных: спиноцеребеллярные, от коры, от ствола</td></tr>
+<tr><td>Куда</td><td>прямо на нейрон Пуркинье, много синапсов</td><td>через вставочные (клетки-зерна и др.)</td></tr>
+<tr><td>Роль</td><td><b>пусковая</b>: даже 1 ПД всегда вызывает разряд Пуркинье</td><td><b>информационная</b>: проприоцепция, вестибулярная, копия программы</td></tr>
+</table></div>
+<p><b>Как мозжечок корректирует движение (5 шагов):</b></p>
+<ol>
+<li>В коре или стволе активируется программа движения.</li>
+<li>Копия программы + проприоцептивная + вестибулярная и другая информация идут по <b>мшистым</b> волокнам в мозжечок.</li>
+<li>Сеть вставочных нейронов хранит <b>память</b> о том, как лучше всего выполнялось это движение. Сопоставляются: план · текущее состояние · память.</li>
+<li>Результат меняет <b>возбудимость</b> нейронов Пуркинье → величину их будущего разряда.</li>
+<li><b>Лазящие</b> волокна запускают разряд Пуркинье → через ядра в ствол или кору → корректирующая программа накладывается на основную.</li>
+</ol>
+<p>Коррекция идёт и перед началом, и постоянно в ходе движения. <b>Ключевая особенность — способность к научению</b>: меняются связи вставочных нейронов (ребёнок учится ходить: на врождённую стволовую программу накладывается уточняющаяся коррекция).</p>
+<div class="blk book"><p>Книга: неясно, что запускает лазящие волокна. По одной гипотезе, в нижних оливах сравнивается запланированное и выполняемое (акцептор и результат), и при ошибке лазящие волокна «стреляют», то есть мозжечок работает при <b>ошибках</b>. Поражение олив даёт те же нарушения, что и поражение мозжечка.</p></div>
+<div class="blk life"><p>Сегодня известно, что нейроны Пуркинье тормозные (ГАМК), а лазящие волокна считают «сигналом ошибки» для обучения. На опросе отвечай по книге: Пуркинье — единственный выход коры мозжечка, лазящие — пусковые.</p></div>
+
+<p><b>Функциональные продольные зоны</b> (чем дальше от червя, тем моложе и тем сложнее движения):</p>
+<div class="tw" id="cerTable"><table>
+<tr><th>Зона</th><th>Функция</th><th>Входы</th><th>Ядро</th><th>Выход</th><th>Симптомы</th></tr>
+<tr data-z="m"><td><b>Медиальная (червь)</b></td><td>равновесие и поза в поле тяжести, тонус</td><td>вестибулярный, проприоцептивный (особенно от шеи)</td><td>шатра</td><td>ядро Дейтерса (+ прямо от Пуркинье), ретикулярная формация</td><td>астазия, абазия, нистагм</td></tr>
+<tr data-z="i"><td><b>Промежуточная</b></td><td>коррекция (в основном стволовых) движений <b>в ходе</b> выполнения по обратной связи</td><td>вестибулярный, проприоцептивный, прочие + кора (через ядра моста)</td><td>пробковидное, шаровидное</td><td>красное ядро</td><td>интенционный тремор, нарушения локомоторных проб</td></tr>
+<tr data-z="l"><td><b>Латеральная (полушария)</b></td><td>коррекция быстрых точных <b>баллистических</b> корковых движений <b>на этапе планирования</b></td><td>кора (через ядра моста)</td><td>зубчатое</td><td>кора (через таламус)</td><td>адиадохокинез, дизартрия</td></tr>
+</table></div>
+<div class="two">
+<figure class="fig"><img loading="lazy" decoding="async" width="1010" height="809" src="img/fig5-13.jpg" alt="Рисунок 5.13"><figcaption><b>Рис. 5.13</b> (с. 103). Медиальная зона: вестибуло- и проприорецепторы → НП → ЯШ (ядро шатра) → ЯД (Дейтерса), РФ; НП → ЯД напрямую.</figcaption></figure>
+<figure class="fig"><img loading="lazy" decoding="async" width="1011" height="802" src="img/fig5-14.jpg" alt="Рисунок 5.14"><figcaption><b>Рис. 5.14</b> (с. 104). Промежуточная зона: кора + рецепторы → НП → ПЯ/ШЯ (пробковидное/шаровидное) → КЯ (красное ядро).</figcaption></figure>
+</div>
+<figure class="fig half"><img loading="lazy" decoding="async" width="1012" height="852" src="img/fig5-15.jpg" alt="Рисунок 5.15"><figcaption><b>Рис. 5.15</b> (с. 105). Латеральная зона: кора → НП → ЗЯ (зубчатое) → Тал → кора.</figcaption></figure>
+<div class="blk assoc"><p><b>Баллистика</b> — как выстрел: всё решает прицел, после выстрела не поправишь. Корковая программа сначала «сверяется» в мозжечке, а потом кора делает «выстрел». При быстрой речи так заранее планируется каждое движение речевого аппарата.</p></div>
+<p><b>Симптомы поражения</b>:</p>
+<ul>
+<li><b>Астазия</b> — не может стоять без поддержки.</li>
+<li><b>Абазия</b> — нарушено равновесие при ходьбе, «пьяная» походка.</li>
+<li><b>Нистагм</b> — медленное смещение глаз в одну сторону, затем скачок в другую (в норме запускается вестибулярным аппаратом, при поражении — самопроизвольно).</li>
+<li><b>Интенционный тремор</b> (<i>intentio</i> — намерение) — дрожание при целенаправленном движении, <b>усиливается к цели</b>. Механизм: запаздывающая обработка проприоцептивной обратной связи → «промахи» то в одну, то в другую сторону.</li>
+<li><b>Нарушение локомоторных проб</b> — пальце-носовая и др.</li>
+<li><b>Адиадохокинез</b> — не может быстро содружественно вращать вытянутыми руками (пронация-супинация).</li>
+<li><b>Дизартрия</b> — нарушение речи, в частности <b>скандированная речь</b> (медленная, по слогам).</li>
+</ul>
+
+<div class="lab" id="lab7"><span class="tag">Лаборатория 7</span>
+<h4>Карта мозжечка + тренажёр «найди зону»</h4>
+<p class="how">нажми на зону мозжечка — увидишь её паспорт. В режиме тренажёра читай симптом и нажимай зону, которая поражена.</p>
+<div class="ctl"><button class="btn sm on" id="l7exp">🔍 Изучать</button><button class="btn sm" id="l7tr">🎯 Тренажёр</button><span class="score" id="l7score" style="align-self:center"></span></div>
+<div class="svgw"><svg id="l7svg" viewBox="0 0 640 260"></svg></div>
+<div class="out" id="l7out">Нажми на зону.</div>
+</div>
+<div class="blk life"><p>Пальце-носовая проба и «пройди по прямой» у сотрудника ГИБДД — проверка мозжечка: алкоголь в первую очередь нарушает его работу. Отсюда шаткая походка и неточные движения.</p></div>
+
+<h3 id="s5-10" data-short="Базальные ядра"><span class="num">5.10</span>Базальные ядра</h3>
+<p>Крупные скопления серого вещества в глубине полушарий. Анатомия и физиология называют их по-разному:</p>
+<div class="two">
+<div class="tw narrow"><table>
+<tr><th>Анатомически: базальные ядра</th></tr>
+<tr><td>1. <b>Полосатое тело</b>: чечевицеобразное ядро (скорлупа + бледный шар) + хвостатое ядро</td></tr>
+<tr><td>2. Ограда</td></tr>
+<tr><td>3. Миндалевидное тело</td></tr>
+</table></div>
+<div class="tw narrow"><table>
+<tr><th>Физиологически: стриопаллидарная система</th></tr>
+<tr><td>1. <b>Стриатум</b> (неостриатум): скорлупа + хвостатое ядро</td></tr>
+<tr><td>2. <b>Паллидум</b> (палеостриатум): только бледный шар</td></tr>
+<tr><td>3. Черная субстанция</td></tr>
+<tr><td>4. Субталамическое ядро</td></tr>
+</table></div>
+</div>
+<div class="blk trap"><ul>
+<li><b>Полосатое тело</b> (<i>corpus striatum</i>, анатомия) = скорлупа + бледный шар + хвостатое. <b>Стриатум</b> (физиология) = только скорлупа + хвостатое.</li>
+<li>Ограда и миндалина анатомически базальные, а функционально относятся к другим системам. Черная субстанция и субталамическое ядро анатомически не базальные, а функционально входят в систему.</li>
+<li><i>neo</i> — новый (стриатум молодой), <i>palaios</i> — древний (бледный шар); «паллидум» — от <i>globus pallidus</i>.</li>
+</ul></div>
+<p><b>Принцип работы</b>: каждое движение сопровождается лишними. Стриопаллидарная система <b>активирует нужные компоненты и тормозит лишние</b>. Для этого она образует <b>кольцо</b> от «замышляющих» к «исполняющим» отделам коры (префронтальная → премоторная, премоторная → моторная) с двумя путями.</p>
+<div class="chain"><span>кора</span><i>→</i><span>стриатум</span><i>→</i><span>бледный шар</span><i>→</i><span>таламус</span><i>→</i><span>кора</span></div>
+<div class="tw"><table>
+<tr><th>Путь</th><th>Маршрут</th><th>Тормозных переключений</th><th>Итог</th></tr>
+<tr><td><b>Прямой</b></td><td>кора → стриатум → <b>медиальный</b> (внутренний) сегмент бледного шара → таламус → кора</td><td><b>2</b> (торможение снимает торможение)</td><td><b>возбуждающий</b>: нужные движения</td></tr>
+<tr><td><b>Непрямой</b></td><td>кора → стриатум → <b>латеральный</b> (наружный) сегмент бледного шара → <b>субталамическое ядро</b> → медиальный сегмент → таламус → кора</td><td><b>3</b></td><td><b>тормозный</b>: лишние движения</td></tr>
+</table></div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1013" height="841" src="img/fig5-16.jpg" alt="Рисунок 5.16"><figcaption><b>Рис. 5.16</b> (с. 108). <b>А</b> — структуры системы. <b>Б</b> — прямой и непрямой (пунктир) пути; (+) возбуждающий, (−) тормозный синапс. Стр — стриатум, ЛБШ/МБШ — латеральный/медиальный сегмент бледного шара, СТЯ — субталамическое ядро, Тал — таламус, ЧС — черная субстанция.</figcaption></figure>
+<p><b>Черная субстанция</b> активирует прямой и тормозит непрямой путь → <b>усиливает все движения</b>, и нужные, и лишние.</p>
+<div class="tw narrow"><table>
+<tr><th>Медиатор</th><th>Роль</th></tr>
+<tr><td><b>Глутамат</b></td><td>возбуждающие синапсы прямого и непрямого путей («+»)</td></tr>
+<tr><td><b>ГАМК</b></td><td>тормозные синапсы («−»)</td></tr>
+<tr><td><b>Дофамин</b></td><td>от черной субстанции: на прямом пути <b>D<sub>1</sub> — возбуждающие</b>, на непрямом <b>D<sub>2</sub> — тормозные</b></td></tr>
+<tr><td><b>Ацетилхолин</b></td><td>собственные вставочные нейроны стриатума; модулирует, в известной мере <b>антагонист дофамина</b></td></tr>
+</table></div>
+<div class="blk assoc"><p>«<b>D1 — один шаг вперёд</b>» (прямой путь, газ). «<b>D2 — два тормоза</b>» (непрямой путь тормозится). Дофамин и там, и там «за движение».</p></div>
+
+<div class="lab" id="lab8"><span class="tag">Лаборатория 8</span>
+<h4>Стриопаллидарный «светофор»</h4>
+<p class="how">выбери состояние — увидишь, как меняется активность прямого и непрямого путей и что получится на выходе (таламус → кора). Кнопка «Посчитать знаки» показывает, почему прямой путь возбуждающий.</p>
+<div class="ctl" id="l8st"></div>
+<div class="ctl"><button class="btn sm" id="l8sign">± Посчитать знаки</button></div>
+<div class="svgw"><svg id="l8svg" viewBox="0 0 640 300"></svg></div>
+<div class="out" id="l8out"></div>
+</div>
+
+<p><b>Базальные ядра и мозжечок</b> — две системы коррекции:</p>
+<div class="tw"><table>
+<tr><th></th><th>Мозжечок</th><th>Стриопаллидарная система</th></tr>
+<tr><td>Происхождение и связи</td><td>вырост ствола, коррекция стволовых движений; только латеральная зона связана с корой</td><td>связана <b>только с корой</b> → корковые движения</td></tr>
+<tr><td>Информация</td><td>обширная сенсорная (проприоцептивная, вестибулярная)</td><td>почти только от коры</td></tr>
+<tr><td>Когда корректирует</td><td><b>в ходе</b> выполнения по обратным связям (латеральная — при планировании)</td><td><b>до</b> совершения, на этапе планирования</td></tr>
+<tr><td>Роль</td><td>следит, чтобы движения выполнялись <b>правильно</b> — <b>тактика</b></td><td><b>выбирает</b>, какие движения совершить — <b>стратегия</b></td></tr>
+</table></div>
+<p><b>Последствия поражений</b>: либо лишние движения — <b>гиперкинезы</b> (поражён непрямой путь), либо заторможенность — <b>гипокинезия</b> (поражена черная субстанция: меньше активации прямого и растормаживание непрямого → кора тормозится).</p>
+<div class="tw narrow"><table>
+<tr><th>Состояние</th><th>Что поражено</th><th>Проявления</th></tr>
+<tr><td><b>Паркинсонизм</b> (гипокинезия)</td><td>гибель дофаминергических нейронов черной субстанции или нарушение передачи к стриатуму</td><td>маскообразное лицо, семенящая походка, замедленность и малый объём движений</td></tr>
+<tr><td><b>Гемибаллизм</b></td><td>субталамическое ядро (часть непрямого пути)</td><td>размашистые бросковые движения руки</td></tr>
+<tr><td><b>Хорея</b></td><td>гибель нейронов стриатума, от которых начинается непрямой путь</td><td>насильственные быстрые движения мышц лица и дистальных отделов конечностей</td></tr>
+</table></div>
+<div class="blk life"><p>Болезнь Паркинсона лечат леводопой (из неё в мозге делается дофамин) и холинолитиками: ацетилхолин в стриатуме — антагонист дофамина. Хорея Гентингтона — наследственная гибель нейронов стриатума. Книга называет влияние на медиаторы этой системы одним из главных достижений современной неврологии.</p></div>
+<div class="blk trap"><p>Интенционный тремор (мозжечок) усиливается <b>при движении к цели</b>. При паркинсонизме тремор обычно <b>в покое</b> (это моё дополнение, в книге тремор при паркинсонизме не описан).</p></div>
+<div class="blk book"><p>В современной литературе есть ещё «гипердирект» путь (кора → субталамическое ядро) и более сложные модели. На опросе отвечай по книге: 2 пути — прямой и непрямой.</p></div>
+</section>
+<section id="ch6" data-ch="6">
+<div class="chap c6"><span class="n">6</span>
+  <div class="kicker" style="color:#fff;opacity:.8">Глава 6</div>
+  <h2>Физиология вегетативных систем</h2>
+  <p>Гипоталамус как «главный термостат» внутренней среды и вегетативная нервная система: симпатика против парасимпатики, медиаторы и рецепторы.</p>
+  <div class="pages">Учебник, с. 111–117</div>
+</div>
+
+<h3 id="s6-1" data-short="Принципы"><span class="num">6.1</span>Общие принципы</h3>
+<p>Главная задача внутренних органов — <b>постоянство внутренней среды</b> (кислород, питательные вещества, температура, pH). Три вида регуляции:</p>
+<div class="tw narrow"><table>
+<tr><th>Регуляция</th><th>Как поддерживает константу</th><th>Пример</th></tr>
+<tr><td><b>Поведенческая</b></td><td>через взаимодействие с внешней средой</td><td>попить воды, поесть</td></tr>
+<tr><td><b>Эндокринная</b></td><td>гормонами, изнутри организма</td><td>выход глюкозы из печени</td></tr>
+<tr><td><b>Вегетативная</b></td><td>нервами, изнутри организма</td><td>спазм кожных сосудов для уменьшения теплоотдачи</td></tr>
+</table></div>
+<p>Делить их можно только с оговорками: любое поведение включает вегетативный и эндокринный компоненты. <b>Главный центр поддержания постоянства внутренней среды — гипоталамус.</b></p>
+
+<h3 id="s6-2" data-short="Гипоталамус"><span class="num">6.2</span>Гипоталамус</h3>
+<div class="two">
+<div>
+<p>Относится к <b>промежуточному мозгу</b>. Много ядер с разными функциями, но всё понятно из одного положения: <b>гипоталамус — главный центр постоянства внутренней среды</b>. Схема верна для глюкозы, температуры, осмотического давления.</p>
+</div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1011" height="520" src="img/fig6-1.jpg" alt="Рисунок 6.1"><figcaption><b>Рис. 6.1</b> (с. 112). Рецепторы → гипоталамус ↔ высшие отделы ЦНС; выходы: эндокринная система, мотивационное поведение, вегетативная нервная система.</figcaption></figure>
+</div>
+<div class="tw"><table>
+<tr><th>Что есть в гипоталамусе</th><th>Состав</th></tr>
+<tr><td><b>Рецепторы</b> внутренней среды</td><td><b>глюкорецепторы</b> (глюкоза крови), <b>осморецепторы</b> (осмотическое давление), <b>терморецепторы</b> (температура крови)</td></tr>
+<tr><td>Центры <b>поведенческой</b> регуляции (запуск мотивационного поведения)</td><td>центр <b>жажды</b> (питьевое), центры <b>голода и насыщения</b> (пищевое), <b>терморегуляторный</b> (терморегуляторное поведение)</td></tr>
+<tr><td>Центры <b>эндокринной</b> регуляции</td><td>ядра, управляющие <b>аденогипофизом</b>, главным регулятором эндокринных желёз (гипоталамо-гипофизарная система, гл. 7)</td></tr>
+<tr><td><b>Высшие вегетативные</b> центры</td><td>хранят <b>целостные</b> программы для многих органов сразу (реакции на холод или жару), часто с соматическим компонентом: спазм кожных сосудов + дрожь</td></tr>
+<tr><td>Связи с другими отделами ЦНС</td><td>—</td></tr>
+</table></div>
+<div class="blk simple"><p>Гипоталамус относится к периферическим вегетативным центрам <b>так же, как ствол к спинному мозгу</b> в движениях: периферия управляет отдельными органами, гипоталамус включает целостные программы.</p></div>
+<p>Другие функции (агрессивное и половое поведение, регуляция половых органов, цикл сон — бодрствование) тоже сводятся к мотивации, эндокринной регуляции или ВНС.</p>
+<div class="blk assoc"><p>Гипоталамус — «умный дом»: датчики (глюко-, осмо-, терморецепторы) + три способа действия: заставить хозяина что-то сделать (поведение: «иди попей»), включить котельную (эндокринная) или открыть или закрыть заслонки (вегетатика).</p></div>
+<div class="blk life"><p>Лихорадка — гипоталамус «переставляет термостат» выше: человек мёрзнет, дрожит, кутается (поведение + дрожь + спазм кожных сосудов), пока температура не дойдёт до новой «уставки». Жажда после солёного — сработали осморецепторы.</p></div>
+
+<h3 id="s6-3" data-short="ВНС: анатомия"><span class="num">6.3</span>Вегетативная нервная система: анатомия</h3>
+<p>Два отдела — <b>симпатический</b> и <b>парасимпатический</b>. К ним относят <b>только двигательное звено</b>; чувствительные волокна от интерорецепторов ни к одному отделу не относят.</p>
+<div class="blk simple"><p>Двигательное звено — <b>два нейрона</b>: <b>преганглионарный</b> (тело в ЦНС) → <b>постганглионарный</b> (тело в вегетативном ганглии, за пределами ЦНС) → орган-мишень.</p></div>
+<figure class="fig"><img loading="lazy" decoding="async" width="1011" height="612" src="img/fig6-2.jpg" alt="Рисунок 6.2"><figcaption><b>Рис. 6.2</b> (с. 113). Тёмные кружки — парасимпатические нейроны, светлые — симпатические. АХ — ацетилхолин, НА — норадреналин; М-х/р, N-х/р — М- и N-холинорецепторы; α,β-а/р — адренорецепторы. В ганглиях обоих отделов: АХ → N; парасимпатика на органе: АХ → M; симпатика на органе: НА → α, β.</figcaption></figure>
+<div class="tw"><table>
+<tr><th>Нейроны (табл. 6.1)</th><th>Где тела</th><th>Медиатор</th></tr>
+<tr><td class="par">Парасимпатические преганглионарные</td><td>1) <b>ствол мозга</b> (ядра черепных нервов); 2) <b>крестцовый</b> отдел спинного мозга</td><td>АХ</td></tr>
+<tr><td class="par">Парасимпатические постганглионарные</td><td>1) <b>внутри органов</b> (интрамуральные ганглии); 2) <b>около органов</b> (параорганные: ресничный, крылонёбный и др.)</td><td>АХ</td></tr>
+<tr><td class="sym">Симпатические преганглионарные</td><td>спинной мозг, <b>боковые рога грудных и поясничных</b> сегментов</td><td>АХ</td></tr>
+<tr><td class="sym">Симпатические постганглионарные</td><td>1) <b>симпатический ствол</b> (паравертебральные ганглии); 2) <b>сплетения</b> (превертебральные, например чревное, или солнечное)</td><td>НА</td></tr>
+</table></div>
+<ul>
+<li><b>Стволовой</b> отдел парасимпатики иннервирует все органы, <b>кроме органов малого таза</b>; главный нерв — <b>блуждающий</b>; волокна других черепных нервов — к органам головы и шеи. <b>Крестцовый</b> — органы малого таза.</li>
+<li>Преганглионарные симпатические волокна идут и к <b>мозговому веществу надпочечников</b> — это видоизменённый симпатический ганглий, выделяющий <b>адреналин</b> → единая <b>симпатоадреналовая система</b>.</li>
+</ul>
+<div class="blk assoc"><p>Расположение = стиль работы. <b>Симпатика</b> выходит из середины (грудь-поясница), ганглии <b>у позвоночника</b> — одна команда расходится сразу на много органов (тревога для всех). <b>Парасимпатика</b> — «краниосакральная» (голова и крестец), ганглии <b>в самом органе</b> — точечная настройка каждого органа.</p></div>
+<div class="blk trap"><p>Боковые рога: в главе 5 — <b>C<sub>VIII</sub>–L<sub>III</sub></b>, здесь — «грудные и поясничные сегменты». Это одно и то же: там лежат <b>симпатические</b> преганглионарные нейроны. Парасимпатических в боковых рогах грудного отдела нет.</p></div>
+
+<h3 id="s6-4" data-short="Медиаторы ВНС"><span class="num">6.4</span>Медиаторы и рецепторы ВНС</h3>
+<div class="blk simple"><p>Все <b>преганглионарные</b> (и симпатические, и парасимпатические) — <b>ацетилхолин</b>. Постганглионарные <b>парасимпатические</b> — <b>ацетилхолин</b>, <b>симпатические</b> — <b>норадреналин</b>. Иначе: <b>парасимпатика действует на органы ацетилхолином, симпатика — норадреналином</b>.</p></div>
+<div class="tw"><table>
+<tr><th>Рецептор</th><th>Чувствителен к</th><th>Где (в частности)</th><th>Тип</th></tr>
+<tr><td><b>N-холинорецептор</b></td><td><b>никотину</b></td><td>постганглионарные нейроны обоих отделов (в ганглиях)</td><td><b>ионотропный</b></td></tr>
+<tr><td><b>M-холинорецептор</b></td><td><b>мускарину</b> (яд мухомора)</td><td>внутренние органы</td><td>метаботропный</td></tr>
+<tr><td><b>α- и β-адренорецепторы</b></td><td>норадреналину и адреналину надпочечников</td><td>органы-мишени симпатики</td><td>метаботропные</td></tr>
+</table></div>
+<p class="muted">Каждый тип делится на подтипы.</p>
+<div class="blk trap"><p>Исключение: <b>холинергические симпатические</b> нервы — действуют <b>ацетилхолином</b>. Снабжают <b>потовые железы</b> и, возможно, сосуды скелетных мышц.</p></div>
+<div class="blk assoc"><p><b>N</b> — <b>N</b>икотин, <b>N</b>ейрон (в ганглии), <b>N</b>аправленно в канал (ионотропный). <b>M</b> — <b>M</b>ухомор, <b>M</b>ишень-орган, <b>M</b>етаботропный.</p></div>
+
+<div class="lab" id="lab10"><span class="tag">Лаборатория 9</span>
+<h4>Собери вегетативную цепочку</h4>
+<p class="how">выбери, куда идёт сигнал. Схема покажет оба нейрона, медиатор в каждом синапсе и рецептор, на который он действует.</p>
+<div class="ctl" id="l10sel"></div>
+<div class="svgw"><svg id="l10svg" viewBox="0 0 640 200"></svg></div>
+<div class="out" id="l10out"></div>
+</div>
+
+<h3 id="s6-5" data-short="Влияния"><span class="num">6.5</span>Действие на внутренние органы</h3>
+<div class="two">
+<div class="blk simple"><p><b>Симпатика</b> — система <b>стресса, мобилизации</b> ресурсов: зрачки шире, сердце чаще и сильнее, бронхи шире, выброс глюкозы и жирных кислот; ЖКТ тормозится.</p></div>
+<div class="blk simple"><p><b>Парасимпатика</b> — система <b>восстановления</b> ресурсов: реакции обратные.</p></div>
+</div>
+<div class="tw" id="vegTable"><table>
+<tr><th>Орган (табл. 6.2)</th><th class="sym">Симпатика</th><th class="par">Парасимпатика</th></tr>
+<tr data-o="eye"><td>Зрачки</td><td>расширение</td><td>сужение</td></tr>
+<tr data-o="sal"><td>Слюнные железы</td><td>↑ секреция α-амилазы (густая слюна)</td><td>↑ секреция воды</td></tr>
+<tr data-o="stm"><td>Желудок: моторика / секреция</td><td>торможение / торможение (?)</td><td>усиление / усиление</td></tr>
+<tr data-o="gut"><td>Кишечник: моторика / секреция</td><td>торможение / торможение (?)</td><td>усиление / усиление</td></tr>
+<tr data-o="br"><td>Бронхи: просвет / секреция</td><td>расширение / обычно снижение</td><td>сужение / повышение</td></tr>
+<tr data-o="hr"><td>Сердце: частота, сила, проведение в АВ-узле</td><td>повышение</td><td>снижение</td></tr>
+<tr data-o="ves"><td>Сосуды</td><td>в основном сужение</td><td>расширение в отдельных органах</td></tr>
+<tr data-o="bl"><td>Мочевой пузырь</td><td>торможение мочеиспускания (детрузор расслаблен, сфинктер сокращён)</td><td>стимуляция (детрузор сокращён, сфинктер расслаблен)</td></tr>
+<tr data-o="liv"><td>Мобилизация глюкозы из печени (гликогенолиз)</td><td>повышение</td><td>влияний нет</td></tr>
+<tr data-o="fat"><td>Мобилизация жирных кислот (липолиз)</td><td>повышение</td><td>влияний нет</td></tr>
+</table></div>
+<p><b>Исключения из правила «стресс/отдых»:</b></p>
+<ul>
+<li>Некоторые органы иннервирует <b>только один</b> отдел: <b>печень, подкожная жировая клетчатка, большинство сосудов</b> — только симпатика.</li>
+<li>Иногда влияния <b>синергичны</b>: парасимпатика — <b>эрекция</b>, симпатика — <b>эякуляция</b>.</li>
+<li>Один отдел может действовать на орган <b>разнонаправленно</b>: сужать и расширять одни и те же сосуды через разные адренорецепторы.</li>
+</ul>
+<p><b>Тонические влияния</b> — оба отдела постоянно посылают импульсацию, но по-разному: на <b>сердце</b> в покое выражен <b>парасимпатический</b> тонус (симпатический незначителен); на <b>большинство сосудов</b> — сильный <b>симпатический</b>, парасимпатического нет.</p>
+<div class="blk assoc"><p>Мнемоника эрекции и эякуляции (из англ. учебников): «<b>P</b>oint and <b>S</b>hoot» — <b>P</b>arasympathetic → эрекция, <b>S</b>ympathetic → эякуляция.</p></div>
+
+<div class="lab" id="lab9"><span class="tag">Лаборатория 10</span>
+<h4>Стресс ↔ покой</h4>
+<p class="how">переключай режим или жми ситуацию. Органы на схеме меняются, а в таблице 6.2 выше подсвечиваются строки.</p>
+<div class="ctl"><button class="btn sm on" id="l9s">⚡ Симпатика (стресс)</button><button class="btn sm" id="l9p">🛋 Парасимпатика (покой)</button></div>
+<div class="ctl" id="l9sit"></div>
+<div class="svgw"><svg id="l9svg" viewBox="0 0 640 300"></svg></div>
+<div class="out" id="l9out"></div>
+</div>
+<div class="blk life"><p>Перед экзаменом: сердце колотится, во рту сухо и вязко (мало воды в слюне, больше амилазы), ладони мокрые (холинергические симпатические волокна к потовым железам!), есть не хочется. Окулист закапывает атропин (блокатор M-холинорецепторов): парасимпатика больше не сужает зрачок, и он расширяется. Бета-блокаторы (анаприлин, бисопролол) урежают пульс, потому что отключают β-адренорецепторы сердца.</p></div>
+
+<h3 id="s6-6" data-short="Современное"><span class="num">6.6</span>Современные дополнения</h3>
+<div class="tw"><table>
+<tr><th>Внутриорганные нейроны</th><th>Классическая схема</th><th>Сейчас показано</th></tr>
+<tr><td>Иннервация</td><td>получают парасимпатические преганглионарные волокна</td><td>во многом <b>автономны</b>: большинство не иннервируется внешними волокнами</td></tr>
+<tr><td>Медиаторы</td><td>только ацетилхолин</td><td>много: пурины, закись азота, дофамин, серотонин, пептиды</td></tr>
+<tr><td>Типы</td><td>только двигательные</td><td>двигательные, <b>чувствительные и вставочные</b></td></tr>
+</table></div>
+<p>Значит, внутриорганные нервные системы — <b>самостоятельные нервные центры</b> со своей регуляцией. Лучше всего изучена система ЖКТ — <b>энтеральная нервная система</b>, которая <b>не относится ни к симпатике, ни к парасимпатике</b>.</p>
+<p><b>Медиаторы и синапсы.</b> Медиаторов больше, чем АХ и НА. Один нейрон может выделять сразу несколько веществ: <b>медиатор</b> (основной эффект) + <b>котрансмиттеры</b> (обычно пептиды, дополнительные эффекты). Передача — не только «выделить и подействовать»: регулируются выделение и обратный захват медиатора, чувствительность и плотность рецепторов.</p>
+<div class="blk assoc"><p>Энтеральная НС — «второй мозг» кишечника: кишка, вынутая из организма, продолжает перистальтику сама.</p></div>
+</section>
+<section id="test">
+<h2>Тест со счётом</h2>
+<p class="muted">Вопросы перемешиваются. После ответа — объяснение. Фильтр по главам:</p>
+<div class="toolbar" id="qFilter">
+  <button class="btn sm on" data-f="all">Все</button>
+  <button class="btn sm" data-f="4">Гл. 4</button>
+  <button class="btn sm" data-f="5">Гл. 5</button>
+  <button class="btn sm" data-f="6">Гл. 6</button>
+  <button class="btn sm" id="qReset">↻ Заново</button>
+</div>
+<div style="margin-top:10px"><span class="score" id="qScore">0 / 0</span> <span class="muted" id="qLeft"></span></div>
+<div class="prog"><i id="qProg"></i></div>
+<div id="qList"></div>
+</section>
+
+<section id="cards">
+<h2>Карточки-термины</h2>
+<p class="muted">Нажми на карточку, чтобы перевернуть. <button class="btn sm" id="cShuffle">перемешать</button> <button class="btn sm" id="cFlipAll">перевернуть все</button></p>
+<div class="cards" id="cardGrid"></div>
+</section>
+
+<section id="traps">
+<h2>Не путать</h2>
+<p class="muted">Пары, на которых ловят на опросе.</p>
+<div class="tw"><table>
+<tr><th>Это</th><th>А это</th><th>Как различить</th></tr>
+<tr><td>Дендриты — афферентные</td><td>Аксон — эфферентный, всегда один</td><td>«Дендрит — Доставляет в нейрон»</td></tr>
+<tr><td>ВПСП — деполяризация</td><td>ТПСП — гиперполяризация</td><td>одиночный ВПСП почти всегда подпороговый</td></tr>
+<tr><td>Пространственная суммация</td><td>Временнáя суммация</td><td>разные синапсы одновременно / один синапс быстро подряд</td></tr>
+<tr><td>Место синапса</td><td>Место возникновения ПД</td><td>ПД — в аксонном холмике (там появляются быстрые Na<sup>+</sup>-каналы)</td></tr>
+<tr><td>Круговая циркуляция</td><td>Возвратное торможение</td><td>похожи внешне: возбуждающий (продлевает) / тормозный (обрывает) нейрон на коллатерали</td></tr>
+<tr><td>Возвратное торможение</td><td>Генератор ритма</td><td>строение одинаково; в генераторе выходной нейрон разряжается постоянно</td></tr>
+<tr><td>Реципрокное торможение</td><td>Латеральное торможение</td><td>антагонисты (сгибатель/разгибатель) / соседи (контраст в сетчатке)</td></tr>
+<tr><td>Эфферентная иерархия — дивергенция</td><td>Афферентная иерархия — конвергенция</td><td>команды расходятся вниз / информация сходится вверх</td></tr>
+<tr><td>Обратная связь</td><td>Цепные рефлексы</td><td>оба — временнáя координация: коррекция по ходу / запуск следующего по окончании предыдущего</td></tr>
+<tr><td>Сила раздражителя</td><td>Значимость</td><td>в борьбе за общий конечный путь «сильнее» = значимее</td></tr>
+<tr><td>Сегментарный</td><td>Надсегментарный</td><td>сам управляет мышцами / управляет программами; ствол — смешанный</td></tr>
+<tr><td>Пирамидный путь</td><td>«Все произвольные движения»</td><td>пирамидный — только тонкие приобретённые (рука, речь)</td></tr>
+<tr><td>α-мотонейрон</td><td>γ-мотонейрон</td><td>рабочие волокна (общий конечный путь) / интрафузальные волокна веретена</td></tr>
+<tr><td>Мышечное веретено</td><td>Орган Гольджи</td><td>длина → сокращение, 2 нейрона / напряжение → расслабление, тормозный вставочный</td></tr>
+<tr><td>Разгибательный толчок</td><td>Стоятельный рефлекс</td><td><b>удар</b> → резко (бег) / <b>давление</b> → длительно (поза)</td></tr>
+<tr><td>Спиноталамические</td><td>Голля и Бурдаха</td><td>грубая поверхностная + боль / тонкая поверхностная + проприоцепция</td></tr>
+<tr><td>Говерса</td><td>Флексига</td><td>передний / задний спиноцеребеллярный (оба — в мозжечок)</td></tr>
+<tr><td>Мостовой отдел РФ</td><td>Бульбарный отдел РФ</td><td>медиальный путь, возбуждает разгибатели / латеральный, тормозит</td></tr>
+<tr><td>Ретикулоспинальные</td><td>Вестибулоспинальный</td><td>«встать» (постоянно) / «не упасть» (меняется с позой)</td></tr>
+<tr><td>Красное ядро</td><td>Ядро Дейтерса</td><td>сгибатели, стереотипные позные / разгибатели, равновесие</td></tr>
+<tr><td>Статические рефлексы</td><td>Статокинетические</td><td>поза в покое / поза при ускорении</td></tr>
+<tr><td>Ствол мозга</td><td>Промежуточный мозг</td><td>ствол = продолговатый + мост + средний; гипоталамус — промежуточный</td></tr>
+<tr><td>Моторная зона</td><td>Премоторная + дополнительная</td><td>группы мышц, соматотопия / навыки, центры, без соматотопии</td></tr>
+<tr><td>Лазящие волокна</td><td>Мшистые волокна</td><td>только от нижних олив, пусковые, прямо на Пуркинье / от всех остальных, информация, через зёрна</td></tr>
+<tr><td>Медиальная зона мозжечка</td><td>Латеральная зона</td><td>равновесие, ядро шатра, астазия / баллистика, зубчатое, адиадохокинез</td></tr>
+<tr><td>Астазия</td><td>Абазия</td><td>не может <b>стоять</b> / не может <b>ходить</b> ровно</td></tr>
+<tr><td>Полосатое тело (анатомия)</td><td>Стриатум (физиология)</td><td>с бледным шаром / без него (скорлупа + хвостатое)</td></tr>
+<tr><td>Прямой путь</td><td>Непрямой путь</td><td>2 торможения → возбуждает, D<sub>1</sub> / 3 торможения через СТЯ → тормозит, D<sub>2</sub></td></tr>
+<tr><td>Медиальный сегмент бледного шара</td><td>Латеральный сегмент</td><td>общий выход обоих путей / только непрямой путь</td></tr>
+<tr><td>Мозжечок — тактика</td><td>Базальные ядра — стратегия</td><td>«как» в ходе движения / «что» до движения</td></tr>
+<tr><td>Гемибаллизм</td><td>Хорея</td><td>субталамическое ядро, бросковые движения руки / стриатум, быстрые движения лица и кистей</td></tr>
+<tr><td>N-холинорецептор</td><td>M-холинорецептор</td><td>никотин, ганглии, ионотропный / мускарин, органы, метаботропный</td></tr>
+<tr><td>Постганглионарная симпатика — НА</td><td>Потовые железы</td><td>исключение: холинергические симпатические волокна (АХ)</td></tr>
+<tr><td>Парасимпатические ганглии</td><td>Симпатические ганглии</td><td>в органе или рядом / у позвоночника или в сплетениях</td></tr>
+<tr><td>Эрекция — парасимпатика</td><td>Эякуляция — симпатика</td><td>пример синергии отделов</td></tr>
+<tr><td>Тонус на сердце</td><td>Тонус на сосуды</td><td>в покое парасимпатический / симпатический (парасимпатического нет)</td></tr>
+</table></div>
+</section>
+
+<section id="nums">
+<h2>Шпаргалка цифр</h2>
+<div class="tw"><table>
+<tr><th>Число</th><th>Что</th></tr>
+<tr><td><b>2</b></td><td>задачи ЦНС: адаптация и интеграция</td></tr>
+<tr><td><b>3</b></td><td>отдела нейрона: дендриты, тело, аксон; аксон — <b>1</b></td></tr>
+<tr><td>до <b>десятков–сотен тысяч</b></td><td>синапсов на одном нейроне</td></tr>
+<tr><td><b>3</b></td><td>способа инактивации медиатора: вымывание, обратный захват, расщепление</td></tr>
+<tr><td><b>3</b></td><td>отдела рефлекторной дуги (кроме двухнейронной)</td></tr>
+<tr><td><b>8</b></td><td>универсальных нейронных контуров (А–З)</td></tr>
+<tr><td><b>6</b></td><td>общих свойств нервных центров</td></tr>
+<tr><td><b>2</b></td><td>механизма временнóй координации: обратная связь, цепные рефлексы</td></tr>
+<tr><td><b>4</b></td><td>вида афферентации на входе в афферентный синтез: мотивация, память, обстановочная, пусковая</td></tr>
+<tr><td><b>3</b></td><td>уровня управления движениями: кора, ствол, спинной мозг</td></tr>
+<tr><td><b>8 · 12 · 5 · 5 · 1–3</b></td><td>сегментов: шейных, грудных, поясничных, крестцовых, копчиковых</td></tr>
+<tr><td><b>C<sub>VIII</sub>–L<sub>III</sub></b></td><td>уровень боковых рогов</td></tr>
+<tr><td><b>5</b></td><td>нисходящих путей: рубро-, вестибуло-, ретикуло- (2), текто-, кортикоспинальный</td></tr>
+<tr><td><b>3</b> группы</td><td>восходящих путей: спиноталамические (2), Голля и Бурдаха, спиноцеребеллярные (2)</td></tr>
+<tr><td><b>2 нейрона, 1 синапс</b></td><td>миотатический рефлекс</td></tr>
+<tr><td><b>8</b></td><td>соматических рефлексов спинного мозга в конспекте</td></tr>
+<tr><td><b>3</b></td><td>отдела ствола: продолговатый, мост, средний</td></tr>
+<tr><td><b>4</b></td><td>двигательные системы ствола: РФ, Дейтерс, красное ядро, четверохолмие</td></tr>
+<tr><td><b>4</b></td><td>центра навыков в премоторной/доп. зоне: праксис, письмо, взор, Брока</td></tr>
+<tr><td><b>4</b> ядра · <b>3</b> пары ножек · <b>3</b> зоны</td><td>мозжечок</td></tr>
+<tr><td><b>5</b> шагов</td><td>коррекции движения мозжечком</td></tr>
+<tr><td><b>4</b> структуры</td><td>стриопаллидарной системы: стриатум, паллидум, черная субстанция, субталамическое ядро</td></tr>
+<tr><td><b>2</b> и <b>3</b></td><td>тормозных переключения в прямом и непрямом путях</td></tr>
+<tr><td><b>4</b> медиатора</td><td>стриопаллидарной системы: глутамат, ГАМК, дофамин, ацетилхолин</td></tr>
+<tr><td><b>D<sub>1</sub> / D<sub>2</sub></b></td><td>возбуждающие (прямой) / тормозные (непрямой)</td></tr>
+<tr><td><b>3</b></td><td>вида регуляции внутренней среды: поведенческая, эндокринная, вегетативная</td></tr>
+<tr><td><b>3</b> типа рецепторов гипоталамуса</td><td>глюко-, осмо-, терморецепторы</td></tr>
+<tr><td><b>2</b> нейрона</td><td>в двигательном звене ВНС: пре- и постганглионарный</td></tr>
+<tr><td><b>3</b> исключения</td><td>из правила «стресс/отдых»: один отдел, синергия, разнонаправленность</td></tr>
+</table></div>
+</section>
+
+<footer>
+<p><b>*</b> Блоки «Из жизни», а также пометки про современные данные — мои дополнения для понимания и запоминания, в учебнике их нет. На опросе опирайся на текст книги.</p>
+<p>Источник: Н. Н. Алипов. Основы медицинской физиологии. 2-е изд. — М.: Практика, 2013. Главы 4–6, с. 62–117.</p>
+</footer>
+</main>
+<div class="lb" id="lb"><span class="x">×</span><img id="lbImg" alt=""></div>
+<script>
+// ===== helpers
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const NS='http://www.w3.org/2000/svg';
+const STYLEK=['fill','stroke','stroke-width','opacity','font-size','font-weight','stroke-dasharray','text-anchor','dominant-baseline','transition','cursor','fill-opacity'];
+function S(tag,a={},parent){const e=document.createElementNS(NS,tag);let st='';for(const k in a){if(k==='text'){e.textContent=a[k];continue}
+ if(STYLEK.includes(k)){st+=k+':'+a[k]+';'}else e.setAttribute(k,a[k])} if(st)e.setAttribute('style',st+(a.style||'')); if(parent)parent.appendChild(e);return e}
+function clear(el){while(el.firstChild)el.removeChild(el.firstChild)}
+function btn(label,parent,cb,cls='btn sm'){const b=document.createElement('button');b.className=cls;b.innerHTML=label;b.onclick=cb;parent.appendChild(b);return b}
+function setOn(group,b){$$('button',group).forEach(x=>x.classList.remove('on'));if(b)b.classList.add('on')}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+const V=n=>`var(--${n})`;
+
+// ===== theme
+(function(){const r=document.documentElement;let t=null;try{t=localStorage.getItem('kt')}catch(e){}
+ if(t)r.dataset.theme=t;
+ $('#themeBtn').onclick=()=>{const dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+  r.dataset.theme=dark?'light':'dark';try{localStorage.setItem('kt',r.dataset.theme)}catch(e){}}})();
+
+// ===== nav
+(function(){const sub=$('#navSub'),mainRow=$('#navMain');const main=$$('#navMain a');
+ const secs=['ch4','ch5','ch6','test','cards','traps','nums'].map(id=>document.getElementById(id));
+ const heads={};secs.forEach(s=>{if(s&&s.dataset.ch)heads[s.id]=$$('h3[data-short]',s)});
+ let cur=null,curH=null,ticking=false;
+ function center(row,a){if(!a)return;const x=a.offsetLeft-row.clientWidth/2+a.offsetWidth/2;row.scrollTo({left:Math.max(0,x),behavior:'auto'})}
+ function build(sec){clear(sub);curH=null;if(!sec||!sec.dataset.ch){sub.style.display='none';return}sub.style.display='flex';
+  heads[sec.id].forEach(h=>{const a=document.createElement('a');a.href='#'+h.id;a.textContent=h.dataset.short;a.dataset.t=h.id;sub.appendChild(a)})}
+ function update(){ticking=false;const y=130;let s=null;for(const x of secs){if(x&&x.getBoundingClientRect().top<y)s=x;else break}
+  if(s!==cur){cur=s;let act=null;main.forEach(a=>{const on=s&&a.getAttribute('href')==='#'+s.id;a.classList.toggle('act',on);if(on)act=a});build(s);center(mainRow,act)}
+  if(cur&&cur.dataset.ch){let hh=null;for(const h of heads[cur.id]){if(h.getBoundingClientRect().top<y+10)hh=h;else break}
+   if(hh!==curH){curH=hh;let act=null;$$('a',sub).forEach(a=>{const on=hh&&a.dataset.t===hh.id;a.classList.toggle('act',on);if(on)act=a});center(sub,act)}}}
+ addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});update();})();
+
+// ===== lightbox
+(function(){const lb=$('#lb'),im=$('#lbImg');$$('figure.fig img').forEach(i=>i.onclick=()=>{im.src=i.src;lb.classList.add('on')});
+ lb.onclick=()=>lb.classList.remove('on');addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')})})();
+
+['#l3svg','#l4svg','#l6svg','#l8svg','#l9svg','#l10svg'].forEach(id=>{const e=document.querySelector(id);if(e)e.parentNode.classList.add('sc')});
+// ===== LAB 1: neuron integrator
+(function(){
+ const svg=$('#l1svg'),out=$('#l1out');let ev=[];let mode='pre';
+ const X=t=>50+t*5.7, Y=v=>200-(v+80)*1.6, THR=-55, REST=-70;
+ const amp={1:9,2:9,3:-7};
+ const k=t=>t<=0?0:(t/5)*Math.exp(1-t/5);
+ const presets=[
+  ['А · вход 1',[[1,20]],'Один ПД на вход 1 → одиночный <b>подпороговый ВПСП</b>. ПД на выходе нет.'],
+  ['Б · вход 2',[[2,20]],'То же для входа 2: одиночный ВПСП почти всегда подпороговый.'],
+  ['В · вход 3',[[3,20]],'Тормозный вход 3 → <b>ТПСП</b> (гиперполяризация): потенциал уходит дальше от E<sub>кр</sub>, возбудимость снижается.'],
+  ['Г · 1+2',[[1,20],[2,20]],'<b>Пространственная суммация</b>: ВПСП из разных синапсов сложились одновременно, потенциал ненадолго превысил E<sub>кр</sub> → один ПД.'],
+  ['Д · 1,1',[[1,20],[1,24]],'<b>Временнáя суммация</b>: два ПД на один и тот же вход с коротким промежутком → ВПСП сложились → один ПД.'],
+  ['Е · 1,1,1',[[1,20],[1,23],[1,26]],'Сложились три ВПСП: потенциал <b>дольше</b> выше E<sub>кр</sub> → <b>несколько ПД</b>. Чем дольше превышение, тем больше импульсов.'],
+  ['Ж · 1+3',[[1,20],[3,20]],'ВПСП и ТПСП <b>алгебраически складываются</b> и гасят друг друга: потенциал почти не меняется, ПД нет.']];
+ const pre=$('#l1pre');
+ presets.forEach((p,i)=>btn(p[0],pre,e=>{mode='pre';ev=p[1].slice();setOn(pre,e.target);draw(p[2])}));
+ $$('#lab1 [data-in]').forEach(b=>b.onclick=()=>{if(mode==='pre'){ev=[];mode='free'}setOn(pre,null);
+   const last=ev.length?Math.max(...ev.map(e=>e[1])):8;const t=last+4;if(t>88){draw('Шкала времени закончилась — нажми «очистить».');return}
+   ev.push([+b.dataset.in,t]);draw(null)});
+ $('#l1clr').onclick=()=>{ev=[];mode='free';setOn(pre,null);draw('Пусто. Добавь сигналы на входы: быстро несколько раз «вход 1» — это временная суммация; «вход 1» и «вход 2» подряд — почти пространственная.')};
+ function vm(t){let v=REST;for(const [i,ti] of ev)v+=amp[i]*k(t-ti);return v}
+ function draw(txt){clear(svg);
+  S('rect',{x:50,y:20,width:570,height:185,fill:V('paper'),stroke:V('line')},svg);
+  S('line',{x1:50,x2:620,y1:Y(THR),y2:Y(THR),stroke:V('accent'),'stroke-dasharray':'6 5','stroke-width':1.5},svg);
+  S('text',{x:46,y:Y(THR)+4,'text-anchor':'end','font-size':'12px',fill:V('accent'),text:'Eкр'},svg);
+  S('text',{x:46,y:Y(REST)+4,'text-anchor':'end','font-size':'12px',fill:V('muted'),text:'МП'},svg);
+  S('line',{x1:50,x2:620,y1:Y(REST),y2:Y(REST),stroke:V('line')},svg);
+  let d='',spikes=[],last=-9,maxv=-99;
+  for(let t=0;t<=100;t+=.25){const v=vm(t);maxv=Math.max(maxv,v);
+   if(v>THR&&t-last>=3.2){spikes.push(t);last=t}
+   d+=(t?'L':'M')+X(t).toFixed(1)+','+Y(Math.min(v,THR+12)).toFixed(1)}
+  S('path',{d,fill:'none',stroke:V('ink'),'stroke-width':2},svg);
+  spikes.forEach(t=>{S('path',{d:`M${X(t)},${Y(THR)} L${X(t+.4)},${Y(28)} L${X(t+1.1)},${Y(-76)} L${X(t+2)},${Y(vm(t+2))}`,fill:'none',stroke:V('ink'),'stroke-width':2},svg)});
+  ev.forEach(([i,t])=>{const c=i===3?V('inh'):V('exc');
+   S('line',{x1:X(t),x2:X(t),y1:226,y2:212,stroke:c,'stroke-width':2.5},svg);
+   S('path',{d:`M${X(t)-4},${216} L${X(t)},${210} L${X(t)+4},${216}`,fill:c},svg);
+   S('text',{x:X(t)+6,y:226,'font-size':'12px',fill:c,'font-weight':700,text:i},svg)});
+  if(!txt){txt=spikes.length?`Порог пройден → <b>${spikes.length} ПД</b>. `:'ПД нет: сумма ВПСП не достигла E<sub>кр</sub>. ';
+   const nE=ev.filter(e=>e[0]!==3).length,nI=ev.filter(e=>e[0]===3).length;
+   txt+=`Возбуждающих сигналов: ${nE}, тормозных: ${nI}. Пик потенциала ≈ ${Math.round(maxv)} мВ (порог −55).`}
+  out.innerHTML=txt}
+ pre.firstChild.click();
+})();
+
+// ===== LAB 2: circuits oscilloscope
+(function(){
+ const svg=$('#l2svg'),out=$('#l2out'),sel=$('#l2sel'),ans=$('#l2ans');
+ const R=(a,b,s)=>{const r=[];for(let t=a;t<=b;t+=s)r.push(t);return r};
+ const C=[
+  {k:'А',n:'Дивергентный',in:[['вход',R(20,32,4)]],out:[['выход 1',R(22,34,4)],['выход 2',R(22,34,4)],['выход 3',R(22,34,4)]],
+   t:'<b>1 вход → много выходов.</b> Один аксон ветвится на многие нейроны (мультипликация). Пример: тронул горячее — одновременно отдёргивание, боль и перераспределение тонуса.'},
+  {k:'Б',n:'Конвергентный',in:[['вход 1',R(10,18,4)],['вход 2',R(42,50,4)],['вход 3',R(72,80,4)]],out:[['выход',[...R(12,20,4),...R(44,52,4),...R(74,82,4)]]],
+   t:'<b>Много входов → 1 выход.</b> На одном мотонейроне сходятся программы письма, игры на фортепиано, чесания.'},
+  {k:'В',n:'Круговая циркуляция',in:[['вход',[15]]],out:[['выход',R(17,97,5)]],
+   t:'<b>Короткий импульс → долгая импульсация.</b> Коллатераль через возбуждающий нейрон возвращает возбуждение к исходному нейрону. Нужно для памяти и эмоций (длительное последействие).'},
+  {k:'Г',n:'Возвратное торможение',in:[['вход',R(10,92,3)]],out:[['выход',R(12,21,3)]],
+   t:'<b>Длинный разряд → короткий.</b> Коллатераль → тормозный нейрон → тот же выходной нейрон. Быстро обрывает импульсацию: точные быстрые движения. В спинном мозге — клетки Реншоу.'},
+  {k:'Д',n:'Генератор ритма',in:[['вход',R(2,98,3)]],out:[['выход',[...R(8,20,3),...R(40,52,3),...R(72,84,3)]]],
+   t:'<b>Постоянная (или нулевая) импульсация → периодические разряды.</b> Выходной нейрон стреляет → возбуждает тормозный → пауза → тормозный замолкает → снова разряд. Дыхательный ритм, ритмы ЭЭГ.'},
+  {k:'Е',n:'Реципрокное торможение',in:[['вход',R(30,62,4)]],out:[['сгибатель',R(32,64,4)],['разгибатель',[...R(4,28,6),...R(70,98,6)]]],
+   t:'<b>Один выход возбуждается, другой тормозится.</b> Вход прямо на один нейрон и через тормозный вставочный на другой. Сгибатель сокращается — разгибатель замолкает.'},
+  {k:'Ж',n:'Латеральное торможение',in:[['вход 1 (темно)',R(5,95,10)],['вход 2 (свет)',R(3,97,4)],['вход 3 (темно)',R(5,95,10)]],out:[['выход 1',R(15,95,30)],['выход 2',R(5,97,4)],['выход 3',R(15,95,30)]],
+   t:'<b>Возбуждённый канал тормозит соседей.</b> Освещённый участок сетчатки подавляет соседние → контраст между светом и тенью усиливается.'},
+  {k:'З',n:'Пресинаптическое торможение',in:[['волокно 1',R(8,95,5)],['волокно 2 (торм.)',R(40,60,4)]],out:[['выход',[...R(10,38,5),...R(68,95,5)]]],
+   t:'<b>Подавление на самом входе.</b> Тормозное волокно 2 у окончания волокна 1 уменьшает выход медиатора. Так спинной мозг выключает ненужную чувствительность ещё до своих нейронов.'}];
+ let cur=0,quiz=false,qi=-1,sc=[0,0],raf=0;
+ C.forEach((c,i)=>btn(c.k+' · '+c.n,sel,e=>{quiz=false;cur=i;setOn(sel,e.target);clear(ans);$('#l2score').textContent='';run()}));
+ function draw(c,p){clear(svg);const rows=[...c.in.map(r=>['in',...r]),...c.out.map(r=>['out',...r])];
+  const h=Math.min(34,180/rows.length);const X=t=>150+t*4.7;
+  S('rect',{x:0,y:0,width:640,height:210,fill:V('paper'),stroke:V('line')},svg);
+  let sep=false;const cnt={in:0,out:0};
+  rows.forEach((r,i)=>{const y=14+i*h+h/2+(r[0]==='out'?12:0);cnt[r[0]]++;
+   if(quiz){r=[r[0],(r[0]==='in'?'вход ':'выход ')+cnt[r[0]]+(r[1].includes('торм')?' (торм.)':''),r[2]]}
+   if(r[0]==='out'&&!sep){sep=true;S('line',{x1:8,x2:632,y1:y-h/2-6,y2:y-h/2-6,stroke:V('line'),'stroke-dasharray':'4 4'},svg)}
+   S('text',{x:142,y:y+4,'text-anchor':'end','font-size':'12px',fill:r[0]==='in'?V('muted'):V('ink'),'font-weight':r[0]==='in'?400:700,text:(r[0]==='in'?'→ ':'⇒ ')+r[1]},svg);
+   S('line',{x1:150,x2:620,y1:y+h*.32,y2:y+h*.32,stroke:V('line')},svg);
+   const col=r[1].includes('торм')?V('inh'):(r[0]==='in'?V('muted'):V('exc'));
+   r[2].filter(t=>t<=p).forEach(t=>S('line',{x1:X(t),x2:X(t),y1:y+h*.32,y2:y-h*.32,stroke:col,'stroke-width':2.2},svg))});
+  S('line',{x1:150+p*4.7,x2:150+p*4.7,y1:4,y2:206,stroke:V('accent'),opacity:p<100?.7:0},svg)}
+ function run(){cancelAnimationFrame(raf);const c=C[cur];let t0=null;
+  out.innerHTML=quiz?'Что это за контур? Смотри на соотношение входа и выхода.':`<b>${c.k}. ${c.n}.</b> ${c.t}`;
+  const f=ts=>{if(!t0)t0=ts;const p=Math.min(100,(ts-t0)/25);draw(c,p);if(p<100)raf=requestAnimationFrame(f)};raf=requestAnimationFrame(f)}
+ $('#l2go').onclick=run;
+ $('#l2quiz').onclick=()=>{quiz=true;setOn(sel,null);let n;do{n=Math.floor(Math.random()*C.length)}while(n===qi);qi=cur=n;run();clear(ans);
+  shuffle(C.map((c,i)=>i)).forEach(i=>btn(C[i].n,ans,e=>{if(ans.dataset.done)return;ans.dataset.done=1;sc[1]++;
+    if(i===cur){sc[0]++;e.target.style.borderColor=V('ok');out.innerHTML='✅ Верно! '+C[cur].t}
+    else{e.target.style.borderColor=V('bad');out.innerHTML=`❌ Это <b>${C[cur].n}</b>. ${C[cur].t}`}
+    $('#l2score').textContent=`Счёт: ${sc[0]} / ${sc[1]}`}));delete ans.dataset.done;
+  out.innerHTML='Что это за контур? Смотри на соотношение входа и выхода.';
+  // hide labels of in/out names that give it away
+ };
+ setOn(sel,sel.firstChild);out.innerHTML=`<b>${C[0].k}. ${C[0].n}.</b> ${C[0].t}`;draw(C[0],100);
+})();
+
+// ===== LAB 3: functional system
+(function(){
+ const svg=$('#l3svg'),out=$('#l3out');let sc=0,st=0;
+ const B={mot:[20,30,130,34,'Мотивация'],mem:[20,74,130,34,'Память'],obs:[20,118,130,34,'Обстановочная афф.'],pus:[20,162,130,34,'Пусковая афф.'],
+  syn:[8,8,154,198,''],dec:[190,95,92,36,'Решение'],prog:[310,40,130,40,'Программа действий'],acc:[310,130,130,48,'Акцептор результатов'],
+  res:[490,40,130,40,'Результат'],back:[490,220,130,36,'Обратная афф.']};
+ function draw(hl){clear(svg);
+  const m=S('defs',{},svg);const mk=S('marker',{id:'ar3',viewBox:'0 0 10 10',refX:9,refY:5,markerWidth:7,markerHeight:7,orient:'auto-start-reverse'},m);S('path',{d:'M0,0L10,5L0,10z',fill:V('muted')},mk);
+  const on=k=>hl.includes(k);
+  S('rect',{x:8,y:8,width:154,height:198,rx:12,fill:on('syn')?'color-mix(in srgb,var(--hi) 30%,var(--paper))':V('paper'),stroke:on('syn')?V('accent'):V('line'),'stroke-width':on('syn')?2.5:1},svg);
+  S('text',{x:85,y:224,'text-anchor':'middle','font-size':'12px',fill:V('muted'),text:'афферентный синтез'},svg);
+  const L=(x1,y1,x2,y2,dash)=>S('path',{d:`M${x1},${y1} L${x2},${y2}`,stroke:V('muted'),'stroke-width':1.6,fill:'none','marker-end':'url(#ar3)','stroke-dasharray':dash||'none'},svg);
+  L(162,113,190,113);L(282,108,310,62);L(282,118,310,150);L(440,60,490,60);
+  S('path',{d:'M555,80 L555,220',stroke:V('muted'),'stroke-width':1.6,fill:'none','marker-end':'url(#ar3)'},svg);
+  S('path',{d:'M490,238 L375,238 L375,180',stroke:V('muted'),'stroke-width':1.6,fill:'none','marker-end':'url(#ar3)'},svg);
+  S('text',{x:455,y:110,'text-anchor':'middle','font-size':'11px',fill:V('muted'),text:'сравнение'},svg);
+  for(const k in B){if(k==='syn')continue;const [x,y,w,h,t]=B[k];const o=on(k);
+   S('rect',{x,y,width:w,height:h,rx:9,fill:o?'var(--hi)':V('bg'),stroke:o?V('ink'):V('line'),'stroke-width':o?2:1,transition:'all .3s'},svg);
+   const lines=t.split(' ');const two=w<140&&t.length>14;
+   if(two){S('text',{x:x+w/2,y:y+h/2-3,'text-anchor':'middle','font-size':'12.5px','font-weight':600,fill:o?'#1d1b18':V('ink'),text:lines[0]},svg);
+    S('text',{x:x+w/2,y:y+h/2+12,'text-anchor':'middle','font-size':'12.5px','font-weight':600,fill:o?'#1d1b18':V('ink'),text:lines.slice(1).join(' ')},svg)}
+   else S('text',{x:x+w/2,y:y+h/2+4,'text-anchor':'middle','font-size':'12.5px','font-weight':600,fill:o?'#1d1b18':V('ink'),text:t},svg)}
+  if(on('ok'))S('text',{x:375,y:205,'text-anchor':'middle','font-size':'20px',fill:V('ok'),text:'✓ совпало'},svg);
+  if(on('bad'))S('text',{x:375,y:205,'text-anchor':'middle','font-size':'20px',fill:V('bad'),text:'✗ не совпало'},svg);
+  if(on('end'))S('text',{x:320,y:290,'text-anchor':'middle','font-size':'14px','font-weight':700,fill:V('accent'),text:'функциональная система распадается'},svg)}
+ const base=[
+  [['mot'],'<b>Мотивация</b>: возникла пищевая потребность (голод).'],
+  [['mem'],'<b>Память</b>: опыт подсказывает, где столовая и сколько стоит обед.'],
+  [['obs'],'<b>Обстановочная афферентация</b>: где я сейчас и сколько у меня денег.'],
+  [['pus'],'<b>Пусковая афферентация</b>: звенит звонок на перемену, можно идти в буфет.'],
+  [['syn','mot','mem','obs','pus','dec'],'<b>Афферентный синтез</b>: всё сопоставлено, условия соблюдены → <b>решение</b> сформировать функциональную систему.'],
+  [['prog','acc'],'Образуются два блока: <b>программа действий</b> (что делать) и <b>акцептор результатов действия</b> (что ожидаю получить).']];
+ const S3=[
+  [...base,
+   [['prog','res'],'Поведение: встал, дошёл до двери, повернул ручку — это <b>промежуточные результаты</b>.'],
+   [['res','back','acc','ok'],'<b>Обратная афферентация</b>: дверь открылась. Совпадает с акцептором → деятельность продолжается по программе.'],
+   [['res','back','acc','ok','end'],'<b>Конечный результат</b>: съел обед → потребность удовлетворена → функциональная система <b>распадается</b>.']],
+  [...base,
+   [['prog','res'],'Повернул ручку двери...'],
+   [['res','back','acc','bad'],'Обратная афферентация: <b>дверь не открылась</b>. Нет совпадения с акцептором!'],
+   [['prog'],'<b>Программа действий корректируется</b> («не тянуть, а толкать»), деятельность возобновляется по новой программе.'],
+   [['res','back','acc','ok'],'Дверь открылась → совпадение → продолжаем.'],
+   [['res','back','acc','ok','end'],'Пообедал → потребность удовлетворена → система распадается.']],
+  [...base,
+   [['prog','res'],'Дошёл до столовой...'],
+   [['res','back','acc','bad'],'Столовая <b>закрыта</b>, а искать другую нет времени: конечный результат <b>недостижим</b>.'],
+   [['end'],'Функциональная система тоже <b>распадается</b>: поведение, направленное на эту потребность, прекращается (по непреодолимым причинам).']]];
+ function show(){const s=S3[sc][st];draw(s[0]);out.innerHTML=s[1];$('#l3step').textContent=`шаг ${st+1} / ${S3[sc].length}`;
+  $('#l3prev').disabled=st===0;$('#l3next').disabled=st===S3[sc].length-1}
+ $$('#l3sc button').forEach(b=>b.onclick=()=>{sc=+b.dataset.sc;st=0;setOn($('#l3sc'),b);show()});
+ $('#l3prev').onclick=()=>{if(st>0){st--;show()}};$('#l3next').onclick=()=>{if(st<S3[sc].length-1){st++;show()}};
+ show();
+})();
+// ===== LAB 4: muscle spindle & Golgi
+(function(){
+ const svg=$('#l4svg'),out=$('#l4out');let timers=[];
+ let st={len:1,gam:0,hl:[],tension:0};
+ function draw(){clear(svg);const on=k=>st.hl.includes(k);
+  const hc=k=>on(k)?V('accent'):V('muted'), hw=k=>on(k)?4:2;
+  S('rect',{x:0,y:0,width:640,height:250,fill:V('paper'),stroke:V('line')},svg);
+  // spinal cord
+  S('rect',{x:20,y:20,width:150,height:120,rx:40,fill:V('bg'),stroke:V('line')},svg);
+  S('text',{x:95,y:40,'text-anchor':'middle','font-size':'12px',fill:V('muted'),text:'спинной мозг'},svg);
+  // neurons
+  const N=(x,y,c,lab,k,inh)=>{S('circle',{cx:x,cy:y,r:on(k)?13:10,fill:inh?V('inh'):(on(k)?'var(--hi)':V('paper')),stroke:on(k)?V('accent'):V('ink'),'stroke-width':2,transition:'all .2s'},svg);
+   S('text',{x:x,y:y+28,'text-anchor':'middle','font-size':'11px',fill:V('ink'),'font-weight':600,text:lab},svg)};
+  // muscle geometry
+  const mx0=250,mx1=250+300*st.len,my=170;
+  S('rect',{x:215,y:my-6,width:35,height:12,rx:4,fill:V('muted')},svg); // tendon left
+  S('rect',{x:mx1,y:my-6,width:40,height:12,rx:4,fill:on('golgi')?V('accent'):V('muted')},svg); // tendon right
+  S('ellipse',{cx:(mx0+mx1)/2,cy:my,rx:(mx1-mx0)/2,ry:34-12*(st.len-1)*3,fill:'#d98b7a',stroke:'#9a4a3a','stroke-width':on('mus')?4:1.5,opacity:.85,transition:'all .3s'},svg);
+  S('text',{x:(mx0+mx1)/2,y:my+52,'text-anchor':'middle','font-size':'12px',fill:V('ink'),text:'мышца (рабочие волокна)'},svg);
+  // spindle
+  const sx0=mx0+40*st.len, sx1=mx1-40*st.len, cx=(sx0+sx1)/2;
+  const cw=Math.max(16,(sx1-sx0)*0.28*(1+st.gam*0.6)), endw=((sx1-sx0)-cw)/2;
+  S('path',{d:`M${sx0},${my} Q${sx0+endw/2},${my-9} ${sx0+endw},${my-5} L${sx0+endw+cw},${my-5} Q${sx1-endw/2},${my-9} ${sx1},${my} Q${sx1-endw/2},${my+9} ${sx0+endw+cw},${my+5} L${sx0+endw},${my+5} Q${sx0+endw/2},${my+9} ${sx0},${my}z`,fill:'#f3d9c9',stroke:'#7a3a2a','stroke-width':1.2},svg);
+  S('rect',{x:sx0+endw,y:my-5,width:cw,height:10,fill:on('spc')?'var(--hi)':'#fff7ef',stroke:on('spc')?V('accent'):'#7a3a2a','stroke-width':on('spc')?2.5:1},svg);
+  S('text',{x:cx,y:my-14,'text-anchor':'middle','font-size':'10.5px',fill:'#5a2a1a',text:'веретено'},svg);
+  // Golgi label
+  S('text',{x:mx1+20,y:my-14,'text-anchor':'middle','font-size':'10.5px',fill:V('ink'),text:'Гольджи'},svg);
+  // nerves
+  const Pth=(d,k,col)=>S('path',{d,fill:'none',stroke:col||hc(k),'stroke-width':hw(k),'stroke-dasharray':on(k)?'none':'none',transition:'all .2s'},svg);
+  Pth(`M${cx},${my-5} C${cx},90 300,60 170,60 L135,60`,'sens');
+  Pth(`M60,110 C60,200 150,210 ${mx0+20},${my+20}`,'alpha');
+  Pth(`M100,120 C110,215 ${sx0-10},225 ${sx0+endw/2},${my+6}`,'gamma');
+  Pth(`M${sx1-endw/2},${my+6} C${sx1},215 ${sx1-60},215 ${sx1-endw/2},${my+6}`,'gamma');
+  Pth(`M${mx1+20},${my-6} C${mx1+40},40 260,30 170,32 L140,32`,'gsens');
+  if(st.showG)Pth('M140,32 C120,32 110,60 105,80','gsens');
+  N(125,60,0,'чувств.','sens');N(60,95,0,'α','alpha');N(100,105,0,'γ','gamma');
+  if(st.showG){N(105,85,0,'',"inh",true);S('text',{x:150,y:95,'font-size':'10px',fill:V('inh'),text:'тормозный'},svg)}
+  // length meter
+  S('text',{x:20,y:240,'font-size':'12px',fill:V('muted'),text:`длина мышцы: ${Math.round(st.len*100)}%   напряжение: ${['низкое','среднее','высокое','очень высокое'][st.tension]}`},svg);
+ }
+ function seq(steps){timers.forEach(clearTimeout);timers=[];let t=0;
+  steps.forEach(s=>{timers.push(setTimeout(()=>{Object.assign(st,s.st||{});st.hl=s.hl||[];draw();out.innerHTML=s.t},t));t+=s.d||1500})}
+ $('#l4hit').onclick=()=>seq([
+  {st:{len:1,gam:0,tension:1,showG:false},hl:[],t:'Исходно: длина постоянна, веретено «молчит» почти фоново.',d:900},
+  {st:{len:1.12},hl:['spc','mus'],t:'🔨 Удар по сухожилию резко <b>растягивает</b> мышцу, а вместе с ней — центр мышечного веретена (рецептор растяжения).'},
+  {hl:['spc','sens'],t:'Чувствительный нейрон (тело — в спинномозговом ганглии) несёт импульсы в спинной мозг.'},
+  {hl:['sens','alpha'],t:'<b>Один синапс</b> — и возбуждён α-мотонейрон. (Параллельно через реципрокный контур тормозится антагонист.)'},
+  {st:{len:.94,tension:2},hl:['alpha','mus'],t:'Мышца <b>сокращается</b> → голень «подпрыгивает». Растяжение вызвало сокращение: так держится постоянная длина.'},
+  {st:{len:1,tension:1},hl:[],t:'Длина вернулась к исходной. Это <b>миотатический рефлекс</b> — основа позы и плавности движений.'}]);
+ $('#l4gam').onclick=()=>seq([
+  {st:{len:1,gam:0,tension:1,showG:false},hl:[],t:'Нужно согнуть ногу. Но миотатический рефлекс сопротивляется любому изменению длины, а затормозить его нельзя.',d:1700},
+  {st:{gam:1},hl:['gamma'],t:'Мозг активирует <b>γ-мотонейрон</b>: сокращаются концы интрафузальных волокон.'},
+  {hl:['gamma','spc'],t:'Центр веретена растянулся, хотя <b>длина самой мышцы не изменилась</b>.'},
+  {hl:['spc','sens'],t:'Веретено шлёт «<b>ложную информацию</b>» об удлинении мышцы.'},
+  {hl:['sens','alpha'],t:'Рефлекторно возбуждается α-мотонейрон...'},
+  {st:{len:.82,gam:0,tension:2},hl:['alpha','mus'],t:'...и мышца укорачивается. <b>Любое сокращение требует активации и α-, и γ-мотонейронов.</b>'}]);
+ $('#l4gol').onclick=()=>seq([
+  {st:{len:1,gam:0,tension:1,showG:true},hl:[],t:'Поднимаем слишком тяжёлый груз.',d:900},
+  {st:{len:.9,tension:3},hl:['mus','golgi'],t:'Мышца сильно напряжена → натягивается сухожилие → возбуждается <b>сухожильный орган Гольджи</b>.'},
+  {hl:['golgi','gsens','inh'],t:'Чувствительный нейрон → <b>вставочный тормозный нейрон</b>.'},
+  {hl:['inh','alpha'],t:'Тормозный нейрон <b>тормозит α-мотонейрон</b> своей же мышцы.'},
+  {st:{len:1.02,tension:1},hl:['mus'],t:'Мышца <b>расслабляется</b>: напряжение → расслабление. Так держится постоянное напряжение и предотвращается травма.'}]);
+ $('#l4rst').onclick=()=>{timers.forEach(clearTimeout);st={len:1,gam:0,hl:[],tension:1,showG:false};draw();out.innerHTML='Выбери действие.'};
+ st.tension=1;draw();
+})();
+
+// ===== LAB 5: which reflex
+(function(){
+ const S5=[['🩺 Невролог стучит молоточком под коленку','myo','Миотатический (коленный): удар растягивает четырёхглавую мышцу → веретено → α-мотонейрон → сокращение. 2 нейрона, 1 синапс.'],
+  ['🔥 Отдёрнул руку от горячего утюга','flex','Сгибательный: болевой рецептор кожи → несколько вставочных → α-мотонейроны сгибателей; разгибатель реципрокно тормозится.'],
+  ['📌 Наступил босой ногой на кнопку','cross','Перекрёстный разгибательный: эта нога сгибается, противоположная разгибается, чтобы удержать тело и оттолкнуть раздражитель.'],
+  ['🦟 По руке ползёт комар','scratch','Чесательный: слабое раздражение кожи → 1) поднести конечность, 2) ритмично чесать. Это ещё и пример цепного рефлекса.'],
+  ['👶 Младенца держат над столом, стопы касаются поверхности','step','Шагательный: раздражение подошвы → попеременные шаги. Элемент ходьбы (реципрокные контуры + генераторы ритма).'],
+  ['🏃 Бег: нога ударилась о землю и сразу толкнула','push','Разгибательный толчок: удар по подошве → резкое разгибание. Элемент бега.'],
+  ['🧍 Долго стоишь, стопы давят на пол','stand','Стоятельный: надавливание на подошву → длительное разгибание. Элемент вертикальной позы.'],
+  ['🏋 Штанга слишком тяжёлая — мышцы вдруг «сдались»','golgi','Рефлекс с сухожильного органа Гольджи: сильное напряжение → тормозный вставочный нейрон → расслабление. Защита от разрыва.']];
+ const box=$('#l5btns'),out=$('#l5out');
+ S5.forEach(s=>btn(s[0],box,e=>{setOn(box,e.target);$$('#reflexTable tr').forEach(r=>r.classList.toggle('hl',r.dataset.r===s[1]));out.innerHTML=s[2]}));
+})();
+
+// ===== LAB 6: brainstem console
+(function(){
+ const svg=$('#l6svg'),out=$('#l6out');let sleep=false,act=[];
+ const C={rfm:[30,'РФ мостовая','медиальный ретикулоспинальный','+ разгибатели'],rfb:[155,'РФ бульбарная','латеральный ретикулоспинальный','− разгибатели'],
+  deit:[280,'Ядро Дейтерса','вестибулоспинальный','+ разгибатели'],red:[405,'Красное ядро','руброспинальный','+ сгибатели'],tec:[530,'Четверохолмие','тектоспинальный','поворот к стимулу']};
+ const SIT=[['🧍 Просто стоим',['rfm'],'Мостовая РФ постоянно возбуждает антигравитационные мышцы (разгибатели спины, шеи, ног) — это базовый тонус. «Позволяет встать».'],
+  ['🚇 Толчок в вагоне метро',['deit','rfm'],'Вестибулярный аппарат + проприорецепторы шеи → <b>ядро Дейтерса</b> → вестибулоспинальный путь быстро перераспределяет тонус разгибателей. «Не упасть». Это статокинетический рефлекс.'],
+  ['🪑 Встаём с кресла, меняем позу',['red'],'<b>Красное ядро</b> → руброспинальный путь: врождённые стереотипные, во многом позные движения (смена и восстановление позы), в основном сгибатели. Запуск — от коры (кортикорубральный), коррекция — от мозжечка.'],
+  ['💥 Резкий хлопок сбоку',['tec'],'<b>Четверохолмие</b> (нижние холмики — слух, верхние — зрение) → тектоспинальный путь: поворот головы, туловища и глаз к стимулу. Рефлекс настораживания (старт-рефлекс). Что это было, распознаёт уже кора.']];
+ const box=$('#l6sit');
+ SIT.forEach(s=>btn(s[0],box,e=>{setOn(box,e.target);act=s[1];draw();out.innerHTML=(sleep?'<i>(Сейчас сон: тонус разгибателей снижен бульбарной РФ.)</i> ':'')+s[2]}));
+ $('#l6wake').onclick=e=>{sleep=false;setOn(e.target.parentNode,e.target);draw();out.innerHTML='<b>Бодрствование</b>: преобладает возбуждающий мостовой отдел РФ (медиальный путь) → тонус разгибателей держит нас вертикально.'};
+ $('#l6sleep').onclick=e=>{sleep=true;setOn(e.target.parentNode,e.target);act=[];setOn(box,null);draw();out.innerHTML='<b>Сон</b>: антигравитационная система не нужна → преобладает тормозный бульбарный отдел РФ (латеральный путь), тонус разгибателей падает.'};
+ function draw(){clear(svg);S('rect',{x:0,y:0,width:640,height:260,fill:V('paper'),stroke:V('line')},svg);
+  S('rect',{x:220,y:8,width:200,height:30,rx:8,fill:V('bg'),stroke:V('line')},svg);S('text',{x:320,y:28,'text-anchor':'middle','font-size':'13px','font-weight':600,fill:V('ink'),text:'Кора: запуск'},svg);
+  S('rect',{x:10,y:212,width:620,height:38,rx:8,fill:V('bg'),stroke:V('line')},svg);
+  S('text',{x:320,y:236,'text-anchor':'middle','font-size':'13px','font-weight':600,fill:V('ink'),text:'Спинной мозг → мышцы'},svg);
+  for(const k in C){const [x,n,p,e]=C[k];let o=act.includes(k);
+   if(k==='rfm'&&!sleep)o=o||true; if(k==='rfb'&&sleep)o=true; const dim=(k==='rfm'&&!sleep&&!act.includes('rfm'));
+   const fill=o?(k==='rfb'?V('inh'):'var(--hi)'):V('bg');
+   S('line',{x1:x+50,x2:x+50,y1:96,y2:212,stroke:o?(k==='rfb'?V('inh'):V('accent')):V('line'),'stroke-width':o?(dim?3:5):2,opacity:dim?.55:1},svg);
+   S('rect',{x,y:56,width:100,height:40,rx:9,fill,stroke:o?V('ink'):V('line'),'stroke-width':o?2:1,opacity:dim?.7:1},svg);
+   S('text',{x:x+50,y:80,'text-anchor':'middle','font-size':'11.5px','font-weight':700,fill:o&&k!=='rfb'?'#1d1b18':(o?'#fff':V('ink')),text:n},svg);
+   S('text',{x:x+50,y:140,'text-anchor':'middle','font-size':'10px',fill:V('muted'),text:p.split(' ')[0]},svg);
+   S('text',{x:x+50,y:153,'text-anchor':'middle','font-size':'10px',fill:V('muted'),text:p.split(' ').slice(1).join(' ')},svg);
+   S('text',{x:x+50,y:200,'text-anchor':'middle','font-size':'11px','font-weight':600,fill:o?V('ink'):V('muted'),text:e},svg)}}
+ draw();out.innerHTML='Бодрствование: горит мостовая РФ. Нажми ситуацию.';
+})();
+
+// ===== LAB 7: cerebellum zones
+(function(){
+ const svg=$('#l7svg'),out=$('#l7out');let mode='exp',q=null,sc=[0,0];
+ const Z={m:{n:'Медиальная зона (червь)',f:'равновесие и поза в поле тяжести, мышечный тонус',in:'вестибулярный; проприоцептивный (особенно от мышц шеи)',nu:'ядро шатра',o:'ядро Дейтерса (+ прямо от нейронов Пуркинье), ретикулярная формация',s:'астазия, абазия, нистагм',age:'самая древняя'},
+  i:{n:'Промежуточная зона',f:'коррекция (в основном стволовых) движений в ходе выполнения по обратным связям',in:'вестибулярный, проприоцептивный, прочие; от коры через ядра моста',nu:'пробковидное и шаровидное',o:'красное ядро',s:'интенционный тремор, нарушения локомоторных (пальце-носовой) проб',age:'средняя'},
+  l:{n:'Латеральная зона (полушария)',f:'коррекция быстрых точных баллистических корковых движений на этапе планирования',in:'кора (через ядра моста)',nu:'зубчатое',o:'кора (через таламус)',s:'адиадохокинез, дизартрия (скандированная речь)',age:'самая молодая'}};
+ const Q=[['Человек не может стоять без поддержки (астазия)','m'],['«Пьяная» походка, падает при ходьбе (абазия)','m'],['Самопроизвольный нистагм','m'],
+  ['Рука дрожит всё сильнее, когда тянется к стакану','i'],['Промахивается в пальце-носовой пробе','i'],['Не может быстро вращать вытянутыми руками (пронация-супинация)','l'],
+  ['Скандированная речь: медленно, по слогам','l'],['Нарушена коррекция движения по ходу выполнения','i'],['Нарушено планирование быстрых «выстрельных» движений','l'],['Нарушен мышечный тонус и поза','m']];
+ let sel=null;
+ function draw(){clear(svg);S('rect',{x:0,y:0,width:640,height:260,fill:V('paper'),stroke:V('line')},svg);
+  const d=S('defs',{},svg);const cp=S('clipPath',{id:'cer'},d);
+  S('path',{d:'M320,40 C250,10 120,20 70,80 C30,130 60,210 150,230 C220,245 280,225 320,205 C360,225 420,245 490,230 C580,210 610,130 570,80 C520,20 390,10 320,40z'},cp);
+  const g=S('g',{'clip-path':'url(#cer)'},svg);
+  const zones=[['l',0,215],['i',215,280],['m',280,360],['i',360,425],['l',425,640]];
+  const col={m:'#7c5a46',i:'#b8957a',l:'#ead7c2'};
+  zones.forEach(([k,a,b])=>{const r=S('rect',{x:a,y:0,width:b-a,height:260,fill:col[k],stroke:sel===k?V('accent'):'none','stroke-width':sel===k?5:0,cursor:'pointer',opacity:sel&&sel!==k?.45:1},g);r.onclick=()=>pick(k)});
+  for(let i=0;i<9;i++)S('path',{d:`M40,${70+i*18} C200,${60+i*18} 440,${60+i*18} 600,${70+i*18}`,fill:'none',stroke:'rgba(60,30,20,.25)','stroke-width':1,style:'pointer-events:none'},g);
+  S('path',{d:'M320,40 C250,10 120,20 70,80 C30,130 60,210 150,230 C220,245 280,225 320,205 C360,225 420,245 490,230 C580,210 610,130 570,80 C520,20 390,10 320,40z',fill:'none',stroke:V('ink'),'stroke-width':2,style:'pointer-events:none'},svg);
+  [['m',320,'червь'],['i',247,'промеж.'],['i',393,'промеж.'],['l',130,'полушарие'],['l',520,'полушарие']].forEach(([k,x,t])=>S('text',{x,y:252,'text-anchor':'middle','font-size':'11px','font-weight':700,fill:V('ink'),text:t},svg));
+  [[320,150,'шатра'],[275,140,'пробк.'],[262,165,'шаров.'],[190,150,'зубчатое']].forEach(([x,y,t])=>{S('circle',{cx:x,cy:y,r:5,fill:V('ink'),style:'pointer-events:none'},svg);S('text',{x,y:y-9,'text-anchor':'middle','font-size':'10px',fill:x>280?'#fff':'#1d1b18','font-weight':600,style:'pointer-events:none',text:t},svg)})}
+ function card(k){const z=Z[k];return `<b>${z.n}</b> <span class="muted">(${z.age})</span><br>Функция: ${z.f}.<br>Входы: ${z.in}.<br>Ядро: <b>${z.nu}</b> → выход: ${z.o}.<br>Поражение: <b>${z.s}</b>.`}
+ function pick(k){sel=k;draw();$$('#cerTable tr').forEach(r=>r.classList.toggle('hl',r.dataset.z===k));
+  if(mode==='exp'){out.innerHTML=card(k);return}
+  if(!q)return;sc[1]++;const ok=k===q[1];if(ok)sc[0]++;
+  out.innerHTML=(ok?'✅ Верно! ':'❌ Нет. ')+card(q[1])+'<br><button class="btn sm" id="l7n">Следующий симптом →</button>';
+  $('#l7score').textContent=`Счёт: ${sc[0]} / ${sc[1]}`;q=null;$('#l7n').onclick=next}
+ function next(){q=Q[Math.floor(Math.random()*Q.length)];sel=null;draw();$$('#cerTable tr').forEach(r=>r.classList.remove('hl'));out.innerHTML=`🎯 <b>${q[0]}</b>. Какая зона поражена? Нажми на неё.`}
+ $('#l7exp').onclick=e=>{mode='exp';setOn(e.target.parentNode,e.target);$('#l7score').textContent='';out.innerHTML='Нажми на зону.'};
+ $('#l7tr').onclick=e=>{mode='tr';setOn(e.target.parentNode,e.target);sc=[0,0];$('#l7score').textContent='Счёт: 0 / 0';next()};
+ draw();
+})();
+
+// ===== LAB 8: basal ganglia
+(function(){
+ const svg=$('#l8svg'),out=$('#l8out'),box=$('#l8st');
+ const P={cx:[320,30],s1:[200,100],s2:[440,100],lbs:[440,165],stn:[440,230],mbs:[200,230],th:[90,165],sn:[320,165]};
+ const lab={cx:'Кора',s1:'Стр (D₁)',s2:'Стр (D₂)',lbs:'ЛБШ',stn:'СТЯ',mbs:'МБШ',th:'Таламус',sn:'ЧС'};
+ const E=[['cx','s1','+'],['cx','s2','+'],['s1','mbs','−','d'],['s2','lbs','−','i'],['lbs','stn','−','i'],['stn','mbs','+','i'],['mbs','th','−','b'],['th','cx','+','b'],['sn','s1','+ D₁','sn'],['sn','s2','− D₂','sn']];
+ const ST=[['Норма',{D:1,str2:1,stn:1}],['Паркинсонизм (гибель ЧС)',{D:.2,str2:1,stn:1}],['Гемибаллизм (СТЯ)',{D:1,str2:1,stn:0}],['Хорея (стриатум непрямого пути)',{D:1,str2:0,stn:1}]];
+ let cur=ST[0][1],hp=null;
+ const cl=v=>Math.max(0,Math.min(2,v));
+ function calc(p){const s1=p.D,s2=(2-p.D)*p.str2,lbs=cl(2-s2),stn=p.stn*cl(2-lbs),mbs=cl(1+.5*stn-.5*s1),th=cl(2-mbs);return{cx:1,s1,s2,lbs,stn,mbs,th,sn:p.D}}
+ function draw(){clear(svg);const a=calc(cur);S('rect',{x:0,y:0,width:640,height:300,fill:V('paper'),stroke:V('line')},svg);
+  const d=S('defs',{},svg);const mk=S('marker',{id:'ar8',viewBox:'0 0 10 10',refX:10,refY:5,markerWidth:6,markerHeight:6,orient:'auto'},d);S('path',{d:'M0,0L10,5L0,10z',fill:V('muted')},mk);
+  E.forEach(([f,t,s,g])=>{const [x1,y1]=P[f],[x2,y2]=P[t];const dx=x2-x1,dy=y2-y1,L=Math.hypot(dx,dy);const ux=dx/L,uy=dy/L;
+   const hlp=hp&&(g===hp||g==='b'||(f==='cx'&&((hp==='d'&&t==='s1')||(hp==='i'&&t==='s2'))));
+   const w=1+2.5*Math.min(2,a[f]);
+   S('line',{x1:x1+ux*30,y1:y1+uy*20,x2:x2-ux*32,y2:y2-uy*22,stroke:hlp?V('accent'):(s[0]==='−'?V('inh'):V('exc')),'stroke-width':hlp?5:w,opacity:hp&&!hlp?.25:.85,'marker-end':'url(#ar8)','stroke-dasharray':g==='i'?'7 4':'none'},svg);
+   S('text',{x:(x1+x2)/2+uy*14,y:(y1+y2)/2-ux*14+4,'text-anchor':'middle','font-size':'13px','font-weight':700,fill:s[0]==='−'?V('inh'):V('exc'),text:s},svg)});
+  for(const k in P){const [x,y]=P[k];const v=a[k];
+   S('rect',{x:x-50,y:y-18,width:100,height:36,rx:10,fill:V('bg'),stroke:V('ink'),'stroke-width':1.5},svg);
+   S('rect',{x:x-46,y:y+9,width:92*Math.min(1,v/2),height:5,rx:2,fill:v>1.2?V('exc'):(v<.6?V('inh'):V('ok'))},svg);
+   S('text',{x,y:y+3,'text-anchor':'middle','font-size':'12.5px','font-weight':700,fill:V('ink'),text:lab[k]},svg)}
+  const th=a.th;const verdict=th<.6?['ГИПОКИНЕЗИЯ',V('inh')]:th>1.3?['ГИПЕРКИНЕЗ',V('exc')]:['НОРМА',V('ok')];
+  S('text',{x:20,y:32,'font-size':'11px',fill:V('muted'),text:'на выходе:'},svg);S('text',{x:20,y:52,'font-size':'16px','font-weight':800,fill:verdict[1],text:verdict[0]},svg);
+  S('text',{x:560,y:288,'text-anchor':'middle','font-size':'10.5px',fill:V('muted'),text:'полоска = активность'},svg);
+  return a}
+ const T=['<b>Норма</b>: прямой путь (через D₁) и непрямой (через D₂) уравновешены → нужные компоненты движения включаются, лишние тормозятся.',
+  '<b>Паркинсонизм</b>: мало дофамина → прямой путь слабее, непрямой <b>растормаживается</b> → МБШ сильнее тормозит таламус → кора заторможена → <b>гипокинезия</b>: маскообразное лицо, семенящая походка, медленные и малые движения.',
+  '<b>Гемибаллизм</b>: выпало СТЯ (часть непрямого пути) → МБШ не возбуждается → таламус расторможен → <b>размашистые бросковые движения руки</b>.',
+  '<b>Хорея</b>: погибли нейроны стриатума, от которых начинается непрямой путь → лишние движения не тормозятся → <b>быстрые насильственные движения</b> лица и кистей.'];
+ ST.forEach((s,i)=>btn(s[0],box,e=>{cur=s[1];hp=null;setOn(box,e.target);draw();out.innerHTML=T[i]}));
+ let sg=0;$('#l8sign').onclick=()=>{sg=(sg+1)%3;
+  if(sg===1){hp='d';draw();out.innerHTML='<b>Прямой путь</b>: кора (+) → стриатум (−) → МБШ (−) → таламус (+) → кора. Два торможения подряд: (−)×(−) = (+). Стриатум тормозит МБШ, который сам тормозит таламус → таламус <b>растормаживается</b> → путь <b>возбуждающий</b>.'}
+  else if(sg===2){hp='i';draw();out.innerHTML='<b>Непрямой путь</b> (пунктир): стриатум (−) → ЛБШ (−) → СТЯ (+) → МБШ (−) → таламус. Три торможения: (−)×(−)×(−) = (−) → путь <b>тормозный</b>.'}
+  else{hp=null;draw();out.innerHTML='Знаки сняты. Черная субстанция: D₁ <b>возбуждает</b> прямой путь, D₂ <b>тормозит</b> непрямой → в обоих случаях движения усиливаются.'}};
+ box.firstChild.click();
+})();
+// ===== LAB 9 (id lab10): autonomic chain
+(function(){
+ const svg=$('#l10svg'),out=$('#l10out'),box=$('#l10sel');
+ const O=[
+  {n:'Парасимпатика → сердце',c:'par',cns:'ствол мозга (ядро X)',pre:'длинное',gang:'интрамуральный ганглий (в сердце)',gm:'АХ → N',post:'короткое',pm:'АХ → M',org:'сердце: ЧСС ↓',
+   t:'Блуждающий нерв: <b>длинное преганглионарное</b> волокно доходит до самого органа, ганглий <b>в стенке</b> органа. Оба синапса холинергические: в ганглии АХ → <b>N</b> (ионотропный), на органе АХ → <b>M</b> (метаботропный).'},
+  {n:'Парасимпатика → мочевой пузырь',c:'par',cns:'крестцовый отдел СМ',pre:'длинное',gang:'интрамуральный / параорганный',gm:'АХ → N',post:'короткое',pm:'АХ → M',org:'пузырь: детрузор ↑, сфинктер ↓',
+   t:'<b>Крестцовый</b> отдел иннервирует органы малого таза. Итог — стимуляция мочеиспускания.'},
+  {n:'Симпатика → сердце, сосуды',c:'sym',cns:'боковые рога Th–L',pre:'короткое',gang:'паравертебральный (симпатический ствол)',gm:'АХ → N',post:'длинное',pm:'НА → α, β',org:'сердце ↑, сосуды сужены',
+   t:'Преганглионарное волокно <b>короткое</b> (до ганглия у позвоночника), постганглионарное длинное. В ганглии АХ → N, на органе <b>норадреналин</b> → α- или β-адренорецепторы.'},
+  {n:'Симпатика → кишечник',c:'sym',cns:'боковые рога Th–L',pre:'среднее',gang:'превертебральный (чревное сплетение)',gm:'АХ → N',post:'длинное',pm:'НА → α, β',org:'моторика и секреция ↓',
+   t:'Часть симпатических постганглионарных нейронов лежит не в стволе, а в <b>сплетениях</b> (превертебральные ганглии, например солнечное сплетение).'},
+  {n:'Симпатика → потовая железа',c:'sym',cns:'боковые рога Th–L',pre:'короткое',gang:'паравертебральный',gm:'АХ → N',post:'длинное',pm:'АХ → M (!)',org:'потоотделение ↑',
+   t:'<b>Исключение</b>: холинергические симпатические волокна. Отдел симпатический, а медиатор на органе — <b>ацетилхолин</b>.'},
+  {n:'Симпатика → надпочечник',c:'sym',cns:'боковые рога Th–L',pre:'до надпочечника',gang:'мозговое в-во надпочечника = видоизменённый ганглий',gm:'АХ → N',post:'кровь',pm:'адреналин',org:'кровь: α, β по всему телу',
+   t:'Преганглионарное волокно идёт <b>прямо в мозговое вещество надпочечника</b>, а «постганглионарный нейрон» — клетка, выбрасывающая <b>адреналин в кровь</b>. Отсюда <b>симпатоадреналовая система</b>.'}];
+ O.forEach((o,i)=>btn(o.n,box,e=>{setOn(box,e.target);draw(o)}));
+ function draw(o){clear(svg);S('rect',{x:0,y:0,width:640,height:200,fill:V('paper'),stroke:V('line')},svg);
+  const col=o.c==='par'?V('c6'):V('c5');
+  const gx=o.pre==='длинное'?440:(o.pre==='среднее'?300:(o.pre==='до надпочечника'?330:210));
+  S('rect',{x:10,y:60,width:120,height:60,rx:10,fill:V('bg'),stroke:col,'stroke-width':2},svg);
+  S('text',{x:70,y:84,'text-anchor':'middle','font-size':'12px','font-weight':700,fill:V('ink'),text:'ЦНС'},svg);
+  S('text',{x:70,y:102,'text-anchor':'middle','font-size':'10.5px',fill:V('muted'),text:o.cns},svg);
+  S('circle',{cx:118,cy:90,r:8,fill:col},svg);
+  S('line',{x1:126,x2:gx-16,y1:90,y2:90,stroke:col,'stroke-width':3},svg);
+  S('text',{x:(126+gx)/2,y:80,'text-anchor':'middle','font-size':'11px',fill:V('muted'),text:'преганглионарное'},svg);
+  S('circle',{cx:gx,cy:90,r:16,fill:'none',stroke:col,'stroke-width':2,'stroke-dasharray':'3 3'},svg);
+  S('circle',{cx:gx,cy:90,r:8,fill:col},svg);
+  S('text',{x:gx,y:126,'text-anchor':'middle','font-size':'12px','font-weight':700,fill:V('accent'),text:o.gm},svg);
+  S('text',{x:gx,y:142,'text-anchor':'middle','font-size':'10px',fill:V('muted'),text:o.gang.length>34?o.gang.slice(0,34)+'…':o.gang},svg);
+  const ox=520;
+  S('line',{x1:gx+8,x2:ox,y1:90,y2:90,stroke:col,'stroke-width':3,'stroke-dasharray':o.post==='кровь'?'2 6':'none'},svg);
+  if(gx+8<ox-40)S('text',{x:(gx+ox)/2,y:80,'text-anchor':'middle','font-size':'11px',fill:V('muted'),text:o.post==='кровь'?'кровь':'постганглионарное'},svg);
+  S('rect',{x:ox,y:55,width:110,height:70,rx:12,fill:'color-mix(in srgb,'+(o.c==='par'?'var(--c6)':'var(--c5)')+' 18%,var(--paper))',stroke:col,'stroke-width':2},svg);
+  S('text',{x:ox+55,y:82,'text-anchor':'middle','font-size':'12px','font-weight':700,fill:V('ink'),text:o.pm},svg);
+  const w=o.org.split(':');S('text',{x:ox+55,y:100,'text-anchor':'middle','font-size':'10.5px',fill:V('ink'),text:w[0]},svg);
+  if(w[1])S('text',{x:ox+55,y:114,'text-anchor':'middle','font-size':'10px',fill:V('muted'),text:w[1].trim()},svg);
+  S('text',{x:320,y:182,'text-anchor':'middle','font-size':'12px',fill:col,'font-weight':700,text:o.c==='par'?'ПАРАСИМПАТИЧЕСКИЙ ОТДЕЛ':'СИМПАТИЧЕСКИЙ ОТДЕЛ'},svg);
+  out.innerHTML=o.t}
+ box.firstChild.click();
+})();
+
+// ===== LAB 10 (id lab9): stress vs rest
+(function(){
+ const svg=$('#l9svg'),out=$('#l9out'),box=$('#l9sit');let mode='s';
+ const SIT=[['📝 Экзамен через 5 минут','s'],['🐕 Убегаешь от собаки','s'],['🍲 Сытный обед, лёг на диван','p'],['😴 Спокойный сон','p']];
+ SIT.forEach(s=>btn(s[0],box,e=>{setOn(box,e.target);set(s[1],s[0])}));
+ $('#l9s').onclick=e=>{setOn(box,null);set('s')};$('#l9p').onclick=e=>{setOn(box,null);set('p')};
+ function set(m,sit){mode=m;$('#l9s').classList.toggle('on',m==='s');$('#l9p').classList.toggle('on',m==='p');draw();
+  $$('#vegTable tr[data-o]').forEach(r=>{r.classList.remove('hl');[...r.cells].forEach((c,i)=>c.style.outline='');const c=r.cells[m==='s'?1:2];c.style.outline='2px solid var(--accent)';c.style.outlineOffset='-2px'});
+  out.innerHTML=(sit?`<b>${sit}</b> → `:'')+(m==='s'?'<b>Симпатика: мобилизация.</b> Зрачки расширены, сердце чаще и сильнее, бронхи расширены, сосуды кожи и органов сужены, печень выбрасывает глюкозу, жир — жирные кислоты; ЖКТ и мочеиспускание заторможены, слюна густая (амилаза). Надпочечники добавляют адреналин в кровь.':'<b>Парасимпатика: восстановление.</b> Зрачки сужены, пульс реже, бронхи сужены (секреция ↑), желудок и кишечник работают активно, слюна жидкая, мочевой пузырь «разрешён». На печень и жир парасимпатика не влияет.')}
+ function draw(){clear(svg);const s=mode==='s';S('rect',{x:0,y:0,width:640,height:300,fill:V('paper'),stroke:V('line')},svg);
+  const ink=V('ink'),mu=V('muted'),ac=s?V('c5'):V('c6');
+  // body outline
+  S('circle',{cx:200,cy:52,r:36,fill:V('bg'),stroke:ink,'stroke-width':1.5},svg);
+  S('path',{d:'M150,100 Q200,88 250,100 L262,250 Q200,268 138,250z',fill:V('bg'),stroke:ink,'stroke-width':1.5},svg);
+  // eye
+  S('ellipse',{cx:186,cy:46,rx:11,ry:7,fill:'#fff',stroke:ink},svg);S('circle',{cx:186,cy:46,r:s?5.5:2,fill:'#111',transition:'r .4s'},svg);
+  S('ellipse',{cx:214,cy:46,rx:11,ry:7,fill:'#fff',stroke:ink},svg);S('circle',{cx:214,cy:46,r:s?5.5:2,fill:'#111'},svg);
+  // mouth + saliva
+  S('path',{d:'M188,70 Q200,76 212,70',fill:'none',stroke:ink},svg);
+  if(!s)[0,1,2].forEach(i=>S('circle',{cx:196+i*4,cy:80+i*3,r:2,fill:'#5aa9e6'},svg));
+  // bronchi
+  const bw=s?4:1.5;S('path',{d:'M200,105 L200,130 M200,130 L180,150 M200,130 L220,150 M180,150 L170,165 M180,150 L188,168 M220,150 L230,165 M220,150 L212,168',stroke:'#7aa',fill:'none','stroke-width':bw,'stroke-linecap':'round'},svg);
+  // heart
+  const h=S('path',{d:'M222,150 c-6,-10 -20,-6 -18,5 c2,9 18,16 18,16 c0,0 16,-7 18,-16 c2,-11 -12,-15 -18,-5z',fill:'#d33',class:'beat'},svg);
+  h.style.transformOrigin='222px 160px';h.style.animation=`beat ${s?.42:1.25}s infinite`;
+  // stomach/gut
+  const gp=S('path',{d:'M170,195 q10,-10 20,0 t20,0 t20,0 t20,0',fill:'none',stroke:'#c98','stroke-width':6,'stroke-linecap':'round'},svg);
+  gp.style.strokeDasharray='12 6';gp.style.animation=s?'none':'gut 1.2s linear infinite';
+  // bladder
+  S('ellipse',{cx:200,cy:236,rx:16,ry:11,fill:s?'#f2d16b':'#f8e7a6',stroke:ink},svg);
+  // liver
+  S('path',{d:'M155,170 q25,-12 40,4 q-20,12 -40,-4z',fill:'#8b3a2a'},svg);
+  if(s)[0,1,2].forEach(i=>S('text',{x:148+i*10,y:162-i*4,'font-size':'10px',fill:V('accent'),text:'G'},svg));
+  // labels
+  const R=[['Зрачки',s?'расширены':'сужены',46],['Слюна',s?'густая, амилаза':'водянистая',75],['Бронхи',s?'расширены':'сужены',130],['Сердце',s?'чаще, сильнее':'реже, слабее',160],
+   ['Печень',s?'гликогенолиз ↑':'нет влияния',185],['ЖКТ',s?'моторика ↓':'моторика ↑',205],['Мочевой пузырь',s?'удержание':'опорожнение',236],['Сосуды',s?'в основном сужены':'расшир. в отдельных',262]];
+  R.forEach(([a,b,y])=>{S('line',{x1:272,x2:340,y1:y,y2:y,stroke:V('line')},svg);S('text',{x:348,y:y+4,'font-size':'13px','font-weight':700,fill:ink,text:a+': '},svg);
+   S('text',{x:348+a.length*8.4+12,y:y+4,'font-size':'13px',fill:ac,'font-weight':600,text:b},svg)});
+  S('text',{x:20,y:290,'font-size':'13px','font-weight':800,fill:ac,text:s?'СИМПАТИКА · стресс, мобилизация':'ПАРАСИМПАТИКА · восстановление'},svg)}
+ const st=document.createElement('style');st.textContent='@keyframes beat{0%,100%{transform:scale(1)}30%{transform:scale(1.22)}}@keyframes gut{to{stroke-dashoffset:-36}}#l9svg.paused *{animation-play-state:paused!important}@media (prefers-reduced-motion:reduce){#l9svg *{animation:none!important}}';document.head.appendChild(st);
+ set('s');
+ if('IntersectionObserver' in window){new IntersectionObserver(es=>es.forEach(e=>svg.classList.toggle('paused',!e.isIntersecting))).observe(svg)}
+})();
+// ===== QUIZ
+const QZ=[
+ [4,'Где в нейроне возникает ПД в ответ на суммацию ВПСП?',['В аксонном холмике (начальном сегменте аксона)','В постсинаптической мембране синапса','В теле, около ядра','В пресинаптическом окончании'],'В постсинаптической мембране нет быстрых Na⁺-каналов. ПД возникает там, где они впервые появляются, — в аксонном холмике.'],
+ [4,'Какое утверждение о нейроне верно для всех его типов?',['Аксон всегда один','Дендритов всегда много','Аксон всегда длинный','Тело — выходной отдел'],'Общее правило: дендриты — чувствительные отростки, аксон — двигательный и всегда единственный.'],
+ [4,'ТПСП — это…',['гиперполяризация, снижающая возбудимость','деполяризация ниже порога','выход медиатора в щель','следовая деполяризация после ПД'],'ТПСП отдаляет мембранный потенциал от Eкр → торможение.'],
+ [4,'Два ПД пришли на ОДИН вход с коротким промежутком, и возник ПД. Это…',['временная суммация','пространственная суммация','облегчение','доминанта'],'Один синапс, разные моменты времени → временная суммация.'],
+ [4,'Главный тормозный медиатор ЦНС:',['ГАМК','Глицин','Глутамат','Дофамин'],'ГАМК — главный тормозный медиатор повсеместно в ЦНС. Глицин — тормозный, но в спинном мозге и стволе.'],
+ [4,'Где находятся основные дофаминергические нейроны, регулирующие движения?',['Черная субстанция','Ядра шва','Голубоватое место','Ядро Дейтерса'],'Табл. 4.1: дофамин — черная субстанция (движения) и лимбическая система (эмоции).'],
+ [4,'Какой НЕ относится к способам инактивации медиатора?',['Обратный транспорт в постсинаптическую клетку','Вымывание из щели','Обратный захват','Ферментативное расщепление'],'Три способа: вымывание, обратный захват, ферментативное расщепление.'],
+ [4,'Контур, превращающий короткий импульс в длительную импульсацию:',['Круговой циркуляции возбуждения','Возвратного торможения','Пресинаптического торможения','Конвергентный'],'Коллатераль через возбуждающий нейрон возвращает возбуждение → долгая циркуляция (память, эмоции).'],
+ [4,'Клетки Реншоу в спинном мозге — пример контура…',['возвратного торможения','латерального торможения','реципрокного торможения','генератора ритма'],'Возвратное торможение в спинном мозге называется торможением Реншоу.'],
+ [4,'Усиление контраста в сетчатке обеспечивает контур…',['латерального торможения','реципрокного торможения','дивергентный','круговой циркуляции'],'Возбуждённый канал через тормозные вставочные нейроны подавляет соседей.'],
+ [4,'Какие два контура внешне неотличимы?',['Возвратного торможения и генератор ритма','Дивергентный и конвергентный','Латерального и пресинаптического торможения','Реципрокного и латерального торможения'],'У них одинаковое строение. В генераторе ритма выходной нейрон разряжается постоянно.'],
+ [4,'Чувствительность нервных центров к гипоксии объясняется…',['аэробным метаболизмом тел нейронов','синаптической задержкой','односторонним проведением','низкой лабильностью'],'Это свойство тел нейронов, а не синапсов.'],
+ [4,'В основе иерархии в афферентных системах лежит принцип…',['конвергенции','дивергенции','доминанты','реципрокности'],'Информация от нескольких нижних центров стекается к одному вышележащему. В эфферентных системах — дивергенция.'],
+ [4,'Чесательный рефлекс: ритмичное чесание начинается только после контакта конечности с кожей. Это механизм…',['цепных рефлексов','обратной афферентации','доминанты','конвергенции'],'Пусковой фактор следующего рефлекса — правильное окончание предыдущего.'],
+ [4,'Борьбу за общий конечный путь в естественном поведении выигрывает раздражитель…',['более значимый','большей амплитуды','более ранний','более длительный'],'Сильнее = значимее: вид хищника важнее кормушки.'],
+ [4,'Какой блок функциональной системы хранит ожидаемый результат?',['Акцептор результатов действия','Афферентный синтез','Пусковая афферентация','Программа действий'],'С акцептором сравнивается обратная афферентация.'],
+ [4,'Звонок на перемену как сигнал «можно идти в буфет» — это…',['пусковая афферентация','обстановочная афферентация','мотивация','обратная афферентация'],'Пусковая афферентация — стимул, запускающий поведение.'],
+ [5,'Что заложено в стволе мозга по иерархии управления движениями?',['Программы цельных движений','Элементы движений','Сложные поведенческие акты','Только коррекция движений'],'Спинной мозг — элементы, ствол — цельные движения, кора — поведенческие акты.'],
+ [5,'Пирамидный путь отвечает за…',['тонкие приобретённые движения (рука, речь)','все произвольные движения','позу и равновесие','автоматические стереотипные движения'],'Многие произвольные стереотипные движения кора запускает через стволовые ядра.'],
+ [5,'Боковые рога спинного мозга есть на уровне…',['C₈–L₃','C₁–C₈','L₁–S₅','на всём протяжении'],'От VIII шейного до III поясничного сегмента: там лежат симпатические преганглионарные нейроны.'],
+ [5,'Единственные выходные соматические нейроны спинного мозга:',['α-мотонейроны','γ-мотонейроны','клетки Реншоу','преганглионарные нейроны'],'α-мотонейроны — общий конечный путь всех двигательных программ.'],
+ [5,'В мозжечок проприоцептивная информация идёт по путям…',['спиноцеребеллярным (Говерса и Флексига)','спиноталамическим','Голля и Бурдаха','руброспинальному'],'Пучки Голля и Бурдаха несут проприоцепцию в ствол и кору, спиноцеребеллярные — в мозжечок.'],
+ [5,'Болевая интероцептивная чувствительность поднимается по…',['спиноталамическим путям','блуждающему нерву','пучкам Голля и Бурдаха','спиноцеребеллярным путям'],'Основная интероцепция идёт по вагусу мимо спинного мозга. Исключение — боль, она идёт по спиноталамическим путям.'],
+ [5,'Сколько синапсов в дуге миотатического рефлекса?',['1','2','3','несколько'],'Два нейрона (чувствительный и α-мотонейрон) → один синапс.'],
+ [5,'Зачем при произвольном сокращении активируются γ-мотонейроны?',['Чтобы растянуть центр веретена и рефлекторно возбудить α-мотонейрон','Чтобы затормозить миотатический рефлекс','Чтобы расслабить антагонист','Чтобы возбудить орган Гольджи'],'Рефлекс нельзя затормозить, но можно «обмануть»: γ создаёт «ложную информацию» об удлинении.'],
+ [5,'Рефлекс с сухожильного органа Гольджи:',['напряжение мышцы → её расслабление','растяжение → сокращение','боль → сгибание','давление на подошву → разгибание'],'Через вставочный тормозный нейрон; поддерживает постоянство напряжения, защищает от травмы.'],
+ [5,'Удар по подошве вызывает резкое разгибание конечности. Это…',['разгибательный толчок (элемент бега)','стоятельный рефлекс','шагательный рефлекс','перекрёстный разгибательный рефлекс'],'Удар = приземление при беге → оттолкнуться. Надавливание → стоятельный.'],
+ [5,'Какой отдел ретикулярной формации возбуждает антигравитационные мышцы?',['Мостовой (медиальный ретикулоспинальный путь)','Бульбарный (латеральный путь)','Средний мозг','Ядра шва'],'Мостовой — возбуждающий, бульбарный — тормозный. Во сне преобладает тормозный.'],
+ [5,'«Не упасть» при толчке в метро помогает…',['ядро Дейтерса и вестибулоспинальный путь','красное ядро','четверохолмие','бледный шар'],'Ретикулоспинальные пути позволяют встать, вестибулоспинальный — не упасть.'],
+ [5,'Руброспинальный путь управляет преимущественно…',['сгибателями','разгибателями','мышцами глаза','антигравитационными мышцами'],'Красное ядро — стереотипные позные движения, в основном сгибатели.'],
+ [5,'Кошка при падении переворачивается на лапы. Это рефлекс…',['статокинетический','позно-тонический','выпрямительный','четверохолмный'],'Статокинетические — удержание позы при внезапных воздействиях и ускорениях.'],
+ [5,'Какая зона коры соматотопически организована?',['Моторная (прецентральная извилина)','Премоторная','Дополнительная моторная','Префронтальная'],'Премоторная и дополнительная хранят навыки по центрам, а не по частям тела.'],
+ [5,'Центр Брока — это…',['моторный центр устной речи','центр письменной речи','центр праксиса','центр произвольных движений глаз'],'«Фабрика слов» в премоторной зоне.'],
+ [5,'Единственные выходные нейроны коры мозжечка:',['нейроны Пуркинье','клетки-зерна','нейроны ядра шатра','нейроны нижних олив'],'Путь: Пуркинье → ядра мозжечка → ствол или таламус → кора.'],
+ [5,'Лазящие волокна идут в мозжечок…',['только от нижних оливных ядер','от спинного мозга','от коры через ядра моста','от вестибулярных ядер'],'Все остальные входы — мшистые волокна.'],
+ [5,'Интенционный тремор — признак поражения…',['промежуточной зоны мозжечка','медиальной зоны мозжечка','черной субстанции','моторной коры'],'Нарушена коррекция в ходе движения: запаздывает обработка проприоцептивной обратной связи.'],
+ [5,'Адиадохокинез и скандированная речь указывают на поражение…',['латеральной зоны мозжечка (зубчатое ядро)','червя','субталамического ядра','ядра Дейтерса'],'Латеральная зона планирует быстрые баллистические корковые движения.'],
+ [5,'В физиологический стриатум входят…',['скорлупа и хвостатое ядро','скорлупа и бледный шар','бледный шар и ограда','хвостатое ядро и миндалина'],'Анатомическое полосатое тело включает и бледный шар, а физиологический стриатум — нет.'],
+ [5,'Почему прямой путь стриопаллидарной системы возбуждающий?',['В нём 2 тормозных переключения подряд','Он идёт через субталамическое ядро','Там только глутамат','Он действует через D₂-рецепторы'],'Стриатум тормозит МБШ, который тормозит таламус: торможение снимает торможение.'],
+ [5,'Поражение субталамического ядра вызывает…',['гемибаллизм','паркинсонизм','хорею','астазию'],'СТЯ — часть непрямого (тормозного) пути → лишние размашистые движения руки.'],
+ [5,'Дофамин на нейронах непрямого пути действует через…',['тормозные D₂-рецепторы','возбуждающие D₁-рецепторы','N-холинорецепторы','NMDA-рецепторы'],'D₁ возбуждает прямой путь, D₂ тормозит непрямой; итог — движения усиливаются.'],
+ [5,'Какое сравнение мозжечка и базальных ядер верно?',['Базальные ядра — стратегия, мозжечок — тактика','Базальные ядра корректируют по ходу движения','Мозжечок связан только с корой','Базальные ядра получают много проприоцепции'],'Стриопаллидарная система выбирает движения до их начала, мозжечок следит за их выполнением.'],
+ [6,'Главный центр поддержания постоянства внутренней среды:',['гипоталамус','продолговатый мозг','мозжечок','кора'],'В гипоталамусе есть и рецепторы внутренней среды, и центры поведенческой, эндокринной и вегетативной регуляции.'],
+ [6,'Какие рецепторы есть в гипоталамусе?',['Глюко-, осмо- и терморецепторы','Барорецепторы и хеморецепторы','Проприорецепторы','Фоторецепторы'],'Глюкоза, осмотическое давление и температура крови.'],
+ [6,'Где лежат тела парасимпатических преганглионарных нейронов?',['Ствол мозга и крестцовый отдел СМ','Боковые рога Th–L','Паравертебральные ганглии','Интрамуральные ганглии'],'Краниосакральный отдел. Симпатика — боковые рога грудных и поясничных сегментов.'],
+ [6,'Медиатор ВСЕХ преганглионарных вегетативных нейронов:',['ацетилхолин','норадреналин','адреналин','дофамин'],'И симпатические, и парасимпатические пре- — ацетилхолин.'],
+ [6,'N-холинорецепторы…',['ионотропные, на постганглионарных нейронах ганглиев','метаботропные, на органах','чувствительны к мускарину','адренорецепторы'],'N — никотин, ионотропные. M — мускарин, метаботропные, на органах.'],
+ [6,'Исключение: какие симпатические волокна используют ацетилхолин?',['к потовым железам','к сердцу','к бронхам','к зрачку'],'Холинергические симпатические нервы — потовые железы и, возможно, сосуды скелетных мышц.'],
+ [6,'Мозговое вещество надпочечников — это…',['видоизменённый симпатический ганглий','парасимпатический ганглий','часть гипоталамуса','эндокринная железа без иннервации'],'Получает преганглионарные симпатические волокна и выделяет адреналин → симпатоадреналовая система.'],
+ [6,'Какой орган иннервируется ТОЛЬКО симпатикой?',['Печень','Сердце','Желудок','Мочевой пузырь'],'Печень, подкожная жировая клетчатка, большинство сосудов — только симпатика.'],
+ [6,'Влияние симпатики на мочевой пузырь:',['детрузор расслаблен, сфинктер сокращён','детрузор сокращён, сфинктер расслаблен','никакого','только сфинктер расслаблен'],'Симпатика тормозит мочеиспускание, парасимпатика стимулирует.'],
+ [6,'На сердце в покое преобладает…',['парасимпатический тонус','симпатический тонус','тонус обоих отделов одинаково','тонуса нет'],'На сердце — выраженный парасимпатический тонус; на сосуды — симпатический.'],
+ [6,'Энтеральная нервная система относится…',['ни к симпатике, ни к парасимпатике','к парасимпатике','к симпатике','к соматической НС'],'Это самостоятельная внутриорганная система, во многом автономная, с разными медиаторами.'],
+ [6,'Влияние симпатики на слюнные железы:',['усиление секреции α-амилазы','усиление секреции воды','полное прекращение секреции','никакого'],'Табл. 6.2: симпатика — амилаза (густая слюна), парасимпатика — вода.']];
+(function(){
+ const list=$('#qList');let filt='all',order=[],done=0,right=0;
+ function build(){clear(list);done=0;right=0;order=shuffle(QZ.map((q,i)=>i).filter(i=>filt==='all'||QZ[i][0]==filt));if(filt==='all')order=order.slice(0,40);
+  order.forEach((qi,n)=>{const [ch,t,opts,ex]=QZ[qi];const d=document.createElement('div');d.className='q';
+   d.innerHTML=`<div class="qt"><small class="t${ch}">гл. ${ch}</small>${n+1}. ${t}</div><div class="opts"></div><div class="ex">${ex}</div>`;
+   const o=$('.opts',d);shuffle(opts.map((x,i)=>i)).forEach(i=>{const b=document.createElement('button');b.className='o';b.textContent=opts[i];
+    b.onclick=()=>{if(d.classList.contains('done'))return;d.classList.add('done');done++;
+     if(i===0){right++;b.classList.add('right')}else{b.classList.add('wrong');$$('button',o).find(x=>x.textContent===opts[0]).classList.add('right')}
+     $$('button',o).forEach(x=>x.disabled=true);upd()};o.appendChild(b)});list.appendChild(d)});upd()}
+ function upd(){$('#qScore').textContent=`${right} / ${done}`;$('#qLeft').textContent=done===order.length?`· готово! ${Math.round(100*right/Math.max(1,done))}%`:`· осталось ${order.length-done} из ${order.length}`;
+  $('#qProg').style.width=(100*done/Math.max(1,order.length))+'%'}
+ $$('#qFilter [data-f]').forEach(b=>b.onclick=()=>{filt=b.dataset.f;$$('#qFilter [data-f]').forEach(x=>x.classList.toggle('on',x===b));build()});
+ $('#qReset').onclick=build;build();
+})();
+
+// ===== CARDS
+const CARDS=[[4,'Нейрон','структурно-функциональная единица ЦНС: дендриты (вход), тело (трофика), аксон (выход, всегда один)'],
+ [4,'Аксонный холмик','начальный сегмент аксона: здесь впервые появляются быстрые Na⁺-каналы и возникает ПД'],
+ [4,'Интегративная деятельность','обработка всех входов нейрона с одним решением на выходе: быть ПД или нет, сколько и с какой частотой'],
+ [4,'Суммация','алгебраическое сложение ВПСП и ТПСП: пространственная (разные синапсы) и временнáя (один синапс подряд)'],
+ [4,'Рефлекс','реакция на раздражитель, опосредованная нервной системой; основа — рефлекторная дуга'],
+ [4,'Нейронный контур','малая группа нейронов, соединённых строго определённым образом, — «микросхема ЦНС»'],
+ [4,'Нервный центр','локализованное скопление нейронов, управляющее определённой функцией или рефлексом'],
+ [4,'Общий конечный путь','структура, на которой сходятся разные программы; классика — мотонейроны спинного мозга'],
+ [4,'Доминанта','программа, выигравшая борьбу за общий конечный путь: тормозит другие и «притягивает» посторонние раздражители'],
+ [4,'Функциональная система','временное объединение нервных структур для достижения полезного результата (удовлетворения потребности)'],
+ [4,'Акцептор результатов действия','блок, где хранится ожидаемый результат; с ним сравнивается обратная афферентация'],
+ [4,'Распределённая система','центры разных уровней ЦНС, объединённые для сложной функции по иерархическому принципу'],
+ [5,'Сегментарный отдел','непосредственно управляет мышцами и органами в пределах сегмента (в основном спинной мозг)'],
+ [5,'Надсегментарный отдел','управляет программами сегментарных отделов, объединяя их в движение (кора, ствол частично)'],
+ [5,'γ-мотонейрон','иннервирует интрафузальные волокна веретена; «обманывает» миотатический рефлекс, чтобы было возможно движение'],
+ [5,'Мышечное веретено','рецептор растяжения: интрафузальные волокна параллельно рабочим, центр без актина и миозина'],
+ [5,'Орган Гольджи','рецептор напряжения в сухожилии; напряжение → через тормозный нейрон → расслабление'],
+ [5,'Миотатический рефлекс','растяжение мышцы → её сокращение; 2 нейрона, 1 синапс; держит постоянную длину'],
+ [5,'Антигравитационные мышцы','разгибатели спины, шеи и ног; их тонус держит тело вертикально (РФ, Дейтерс)'],
+ [5,'Рефлекс настораживания','четверохолмный: поворот глаз, головы, туловища к внезапному стимулу; тектоспинальный путь'],
+ [5,'Соматотопия','каждому участку моторной коры — своя группа мышц; тело перевёрнуто и перекрещено'],
+ [5,'Баллистические движения','настолько быстрые, что не корректируются по ходу; планируются заранее (латеральная зона мозжечка)'],
+ [5,'Нейрон Пуркинье','единственный выходной нейрон коры мозжечка'],
+ [5,'Лазящие волокна','от нижних олив, прямо на Пуркинье; даже 1 ПД вызывает разряд — пусковая роль'],
+ [5,'Мшистые волокна','от всех остальных входов, через клетки-зерна; несут информацию'],
+ [5,'Астазия / абазия','не может стоять / нарушено равновесие при ходьбе (медиальная зона)'],
+ [5,'Адиадохокинез','невозможность быстро вращать вытянутыми руками (пронация-супинация); латеральная зона'],
+ [5,'Стриопаллидарная система','стриатум + паллидум + черная субстанция + субталамическое ядро'],
+ [5,'Непрямой путь','стриатум → ЛБШ → СТЯ → МБШ → таламус; 3 торможения → тормозит лишние движения'],
+ [5,'Гипокинезия','заторможенность движений; паркинсонизм (гибель дофаминовых нейронов черной субстанции)'],
+ [5,'Хорея','насильственные быстрые движения лица и кистей; гибель нейронов стриатума непрямого пути'],
+ [6,'Преганглионарный нейрон','первый нейрон вегетативного звена; тело в ЦНС; медиатор — ацетилхолин'],
+ [6,'Интрамуральный ганглий','ганглий в стенке органа; место парасимпатических постганглионарных нейронов'],
+ [6,'Паравертебральные ганглии','ганглии симпатического ствола по бокам от позвоночника'],
+ [6,'Симпатоадреналовая система','симпатика + мозговое вещество надпочечников (видоизменённый ганглий, выделяет адреналин)'],
+ [6,'Котрансмиттер','дополнительное вещество (обычно пептид), выделяемое нейроном вместе с медиатором'],
+ [6,'Тонические влияния','постоянная импульсация отделов ВНС к органам: сердце — парасимпатика, сосуды — симпатика']];
+(function(){const g=$('#cardGrid');
+ function build(arr){clear(g);arr.forEach(([ch,f,b])=>{const c=document.createElement('div');c.className='card';
+  c.innerHTML=`<div class="in"><div class="fa"><small>гл. ${ch}</small>${f}</div><div class="ba">${b}</div></div>`;c.onclick=()=>c.classList.toggle('f');g.appendChild(c)})}
+ build(CARDS);$('#cShuffle').onclick=()=>build(shuffle(CARDS));
+ $('#cFlipAll').onclick=()=>{const cs=$$('.card',g);const any=cs.some(c=>!c.classList.contains('f'));cs.forEach(c=>c.classList.toggle('f',any))};
+})();
+
+</script>
+</body>
+</html>
